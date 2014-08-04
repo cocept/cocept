@@ -33,3 +33,14 @@ defaults:
       layout: "development"
       author: "Max Mumford"
       category: "development"
+  -
+    scope:
+      path: "photos"
+      type: "post"
+    values:
+      layout: "development"
+      author: "Max Mumford"
+      category: "photos"
+
+# Permalinks
+permalink: /:categories/:year/:title
