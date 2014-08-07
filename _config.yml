@@ -9,7 +9,9 @@ github_username: maxmumford
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+
+# Permalinks
+permalink: /:categories/:year/:title
 
 # Gems
 gems:
@@ -35,12 +37,18 @@ defaults:
       category: "development"
   -
     scope:
-      path: "photos"
+      path: "photography"
       type: "post"
     values:
-      layout: "development"
+      layout: "photography"
       author: "Max Mumford"
-      category: "photos"
+      category: "photography"
 
-# Permalinks
-permalink: /:categories/:year/:title
+  -
+    scope:
+      path: "portfolio"
+      type: "post"
+    values:
+      layout: "portfolio"
+      author: "Max Mumford"
+      category: "portfolio"
