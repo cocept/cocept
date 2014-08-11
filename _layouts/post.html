@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <div class="meta">
+        <time>{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <a href="{{ page.author_link }}" target="_blank" rel="author">{{ page.author }}</a>{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</time>
+	</div>
+  </header>
+
+  <article class="post-content">
+  	{{ content }}
+  </article>
+
+</div>

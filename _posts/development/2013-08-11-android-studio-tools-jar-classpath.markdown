@@ -1,5 +1,5 @@
 ---
-title: Android Studio Ubuntu 'tools.jar' is not in the Android Studio classpath. Please ensure JAVA_HOME points to JDK rather than JRE.
+title: Android Studio Ubuntu Classpath
 redirect_from:
   - /how-to/android-studio-ubuntu-tools-jar-is-not-in-the-android-studio-classpath-please-ensure-java_home-points-to-jdk-rather-than-jre
   - /posts/34-android-studio-ubuntu-toolsjar-is-not-in-the-android-studio-classpath-please-ensure-javahome-points-to-jdk-rather-than-jre

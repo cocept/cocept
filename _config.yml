@@ -1,11 +1,6 @@
 # Site settings
 title: MaxMakeDesign
-email: maxmumford@gmail.com
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
-baseurl: ""
-url: "http://localhost"
-twitter_username: MaxMakeDesign
-github_username: maxmumford
+url: "http://www.MaxMakeDesign.co.uk/"
 
 # Build settings
 markdown: kramdown
@@ -21,10 +16,17 @@ gems:
 defaults:
   -
     scope:
+      type: "post"
+      path: ""
+    values:
+      author: "Max Mumford"
+      author_link: "https://plus.google.com/+MaxMumford/"
+  -
+    scope:
       path: "design"
       type: "post"
     values:
-      layout: "design"
+      layout: "post"
       author: "Max Mumford"
       category: "design"
   -
@@ -32,7 +34,7 @@ defaults:
       path: "development"
       type: "post"
     values:
-      layout: "development"
+      layout: "post"
       author: "Max Mumford"
       category: "development"
   -
