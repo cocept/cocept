@@ -200,7 +200,42 @@ nav #links ul.dropdown-menu a {
     font-size: 1.4em;
 }
 
+/* footer */
+#to-top {
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    margin: 30px auto;
+    border-radius: 50%;
+    cursor: pointer;
+
+    width: 100px;
+    height: 100px;
+    background-color: #512db1;
+    transition: background-color 0.5s;
+}
+
+#to-top:hover {
+    text-decoration: none;
+    background-color: #41169a;
+    transition: background-color 0.5s;
+}
+
+#to-top div {
+    color: white;
+    font-size: 6.8em;
+    padding-top: 56px;
+    margin-top: 0px;
+    transition: margin-top 0.5s;
+}
+
+#to-top:hover div {
+    margin-top: -10px;
+    transition: margin-top 0.5s;
+}
+
 /* content */
+/* ----------------------------------------------------------*/
 #content {
     width: 760px;
     margin: 45px auto;
