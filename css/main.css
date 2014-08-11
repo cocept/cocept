@@ -154,6 +154,10 @@ nav .row > div {
     margin-top: 60px;
 }
 
+nav #links {
+    text-align: right;
+}
+
 nav #links > ul > li > a, nav #links > ul > li > a:hover {
     text-decoration: none;
 }
@@ -188,8 +192,8 @@ nav #links li {
 
 nav #links > ul > li > a {
     color: white;
-    font-size: 1.9em;
-    margin: 16px;
+    font-size: 1.7em;
+    margin: 13px;
 }
 
 nav #links ul.dropdown-menu a {
