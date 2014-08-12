@@ -12,6 +12,9 @@ permalink: /:categories/:year/:title
 gems:
   - jekyll-redirect-from
 
+# Custom directories
+include: ["_pages"]
+
 # Defaults for blog posts
 defaults:
   -
@@ -27,7 +30,6 @@ defaults:
       type: "post"
     values:
       layout: "post"
-      author: "Max Mumford"
       category: "design"
   -
     scope:
@@ -35,22 +37,18 @@ defaults:
       type: "post"
     values:
       layout: "post"
-      author: "Max Mumford"
       category: "development"
   -
     scope:
-      path: "photography"
+      path: "blog"
       type: "post"
     values:
-      layout: "photography"
-      author: "Max Mumford"
-      category: "photography"
-
+      layout: "post"
+      category: "blog"
   -
     scope:
       path: "portfolio"
       type: "post"
     values:
       layout: "portfolio"
-      author: "Max Mumford"
       category: "portfolio"
