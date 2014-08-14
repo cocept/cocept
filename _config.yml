@@ -64,7 +64,6 @@ prose:
           element: "text"
           label: "Title"
           value: ""
-
     _drafts:
       - name: "title"
         field:
