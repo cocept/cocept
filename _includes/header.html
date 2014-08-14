@@ -1,44 +1,48 @@
 <header>
-
     <nav role="navigation">
         <div id="top-strip"></div>  
-        <div class="row">
-            <div class="col-md-3" id="logo">
-                <a href="/">MMD</a>
-            </div>
-            <div class="col-md-9" id="links">
-                <ul>
-                    <li>
-                        <a href="/portfolio/">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="/process/">Process</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                            Writing <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/design">Design</a></li>
-                            <li><a href="/development">Development</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                            Max <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/resume">Resume</a></li>
-                            <li><a href="/blog">Blog</a></li>
-                            <li>
-                                <a href="http://maxmumford.500px.com/" target="_blank">
-                                    Photography <span class="glyphicon glyphicon-new-window"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-1 visible-xs"><!-- hamburger menu in xs -->
+                    <a id="hamburger" href="#"><span></span></a>
+                </div>
+                <div class="col-sm-3 col-xs-10" id="logo">
+                    <a href="/">MMD</a>
+                </div>
+                <div class="col-sm-9 hidden-xs" id="links">
+                    <ul>
+                        <li>
+                            <a href="/portfolio/">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="/process/">Process</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                Writing <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/design">Design</a></li>
+                                <li><a href="/development">Development</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                Max <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/resume">Resume</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li>
+                                    <a href="http://maxmumford.500px.com/" target="_blank">
+                                        Photography <span class="glyphicon glyphicon-new-window"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-1 visible-xs"></div><!-- buffer to centre align the logo on xs -->
             </div>
         </div>
     </nav>

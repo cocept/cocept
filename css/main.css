@@ -212,7 +212,7 @@ nav #links ul.dropdown-menu a {
 nav {
     position: fixed;
     top: 0px;
-    z-index: 999;
+    z-index: 100;
     width: 100%;
     transition: height 0.5s;
 }
@@ -229,6 +229,57 @@ nav.scrolled .row > div {
 
 nav.scrolled #logo a:hover {
     border: none;
+}
+
+/* hamburger icon */
+#hamburger { 
+    display: block;
+    height: 40px;
+    width: 40px;
+    padding: 17px 2px;
+    cursor: pointer; 
+    text-align: center;
+    margin-top: -6px;
+}
+
+#hamburger span, #hamburger span:before, #hamburger span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+#hamburger span:before {
+    top: -10px; 
+}
+
+#hamburger span:after {
+    bottom: -10px;
+}
+
+#hamburger span, #hamburger span:before, #hamburger span:after {
+    transition: all 500ms ease-in-out;
+}
+
+#hamburger.active span {
+    background-color: transparent;
+}
+
+#hamburger.active span:before, #hamburger.active span:after {
+    top: 0;
+}
+
+#hamburger.active span:before {
+    transform: rotate(45deg);
+}
+
+#hamburger.active span:after {
+    transform: translateY(-10px) rotate(-45deg);
+    top: 10px;
 }
 
 /* footer */
@@ -262,7 +313,7 @@ nav.scrolled #logo a:hover {
 /* ----------------------------------------------------------*/
 
 #content {
-    width: 760px;
+    max-width: 760px;
     margin: 215px auto 45px auto;
 }
 
@@ -291,7 +342,9 @@ header.post-header {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-
+    #logo {
+        text-align: center;
+    }
 }
 
 /* Extra Small Devices, Phones */ 
@@ -302,4 +355,17 @@ header.post-header {
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
     
+}
+
+/* debugging */
+/* ----------------------------------------------------------*/
+
+.breakpoint-test {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 150;
 }

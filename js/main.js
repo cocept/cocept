@@ -13,6 +13,11 @@ $(document).ready(function() {
 	    }
 	})
 
+	// hamgburger icon
+	$('#hamburger').click(function(){
+		$(this).toggleClass("active");
+	});
+
 	// go to top button
     $('#to-top').click(function(){
         $('html, body').animate({scrollTop:0}, 'slow');
