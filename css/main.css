@@ -213,30 +213,23 @@ a span.glyphicon {
     margin: 30px auto;
     border-radius: 50%;
     cursor: pointer;
-
+    color: white;
+    font-size: 6.8em;
+    padding-top: 56px;
     width: 100px;
     height: 100px;
+
     background-color: #512db1;
-    transition: background-color 0.5s;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    transition: background-color 0.5s, transform 0.5s;
 }
 
 #to-top:hover {
     text-decoration: none;
     background-color: #41169a;
-    transition: background-color 0.5s;
-}
-
-#to-top div {
-    color: white;
-    font-size: 6.8em;
-    padding-top: 56px;
-    margin-top: 0px;
-    transition: margin-top 0.5s;
-}
-
-#to-top:hover div {
-    margin-top: -10px;
-    transition: margin-top 0.5s;
+    transform: translateY(-10px);
+    transition: background-color 0.5s, transform 0.5s;
 }
 
 /* content */
@@ -250,4 +243,8 @@ a span.glyphicon {
 .meta {
     display: block;
     margin: 12px 0px;
+}
+
+header.post-header {
+    margin-bottom: 45px;
 }
