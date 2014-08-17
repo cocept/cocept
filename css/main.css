@@ -239,6 +239,10 @@ nav.scrolled #logo a:hover {
     border: none;
 }
 
+nav .nav-desktop ul {
+    margin: 0px;
+}
+
 /* nav xs */
 .nav-mobile {
     margin-top: 60px;
