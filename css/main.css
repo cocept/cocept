@@ -34,9 +34,6 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1.618em;
 }
-ol, ul {
-    list-style: none;
-}
 blockquote, q {
     quotes: none;
 }
@@ -118,6 +115,10 @@ p.quote {
     font-family: "Sanchez";
 }
 
+ul, ol {
+    font-size: 20px;
+}
+
 blockquote.pull-quote {
     margin: 0em 1em 1em 0em;
     border-left: 3px solid #ccc;
@@ -128,6 +129,13 @@ blockquote {
     font-size: 26px;
     line-height: 37px;
     margin-bottom: 25px;
+}
+
+/* elements */
+/* ----------------------------------------------------------*/
+
+ol, ul {
+    margin: 25px;
 }
 
 /* misc */
@@ -201,7 +209,7 @@ nav #links li {
 
 nav #links > ul > li > a {
     color: white;
-    font-size: 1.6em;
+    font-size: 1.5em;
     margin: 13px;
 }
 
@@ -243,6 +251,10 @@ nav.scrolled #logo a:hover {
 .nav-mobile #hamburger {
     float: left;
     margin-top: -11px;
+}
+
+#push-menu ul {
+    margin: 10px 0px;
 }
 
 /* push menu */
