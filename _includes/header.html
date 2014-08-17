@@ -2,14 +2,19 @@
     <nav role="navigation">
         <div id="top-strip"></div>  
         <div class="container">
-            <div class="row">
-                <div class="col-xs-1 visible-xs"><!-- hamburger menu in xs -->
+            <div class="nav-mobile visible-xs"><!-- mobile -->
+                <div id="hamburger">
                     <a id="hamburger" href="#"><span></span></a>
                 </div>
-                <div class="col-sm-3 col-xs-10" id="logo">
+                <div id="logo">
                     <a href="/">MMD</a>
                 </div>
-                <div class="col-sm-9 hidden-xs" id="links">
+            </div>
+            <div class="row nav-desktop hidden-xs"><!-- desktop -->
+                <div class="col-sm-3" id="logo">
+                    <a href="/">MMD</a>
+                </div>
+                <div class="col-sm-9" id="links">
                     <ul>
                         <li>
                             <a href="/portfolio/">Portfolio</a>
@@ -42,7 +47,6 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-xs-1 visible-xs"></div><!-- buffer to centre align the logo on xs -->
             </div>
         </div>
     </nav>

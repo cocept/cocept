@@ -201,7 +201,7 @@ nav #links li {
 
 nav #links > ul > li > a {
     color: white;
-    font-size: 1.7em;
+    font-size: 1.6em;
     margin: 13px;
 }
 
@@ -229,6 +229,20 @@ nav.scrolled .row > div {
 
 nav.scrolled #logo a:hover {
     border: none;
+}
+
+/* nav xs */
+.nav-mobile {
+    margin-top: 60px;
+}
+
+.nav-mobile #logo {
+    margin: auto;
+}
+
+.nav-mobile #hamburger {
+    float: left;
+    margin-top: -11px;
 }
 
 /* hamburger icon */
