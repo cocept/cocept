@@ -158,7 +158,7 @@ nav .row {
     width: 760px;
 }
 
-nav .row > div {
+nav .nav-desktop > div, nav .nav-mobile > div {
     margin-top: 60px;
     transition: margin-top 0.5s
 }
@@ -222,7 +222,7 @@ nav.scrolled {
     transition: height 0.5s;
 }
 
-nav.scrolled .row > div {
+nav.scrolled .nav-desktop > div, nav.scrolled .nav-mobile {
     margin-top: 27px;
     transition: margin-top 0.5s;
 }
@@ -243,6 +243,71 @@ nav.scrolled #logo a:hover {
 .nav-mobile #hamburger {
     float: left;
     margin-top: -11px;
+}
+
+/* push menu */
+#push-menu {
+    width: 300px;
+    background-color: #41169a;
+    color: white;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: -300px;
+    visibility: hidden;
+    z-index: 101;
+
+    padding: 20px;
+    font-size: 1.2em;
+    line-height: 35px;
+}
+
+#push-menu.pushed {
+    visibility: visible;
+    transition: 0.6s;
+    transform: translateX(300px);
+}
+
+#push-menu.pulled {
+    transition: 0.6s;
+    transform: translateX(0px);
+}
+
+.container.pushed {
+    transition: 0.6s;
+    transform: translateX(300px);
+}
+
+.container.pulled {
+    transition: 0.6s;
+    transform: translateX(0px);
+}
+
+footer.pushed {
+    transition: 0.6s;
+    transform: translateX(300px);
+}
+
+footer.pulled {
+    transition: 0.6s;
+    transform: translateX(0px);
+}
+
+#push-menu ul {
+    list-style-type: none;
+    color: #cccccc;
+}
+
+#push-menu ul a {
+    color: white;
+}
+
+#push-menu ul .category {
+    margin-bottom: 30px;
+}
+
+#push-menu ul .category > div {
+    border-bottom: 1px solid #ccc;
 }
 
 /* hamburger icon */
