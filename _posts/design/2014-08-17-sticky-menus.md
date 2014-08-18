@@ -3,9 +3,15 @@ title: Sticky Menu UX Pattern
 published: true
 ---
 
+A Sticky Menu is a menu that stays put even when you scroll down. I'm using one on this page - scroll to the top and the menu bar hugs the top of the page. Scroll down slightly and it follows you. 
+
+Checkout the video below for an example from [www.makebetterapps.com](http://www.makebetterapps.com/):
+
+<img src="/images/design/sticky-menu-still.gif" data-gif-src="/images/design/sticky-menu.gif" />
+
 > Your site must be snappy to surf to delight your visitors
 
-This article gives a brief overview of the sticky menu navigation UX pattern that is implemented on this site and the rational behind it's usage.
+"That's great, but why use it?" I hear you ask! Let me detail a bit of the rational behind it's usage.
 
 ## The Importance of Navigation
 
@@ -17,17 +23,15 @@ Your site must be snappy to surf to make your visitors delighted.
 
 ## The UX Pattern
 
-In response to the need for accessibility of navigation, a design pattern emerged where the menu is made to "stick" to the top of the page even when scrolling, so it is always accessible. 
+The internet hive brain came up with a clever design pattern to improve navigation accessability. The menu is made to "stick" to the top of the page even when scrolling, so it's always accessible. 
 
-[Smashing Magazine's](http://www.smashingmagazine.com/) Hyrum Denney [conducted an experiment](http://www.smashingmagazine.com/2012/09/11/sticky-menus-are-quicker-to-navigate/) and discovered that Sticky Menus **increase navigation speed by a whopping 22%**.
-
-Here's an example of a sticky menu taken from [www.makebetterapps.com](http://www.makebetterapps.com/):
-
-<img src="/images/design/sticky-menu-still.gif" data-gif-src="/images/design/sticky-menu.gif" />
+[Smashing Magazine's](http://www.smashingmagazine.com/) Hyrum Denney [conducted an experiment](http://www.smashingmagazine.com/2012/09/11/sticky-menus-are-quicker-to-navigate/) that discovered that Sticky Menus **increase navigation speed by a whopping 22%**!
 
 ## Limitations
 
-Of course one drawback of the sticky menu approach is it's **intrusiveness**. Something that the user might expect to disappear lingers on the page. Navigation is typically designed to be bold so the user notices it. Having something eye grabbing distracts from your other valuable content.
+Of course one drawback of the sticky menu approach is it's **intrusiveness**. Something that the user might expect to disappear lingers on the page. 
+
+Navigation is typically designed to be bold so the user notices it. Having something eye grabbing distracts from your other valuable content.
 
 ## The solution
 
@@ -36,7 +40,7 @@ As you will have noticed by now, when you scroll down on this page two things ha
 - The navigation bar sticks to the top of the page 
 - It's height is shrunk slightly
 
-> Navigation speed is increased by 22% by using Sticky Menus
+> De-emphasize your navigation when it gets in the way of your other valuable content
 
 I decided to adopt the Sticky Menu paradigm because of the **sheer efficiency gains** that my visitors would enjoy. To **de-emphasize** it after scrolling I slightly reduce it's vertical height. The result is a more efficient navigation experience. 
 
