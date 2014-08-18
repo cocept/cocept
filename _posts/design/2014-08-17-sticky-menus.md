@@ -13,7 +13,7 @@ Most designers will agree that navigation ranks very highly as one the most crit
 
 In response to the need for accessibility of navigation, a design pattern emerged where the menu is made to "stick" to the top of the page even when scrolling, so it is always accessible. [Smashing Magazine's](http://www.smashingmagazine.com/) Hyrum Denney [conducted an experiment](http://www.smashingmagazine.com/2012/09/11/sticky-menus-are-quicker-to-navigate/) to discover whether this technique improves navigation speed and it discovered that it does. Positively. **By 22%**. Heres an example of a sticky menu taken from [www.makebetterapps.com/](http://www.makebetterapps.com/):
 
-![Sticky Menu Example](/images/design/sticky-menu.gif)
+<img src="/images/design/sticky-menu-still.gif" data-gif-src="/images/design/sticky-menu.gif" />
 
 ## Limitations
 

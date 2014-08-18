@@ -115,7 +115,7 @@ p.quote {
     font-family: "Sanchez";
 }
 
-ul, ol {
+article ul, ol {
     font-size: 20px;
     font-family: "Sanchez";
 }
@@ -181,7 +181,7 @@ nav #links > ul > li > a, nav #links > ul > li > a:hover {
 }
 
 nav #links > ul > li > a:hover, nav #logo a:hover {
-    border-bottom: solid 3px orange;
+    border-bottom: solid 3px #ff4081;
 }
 
 nav #logo {
@@ -392,7 +392,7 @@ footer.pulled {
     width: 100px;
     height: 100px;
 
-    background-color: #512db1;
+    background-color: #ff4081;
     margin-top: 0px;
     margin-bottom: 0px;
     transition: background-color 0.5s, transform 0.5s;
@@ -455,6 +455,29 @@ article img {
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
     
+}
+
+/* components */
+/* ----------------------------------------------------------*/
+
+.gif-player {
+    text-align: center;
+}
+
+.gif-player a {
+    transition: 0.5s;
+    font-size: 1.3em;
+    padding: 10px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    color: white;
+}
+
+.gif-player a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #41169a;
+    transform: rotate(-15deg);
 }
 
 /* debugging */

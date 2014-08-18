@@ -18,15 +18,15 @@ $(document).ready(function() {
 
 	// sticky nav
 	$(document).scroll(function() {
-	    var scrollAmount = $(document).scrollTop();
-	    if (scrollAmount > 0){
-	    	$('nav').addClass('scrolled');
-	    	$('#content').addClass('scrolled');
-	    }
-	    else {
-	    	$('nav').removeClass('scrolled');
-	    	$('#content').removeClass('scrolled');
-	    }
+		var scrollAmount = $(document).scrollTop();
+		if (scrollAmount > 0){
+			$('nav').addClass('scrolled');
+			$('#content').addClass('scrolled');
+		}
+		else {
+			$('nav').removeClass('scrolled');
+			$('#content').removeClass('scrolled');
+		}
 	})
 
 	// hamgburger icon
@@ -39,10 +39,41 @@ $(document).ready(function() {
 	});
 
 	// go to top button
-    $('#to-top').click(function(){
-        $('html, body').animate({scrollTop:0}, 'slow');
-        return false;
-    });
+	$('#to-top').click(function(){
+		$('html, body').animate({scrollTop:0}, 'slow');
+		return false;
+	});
 
+	// gif controls
+	$.each($('*[data-gif-src]'), function(index, img){
+		// set starting data for image
+		img = $(img);
+		img.attr('data-state', 'paused');
+		img.attr('data-still-src', img.attr('src'));
+		var controls = '\
+		<div class="gif-player">\
+			<a class="glyphicon glyphicon-play"></a>\
+		</div>\
+		';
+		var inserted = img.after(controls).next();
+		inserted.find('a').click(function(){
+			if(img.attr('data-state') == 'paused'){
+				// swap image and state
+				img.attr('src', img.attr('data-gif-src'));
+				img.attr('data-state', 'playing');
+
+				// toggle play / pause
+				toggleReplaceClass($(this), 'glyphicon-play', 'glyphicon-stop');
+			}
+			else {
+				// swap image and state
+				img.attr('src', img.attr('data-still-src'));
+				img.attr('data-state', 'paused');
+
+				// toggle play / pause
+				toggleReplaceClass($(this), 'glyphicon-play', 'glyphicon-stop');
+			}
+		})
+	});
 
 });
