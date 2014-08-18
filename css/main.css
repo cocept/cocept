@@ -431,7 +431,10 @@ header.post-header {
 }
 
 article img {
+    display: block;
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* small screen optimization */
