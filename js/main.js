@@ -50,12 +50,16 @@ $(document).ready(function() {
 		img = $(img);
 		img.attr('data-state', 'paused');
 		img.attr('data-still-src', img.attr('src'));
+
+		// append gif player controls
 		var controls = '\
 		<div class="gif-player">\
 			<a class="glyphicon glyphicon-play"></a>\
 		</div>\
 		';
 		var inserted = img.after(controls).next();
+
+		// set controls on click
 		inserted.find('a').click(function(){
 			if(img.attr('data-state') == 'paused'){
 				// swap image and state
