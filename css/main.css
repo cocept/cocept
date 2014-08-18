@@ -120,16 +120,17 @@ article ul, ol {
     font-family: "Sanchez";
 }
 
-blockquote.pull-quote {
-    margin: 0em 1em 1em 0em;
-    border-left: 3px solid #ccc;
-    padding: 0em 0em 0em 0.7em;
+blockquote p {
+    padding-left: 27px;
+    margin-bottom: 25px !important;
+    border-left: solid 7px #ff4081;
+    font-size: 32px;
+    line-height: 42px;
+    color: #424242;
 }
 
-blockquote {
-    font-size: 26px;
-    line-height: 37px;
-    margin-bottom: 25px;
+strong, b {
+    font-weight: bold;
 }
 
 /* elements */
