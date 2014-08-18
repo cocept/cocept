@@ -17,7 +17,11 @@ Your site must be snappy to surf to make your visitors delighted.
 
 ## The UX Pattern
 
-In response to the need for accessibility of navigation, a design pattern emerged where the menu is made to "stick" to the top of the page even when scrolling, so it is always accessible. [Smashing Magazine's](http://www.smashingmagazine.com/) Hyrum Denney [conducted an experiment](http://www.smashingmagazine.com/2012/09/11/sticky-menus-are-quicker-to-navigate/) to discover whether this technique improves navigation speed and it discovered that it does. Positively. **By 22%**. Here's an example of a sticky menu taken from [www.makebetterapps.com](http://www.makebetterapps.com/):
+In response to the need for accessibility of navigation, a design pattern emerged where the menu is made to "stick" to the top of the page even when scrolling, so it is always accessible. 
+
+[Smashing Magazine's](http://www.smashingmagazine.com/) Hyrum Denney [conducted an experiment](http://www.smashingmagazine.com/2012/09/11/sticky-menus-are-quicker-to-navigate/) and discovered that Sticky Menus **increase navigation speed by a whopping 22%**.
+
+Here's an example of a sticky menu taken from [www.makebetterapps.com](http://www.makebetterapps.com/):
 
 <img src="/images/design/sticky-menu-still.gif" data-gif-src="/images/design/sticky-menu.gif" />
 
@@ -31,6 +35,8 @@ As you will have noticed by now, when you scroll down on this page two things ha
 
 - The navigation bar sticks to the top of the page 
 - It's height is shrunk slightly
+
+> Navigation speed is increased by 22% by using Sticky Menus
 
 I decided to adopt the Sticky Menu paradigm because of the **sheer efficiency gains** that my visitors would enjoy. To **de-emphasize** it after scrolling I slightly reduce it's vertical height. The result is a more efficient navigation experience. 
 
