@@ -117,6 +117,7 @@ p.quote {
 
 ul, ol {
     font-size: 20px;
+    font-family: "Sanchez";
 }
 
 blockquote.pull-quote {
@@ -420,6 +421,10 @@ footer.pulled {
 
 header.post-header {
     margin-bottom: 45px;
+}
+
+article img {
+    max-width: 100%;
 }
 
 /* small screen optimization */
