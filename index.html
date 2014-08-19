@@ -1,20 +1,48 @@
 ---
-layout: default
+layout: empty
 ---
 
-<div class="home">
+<div id="about-me">
+    <div class="container narrow">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>I’m <a href="/resume">Max Mumford</a>, a User Experience &amp; Web Designer</h1>
+            </div>
+            <div class="col-sm-6">
+                <img src="/images/home/max.jpg" />
+            </div>
+            <div class="col-sm-6">
+                <h2>Prospective Clients:</h2>
+                <ul>
+                    <li>Checkout the work in my <a href="/portfolio">portfolio</a></li>
+                    <li>Read about my working <a href="/process">process</a></li>
+                </ul>
 
-  <h1>All Posts</h1>
+                <h2>Fellow Designers:</h2>
+                <ul>
+                    <li>Cast an eye over my <a href="/design">design</a> articles</li>
+                    <li>Browse my <a href="/development">development</a> articles</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="paper" id="portfolio">
+    <div class="container narrow">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Latest Project</h2>
+            </div>
+            <div class="col-sm-9">
+                <img src="/images/portfolio/happy-voting/happy-voting-imac.png" />
+            </div>
+            <div class="col-sm-3">
+                <img src="/images/portfolio/happy-voting/happy-voting-iphone.png" />
+            </div>
+            <div class="col-sm-12">
+                <blockquote>Happy Voting was an international, independent campaign focussed on improving young voter turnout in the 2014 European Elections. <a href="/portfolio/2014/happy-voting/">Learn More...</a></blockquote>
+            </div>
+        </div>
+    </div>
 </div>

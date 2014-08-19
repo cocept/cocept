@@ -160,6 +160,10 @@ ol, ul {
     margin: 25px;
 }
 
+img {
+    max-width: 100%;
+}
+
 /* misc */
 /* ----------------------------------------------------------*/
 
@@ -321,6 +325,10 @@ nav .nav-desktop ul {
     transform: translateX(0px);
 }
 
+div#spacer {
+    margin-top: 215px;
+}
+
 footer.pushed {
     transition: 0.6s;
     transform: translateX(300px);
@@ -429,9 +437,9 @@ footer.pulled {
 /* content */
 /* ----------------------------------------------------------*/
 
-#content {
+.container.narrow {
     max-width: 760px;
-    margin: 215px auto 45px auto;
+    margin: 0px auto 45px auto;
 }
 
 /* posts */
@@ -446,7 +454,6 @@ header.post-header {
 
 article img {
     display: block;
-    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -516,4 +523,57 @@ article img {
     top: 0px;
     left: 0px;
     z-index: 150;
+}
+
+/* pages */
+/* ----------------------------------------------------------*/
+
+/* home */
+
+#about-me {
+    padding: 205px 0px 15px 0px;
+    background-color: #eaeaea;
+    border-bottom: 3px solid #d8d8d8;
+}
+
+#about-me, #about-me h1, #about-me h2 {
+    font-family: "Sanchez";
+}
+
+#about-me h1 {
+    font-size: 28px;
+}
+
+#about-me h2:first-child {
+    margin: -12px 0px 8px 0px;
+}
+
+#about-me h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 24px 0px 8px 0px;
+}
+
+#about-me {
+    font-size: 18px;
+}
+
+#about-me ul {
+    margin: 0px 0px 0px 24px;
+}
+
+.paper {
+    padding: 45px 0px;
+}
+
+.paper h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.paper blockquote {
+    font-size: 30px;
+    font-family: "Sanchez";
+    line-height: 40px;
+    margin-top: 60px;
 }
