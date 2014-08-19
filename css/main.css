@@ -120,19 +120,33 @@ article ul, ol {
     font-family: "Sanchez";
 }
 
-blockquote p {
+blockquote {
     transition: border-left 0.5s;
     padding-left: 27px;
     margin-bottom: 25px !important;
     border-left: solid 7px #ff4081;
+}
+
+blockquote p {
     font-size: 32px;
     line-height: 42px;
     color: #424242;
 }
 
-blockquote p:hover {
+blockquote li {
+    font-size: 26px;
+    line-height: 38px;
+    color: #424242;
+}
+
+blockquote:hover {
     transition: border-left 0.5s;
     border-left: solid 7px #512db1;
+}
+
+article > blockquote:first-child {
+    margin-bottom: 60px !important;
+    margin-top: 60px !important;
 }
 
 strong, b {
@@ -472,6 +486,7 @@ article img {
 
 .gif-player {
     text-align: center;
+    margin: 10px;
 }
 
 .gif-player a {

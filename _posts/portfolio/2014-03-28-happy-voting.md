@@ -2,6 +2,18 @@
 title:  Happy Voting
 ---
 
+<blockquote>
+
+	<p>Web Presence for an International EU Youth Voting Campaign</p>
+
+	<ul>
+		<li>Fast Changing Content</li>
+		<li>Short Lifecycle, High &amp; Fluctuating Traffic Levels</li>
+		<li>1 Week Deadline!</li>
+	</ul>
+
+</blockquote>
+
 ## The Project
 
 Happy Voting was an **international**, independent campaign focussed on improving **young voter turnout** in the 2014 **European Elections**.
@@ -55,9 +67,11 @@ To **optimise** for our visitors coming from social media on their **mobiles and
 
 ## The Result
 
-The campaign was a **huge success**. The video received close to 100,000 views and sparked hot debates amongst it's viewers. It succeeded in raising voting awareness among young voters all accross Europe.
+The campaign was a **huge success**. The video received close to 100,000 views and sparked hot debates among it's viewers. It succeeded in raising voting awareness among young voters all accross Europe.
 
 A lot of buzz was created online through viral word of mouth, which carried over into traditional publishing industries like TV and radio where the campaign was featured internationally.
+
+Here you can see the distribution of traffic sources between direct traffic, social sources, referral and organic search. Social media clearly played a huge rule in the campaign's diffusion throughout the continent:
 
 ![Traffic Sources](/images/portfolio/happy-voting/traffic.png)
 

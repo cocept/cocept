@@ -3,9 +3,9 @@ title: Sticky Menu UX Pattern
 published: true
 ---
 
-A Sticky Menu is a menu that stays put even when you scroll down. I'm using one on this page - scroll to the top and the menu bar hugs the top of the page. Scroll down slightly and it follows you. 
+A Sticky Menu is a menu that stays put even when you scroll down. I'm using one on this page - scroll to the top and the menu bar hugs the top of the page. Scroll down slightly and it follows you instead of disappearing. 
 
-Checkout the video below for an example from [www.makebetterapps.com](http://www.makebetterapps.com/):
+Hit play on the video below and watch as the navigation bar at the top stays put as the user scrolls down the page:
 
 <img src="/images/design/sticky-menu-still.gif" data-gif-src="/images/design/sticky-menu.gif" />
 
