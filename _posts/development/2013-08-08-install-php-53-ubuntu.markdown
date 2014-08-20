@@ -1,8 +1,8 @@
 ---
 title: Install PHP 5.3 on Ubuntu
 redirect_from:
-  - /how-to/install-php-5-3-on-ubuntu
-  - /posts/29-install-php-53-on-ubuntu
+  - /how-to/install-php-5-3-on-ubuntu/
+  - /posts/29-install-php-53-on-ubuntu/
 ---
 
 <p>Installing php 5.3 on Ubuntu can be a bit tricky. Luckily, some kind *nix wiz made the following bash script that will<strong> downgrade your existing php 5 installation</strong> to version 5.3.</p>

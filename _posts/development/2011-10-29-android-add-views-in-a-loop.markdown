@@ -1,8 +1,8 @@
 ---
 title: Android - Add views in a loop
 redirect_from:
-  - /how-to/android-add-views-in-a-loop
-  - /posts/16-android-add-views-in-a-loop
+  - /how-to/android-add-views-in-a-loop/
+  - /posts/16-android-add-views-in-a-loop/
 ---
 
 <p>Sometimes you need to <strong>dynamically create</strong> an <strong>unknown number </strong>of<strong> views</strong> - for example rows of data in a table. Because you cannot add the same view more than once without recreating it in a new variable, this is not as straight forward as one would think.</p>

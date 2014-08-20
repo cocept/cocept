@@ -1,7 +1,7 @@
 ---
 title: Fingerprint Not Appended to Assets When Deploying in Production
 redirect_from:
-  - /posts/37-fingerprint-not-appended-to-assets-when-deploying-in-production
+  - /posts/37-fingerprint-not-appended-to-assets-when-deploying-in-production/
 ---
 
 <p>When deploying your rails 4 app, you might experience a problem where the<strong> fingerprint is not appended</strong> to the <strong>assets name</strong> on your HTML when you deploy into <strong>production</strong>. To solve this issue:</p>

@@ -1,8 +1,8 @@
 ---
 title: Kivy unexpected keyword argument '__no_builder'
 redirect_from:
-  - /how-to/kivy-unexpected-keyword-argument-__no_builder
-  - /posts/32-kivy-unexpected-keyword-argument-nobuilder
+  - /how-to/kivy-unexpected-keyword-argument-__no_builder/
+  - /posts/32-kivy-unexpected-keyword-argument-nobuilder/
 ---
 
 <p>This error comes from&nbsp;<strong>subclassing a widget&nbsp;</strong>and&nbsp;<strong>overriding __init__ without **kwargs</strong>.</p>

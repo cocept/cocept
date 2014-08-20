@@ -1,8 +1,8 @@
 ---
 title:  Cufon Installation Tutorial
 redirect_from:
-  - /how-to/cufon-tutorial-installation-guide-how-to-install-2
-  - /posts/2-how-to-install-cufon-cufon-installation-guide
+  - /how-to/cufon-tutorial-installation-guide-how-to-install-2/
+  - /posts/2-how-to-install-cufon-cufon-installation-guide/
 ---
 
 <p>Cufon is a script that makes&nbsp;<strong>fonts </strong>on your website&nbsp;<strong>clearer </strong>and&nbsp;<strong>prettier </strong>using flash vectors. In the past, I have used cufon with a font called delicious &ndash;&nbsp;<a href="http://www.exljbris.com/delicious.html" target="_blank">http://www.exljbris.com/delicious.html</a>.</p>

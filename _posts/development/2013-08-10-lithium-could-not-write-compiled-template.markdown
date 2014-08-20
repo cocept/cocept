@@ -1,8 +1,8 @@
 ---
 title: Lithium Could not write compiled template - Ubuntu
 redirect_from:
-  - /how-to/lithium-could-not-write-compiled-template-ubuntu
-  - /posts/33-lithium-could-not-write-compiled-template-ubuntu
+  - /how-to/lithium-could-not-write-compiled-template-ubuntu/
+  - /posts/33-lithium-could-not-write-compiled-template-ubuntu/
 ---
 
 <p>When setting up the Lithium PHP Web Framework it is necessary to allocate the correct <strong>permissions</strong> to the<strong> app/resources</strong> folder, otherwise you will get a message like the one below, when Lithium tries to write the view cache files:</p>

@@ -1,8 +1,8 @@
 ---
 title: Android Use Classes From Another Project in Eclipse
 redirect_from:
-  - /how-to/android-use-classes-from-another-project-in-eclipse
-  - /posts/25-android-use-classes-from-another-project-in-eclipse
+  - /how-to/android-use-classes-from-another-project-in-eclipse/
+  - /posts/25-android-use-classes-from-another-project-in-eclipse/
 ---
 
 <p>A good project architecture&nbsp;separates&nbsp;abstracted code into different projects. This short article shows how to implement this when developing for Android in Eclipse:</p>

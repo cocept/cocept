@@ -1,8 +1,8 @@
 ---
 title: Taking Screen Shots with your HTC Desire HD
 redirect_from:
-  - /how-to/htc-android-phone-makes-photo-shutter-sound-randomly
-  - /posts/24-htc-android-phone-plays-photo-shutter-sound-randomly-taking-screen-shots-with-your-htc
+  - /how-to/htc-android-phone-makes-photo-shutter-sound-randomly/
+  - /posts/24-htc-android-phone-plays-photo-shutter-sound-randomly-taking-screen-shots-with-your-htc/
 ---
 
 <p>Some people have been complaining of their HTC Android phone playing the <strong>camera</strong> <strong>shutter</strong> <strong>sound</strong> randomly. Most people do not realise that this is caused by a <strong>software update</strong> that allows their phone to take<strong> screen shots </strong>of the current screen!</p>

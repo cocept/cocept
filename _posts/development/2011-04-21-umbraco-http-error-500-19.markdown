@@ -1,8 +1,8 @@
 ---
 title: Umbraco HTTP Error 500.19
 redirect_from:
-  - /how-to/http-error-500-19
-  - /posts/10-umbraco-http-error-50019-the-requested-page-cannot-be-accessed
+  - /how-to/http-error-500-19/
+  - /posts/10-umbraco-http-error-50019-the-requested-page-cannot-be-accessed/
 ---
 
 <p>When setting up Umbraco with IIS on Windows you may encounter the following error page: &nbsp;</p>

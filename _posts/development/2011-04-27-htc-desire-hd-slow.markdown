@@ -1,8 +1,8 @@
 ---
 title: HTC Desire HD Slow and Laggy
 redirect_from:
-  - /how-to/htc-desire-hd-slow-and-laggy
-  - /posts/12-htc-desire-hd-slow-and-laggy
+  - /how-to/htc-desire-hd-slow-and-laggy/
+  - /posts/12-htc-desire-hd-slow-and-laggy/
 ---
 
 <p>Some people using the <strong>HTC desire HD</strong> mobile phone have experienced <strong>severe lag when trying to interact with it</strong>, for example swiping through home screens or opening apps.</p>

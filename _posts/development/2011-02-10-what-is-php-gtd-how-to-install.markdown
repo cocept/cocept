@@ -1,8 +1,8 @@
 ---
 title: What is PHP-GTD? How do you install it?
 redirect_from:
-  - /how-to/what-is-php-gtd-how-do-you-install-it
-  - /posts/6-what-is-phpgtd-how-do-you-install-it
+  - /how-to/what-is-php-gtd-how-do-you-install-it/
+  - /posts/6-what-is-phpgtd-how-do-you-install-it/
 ---
 
 <h1>Introduction</h1>

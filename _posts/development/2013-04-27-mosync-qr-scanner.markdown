@@ -1,8 +1,8 @@
 ---
 title: MoSync QR Code Scanner
 redirect_from:
-  - /how-to/mosync-javascript-qr-decoder
-  - /posts/28-mosync-qr-code-scanner
+  - /how-to/mosync-javascript-qr-decoder/
+  - /posts/28-mosync-qr-code-scanner/
 ---
 
 <h2>Introduction</h2>

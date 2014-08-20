@@ -1,8 +1,8 @@
 ---
 title: Dependency issues after downgrading PHP 5.4 to 5.3 on Ubuntu
 redirect_from:
-  - /how-to/dependency-issues-after-downgrading-php-5-4-to-5-3-on-ubuntu
-  - /posts/30-dependency-issues-after-downgrading-php-54-to-53-on-ubuntu
+  - /how-to/dependency-issues-after-downgrading-php-5-4-to-5-3-on-ubuntu/
+  - /posts/30-dependency-issues-after-downgrading-php-54-to-53-on-ubuntu/
 ---
 
 <p>After using the <strong>php version downgrade script</strong> to downgrade your PHP version from 5.4 to 5.3, you might experience an issue where <strong>installing php plugins</strong> leads to the below&nbsp;<strong>dependency errors</strong>. In my case, I was installing a list of packages as advised on <a href="http://www.howtoforge.com/installing-apache2-with-php5-and-mysql-support-on-ubuntu-11.04-lamp">this guide</a>.</p>

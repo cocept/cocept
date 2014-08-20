@@ -1,8 +1,8 @@
 ---
 title: HTTP Error 500.21 - Internal Server Error
 redirect_from:
-  - /how-to/http-error-500-21-internal-server-error
-  - /posts/11-http-error-50021-internal-server-error
+  - /how-to/http-error-500-21-internal-server-error/
+  - /posts/11-http-error-50021-internal-server-error/
 ---
 
 <p>This post shows you how to fix the following IIS error message: <strong>Handler &quot;PageHandlerFactory-Integrated&quot; has a bad module &quot;ManagedPipelineHandler&quot; in its module list</strong> This error occurs when the IIS module is incorrectly registered (nope, I don&#39;t know what that means either.) But to fix it, follow the steps below:</p>

@@ -1,8 +1,8 @@
 ---
 title: Android Studio Ubuntu Classpath
 redirect_from:
-  - /how-to/android-studio-ubuntu-tools-jar-is-not-in-the-android-studio-classpath-please-ensure-java_home-points-to-jdk-rather-than-jre
-  - /posts/34-android-studio-ubuntu-toolsjar-is-not-in-the-android-studio-classpath-please-ensure-javahome-points-to-jdk-rather-than-jre
+  - /how-to/android-studio-ubuntu-tools-jar-is-not-in-the-android-studio-classpath-please-ensure-java_home-points-to-jdk-rather-than-jre/
+  - /posts/34-android-studio-ubuntu-toolsjar-is-not-in-the-android-studio-classpath-please-ensure-javahome-points-to-jdk-rather-than-jre/
 ---
 
 <p>When setting up&nbsp;<strong>Android Studio</strong> on <b>Ubuntu&nbsp;</b>you might get the following error message:</p>

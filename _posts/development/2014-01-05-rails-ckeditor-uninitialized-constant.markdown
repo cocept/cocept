@@ -1,6 +1,6 @@
 ---
 title: Rails 4 CKEditor uninitialized constant Ckeditor::Orm
-redirect_from: /posts/38-railes-4-ckeditor-uninitialized-constant-ckeditororm
+redirect_from: /posts/38-railes-4-ckeditor-uninitialized-constant-ckeditororm/
 ---
 
 <p>With <strong>Rails 4</strong> you may get the following traceback when trying to use the <strong>CKEditor</strong> gem:</p>

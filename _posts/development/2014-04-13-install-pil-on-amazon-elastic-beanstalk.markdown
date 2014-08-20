@@ -1,7 +1,7 @@
 ---
 title: Install PIL on Amazon Beanstalk
 redirect_from:
-  - /posts/43-install-pil-on-amazon-beanstalk
+  - /posts/43-install-pil-on-amazon-beanstalk/
 ---
 
 <p>To install <strong>python libraries</strong> like PIL on an Amazon Elastic Beanstalk instance, put the following into a file called &quot;<strong>requirements.txt</strong>&quot; in the root of your project:</p>

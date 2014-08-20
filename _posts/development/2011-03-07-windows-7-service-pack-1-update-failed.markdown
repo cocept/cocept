@@ -1,8 +1,8 @@
 ---
 title: Windows 7 Service Pack 1 Update Failed
 redirect_from:
-  - /how-to/windows-7-service-pack-1-0x800f0a12-error-message-update-failed
-  - /posts/8-windows-7-service-pack-1-0x800f0a12-update-failed
+  - /how-to/windows-7-service-pack-1-0x800f0a12-error-message-update-failed/
+  - /posts/8-windows-7-service-pack-1-0x800f0a12-update-failed/
 ---
 
 <p>I recently tried installing the Service Pack 1 update for Windows 7 and got the following error: <strong>0x800f0a12</strong> Some research told me that the update failed because it didnt have access to the system partition (A hard drive partition that stores backups of system files) which needed to be modified. To rectify this, do the following:</p>

@@ -1,8 +1,8 @@
 ---
 title: Eclipse Auto Format Line Wrapping Width
 redirect_from:
-  - /how-to/eclipse-auto-format-line-wrapping-width
-  - /posts/15-eclipse-auto-format-line-wrapping-width
+  - /how-to/eclipse-auto-format-line-wrapping-width/
+  - /posts/15-eclipse-auto-format-line-wrapping-width/
 ---
 
 <p>When using<strong> CTRL + SHIFT + F</strong> in Eclipse by default it <strong>wraps your lines quite tightly</strong>. If you have a relatively large screen this is unnecessary&nbsp;and annoying. To change the width that Eclipse lets your code use before wrapping it to the next line, use the steps below:</p>

@@ -1,8 +1,8 @@
 ---Use
 title: Move All User Folders to Another Hard Drive - Windows 7
 redirect_from:
-  - /how-to/move-all-user-folders-to-another-hard-drive-windows-7
-  - /posts/26-move-all-user-folders-to-another-hard-drive-windows-7
+  - /how-to/move-all-user-folders-to-another-hard-drive-windows-7/
+  - /posts/26-move-all-user-folders-to-another-hard-drive-windows-7/
 ---
 
 <p>Sometimes, especially if you have a nice new shiny solid state drive (like me), you will want to put all the user files and folders (Documents, Videos, AppData etc) onto a hard drive different to where your operating system is stored.&nbsp;</p>

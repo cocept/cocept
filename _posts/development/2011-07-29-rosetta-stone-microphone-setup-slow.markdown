@@ -1,8 +1,8 @@
 ---
 title: Rosetta Stone microphone setup takes ages
 redirect_from:
-  - /how-to/rosetta-stone-microphone-setup-takes-ages-1-2-3-4-5
-  - /posts/13-rosetta-stone-microphone-setup-takes-ages-1-2-3-4-5
+  - /how-to/rosetta-stone-microphone-setup-takes-ages-1-2-3-4-5/
+  - /posts/13-rosetta-stone-microphone-setup-takes-ages-1-2-3-4-5/
 ---
 
 <p>If, when starting up Rosetta Stone, the microphone configuration stage where you have to repeat &quot;1 2 3 4 5&quot; takes longer than a few steps (On average I was repeating them 13 times! Now down to 1.), here is what you can do to fix it:</p>

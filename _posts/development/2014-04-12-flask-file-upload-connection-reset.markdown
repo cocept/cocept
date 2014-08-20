@@ -1,7 +1,7 @@
 ---
 title: Flask File Upload Connection Reset 
 redirect_from:
-  - /posts/41-flask-file-upload-connection-reset
+  - /posts/41-flask-file-upload-connection-reset/
 ---
 
 <p>While following the Flask file upload tutorial <a href="http://flask.pocoo.org/docs/patterns/fileuploads/">here</a>, you might get a &quot;<strong>This webpage is not available</strong>&quot; message due to the connection being interrupted (<strong>ERR_CONNECTION_RESET</strong>). This is due to a problem with how modern browsers interact with the <strong>Werkzeug </strong><a href="http://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">WGSI</a>.</p>

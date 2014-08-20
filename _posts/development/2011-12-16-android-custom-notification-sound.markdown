@@ -1,8 +1,8 @@
 ---
 title: Android Custom Notification Sound Tutorial
 redirect_from:
-  - /how-to/android-custom-notification-sound-tutorial-example
-  - /posts/18-android-custom-notification-sound-tutorial-example
+  - /how-to/android-custom-notification-sound-tutorial-example/
+  - /posts/18-android-custom-notification-sound-tutorial-example/
 ---
 
 <p>In order to make your notification play a custom notification sound when it is shown, follow the steps below:</p>

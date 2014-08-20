@@ -1,8 +1,8 @@
 ---
 title: GIMP Path To Selection
 redirect_from:
-  - /how-to/gimp-path-to-selection-gimp-selection-from-path
-  - /posts/3-gimp-path-to-selection
+  - /how-to/gimp-path-to-selection-gimp-selection-from-path/
+  - /posts/3-gimp-path-to-selection/
 ---
 
 <p>First, make your <strong>selection</strong> using the <strong>Pen</strong> Tool.</p>

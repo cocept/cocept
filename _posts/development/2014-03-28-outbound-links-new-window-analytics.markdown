@@ -1,7 +1,7 @@
 ---
 title: Track Outbound Links to New Windows with Google Analytics
 redirect_from:
-  - /posts/40-track-outbound-links-to-new-windows-with-google-analytics
+  - /posts/40-track-outbound-links-to-new-windows-with-google-analytics/
 ---
 
 <p>You can use Google Analytics to track when a user clicks on a link that takes them to an external website using the code snippet in the link below:</p>
