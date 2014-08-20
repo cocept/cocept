@@ -17,6 +17,17 @@ layout: page
     {% endfor %}
   </ul>
 
+  {% capture post_count %}{{ site.categories[page.category_name] | size }}{% endcapture %}
+  {% if post_count == '0' %}
+      <h2>Sorry, no posts here! Try somewhere else:</h2>
+      <ul>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/design">Design</a></li>
+          <li><a href="/development">Development</a></li>
+          <li><a href="/blog">Blog</a></li>
+      </ul>
+  {% endif %}
+
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>

@@ -183,6 +183,19 @@ img {
     max-width: 100%;
 }
 
+/* form */
+.btn.btn-primary {
+    transition: 0.5s;
+    background-color: #ff4081;
+    border-color: #ff4081;
+}
+
+.btn.btn-primary:hover {
+    transition: 0.5s;
+    background-color: #41169a;
+    border-color: #41169a;
+}
+
 /* misc */
 /* ----------------------------------------------------------*/
 
@@ -477,6 +490,8 @@ article img {
 /* components */
 /* ----------------------------------------------------------*/
 
+/* gif player */
+
 .gif-player {
     text-align: center;
     margin: 10px;
@@ -496,6 +511,12 @@ article img {
     cursor: pointer;
     background-color: #41169a;
     transform: rotate(-15deg);
+}
+
+/* contact form */
+
+form#contact div.row {
+    margin-bottom: 20px;
 }
 
 /* debugging */
