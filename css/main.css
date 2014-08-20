@@ -156,6 +156,25 @@ strong, b {
 /* elements */
 /* ----------------------------------------------------------*/
 
+q {
+    quotes: "“" "”" "‘" "’";
+    display: block;
+    font-size: 1.8em;
+    line-height: 45px;
+}
+
+q:before {
+    font-size: 1.8em;
+    margin-left: -25px;
+    content: open-quote;
+}
+
+q:after {
+    font-size: 1.8em;
+    position: absolute;
+    content: close-quote;
+}
+
 ol, ul {
     margin: 25px;
 }
@@ -221,6 +240,13 @@ nav #logo a {
 
 nav #logo a:hover {
     text-decoration: none;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    #logo {
+        text-align: center;
+    }
 }
 
 nav #links > ul {
@@ -458,36 +484,6 @@ article img {
     margin-right: auto;
 }
 
-/* small screen optimization */
-/* ----------------------------------------------------------*/
-
-/* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px) {
-
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
-
-}
-
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-    #logo {
-        text-align: center;
-    }
-}
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
-
-}
-
-/* Custom, iPhone Retina */ 
-@media only screen and (max-width : 320px) {
-    
-}
-
 /* components */
 /* ----------------------------------------------------------*/
 
@@ -528,7 +524,31 @@ article img {
 /* pages */
 /* ----------------------------------------------------------*/
 
-/* home */
+/* home components */
+
+.paper {
+    padding: 45px 0px;
+    box-shadow: 0 24px 33px -33px gray;
+}
+
+.paper.last {
+    margin-bottom: 60px;
+}
+
+.paper h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.paper blockquote {
+    font-size: 30px;
+    font-family: "Sanchez";
+    line-height: 40px;
+    margin-top: 60px;
+    margin-bottom: 0px !important;
+}
+
+/* home sections */
 
 #about-me {
     padding: 205px 0px 15px 0px;
@@ -542,6 +562,7 @@ article img {
 
 #about-me h1 {
     font-size: 28px;
+    margin-bottom: 30px;
 }
 
 #about-me h2:first-child {
@@ -562,18 +583,44 @@ article img {
     margin: 0px 0px 0px 24px;
 }
 
-.paper {
-    padding: 45px 0px;
+@media only screen and (min-width : 768px) {
+    img.iphone {
+        margin-top: 112px;
+    }
 }
 
-.paper h2 {
-    text-align: center;
-    padding-bottom: 10px;
+#articles q {
+    margin-bottom: 30px;
 }
 
-.paper blockquote {
-    font-size: 30px;
-    font-family: "Sanchez";
-    line-height: 40px;
-    margin-top: 60px;
+#articles a {
+    font-size: 1.5em;
+}
+
+/* small screen optimization */
+/* ----------------------------------------------------------*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+    
 }

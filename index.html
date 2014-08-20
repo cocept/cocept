@@ -2,11 +2,11 @@
 layout: empty
 ---
 
-<div id="about-me">
+<section id="about-me">
     <div class="container narrow">
         <div class="row">
             <div class="col-sm-12">
-                <h1>I’m <a href="/resume">Max Mumford</a>, a User Experience &amp; Web Designer</h1>
+                <h1>I’m <a href="/resume" title="To my resume">Max Mumford</a>, a User Experience &amp; Web Designer</h1>
             </div>
             <div class="col-sm-6">
                 <img src="/images/home/max.jpg" />
@@ -14,21 +14,20 @@ layout: empty
             <div class="col-sm-6">
                 <h2>Prospective Clients:</h2>
                 <ul>
-                    <li>Checkout the work in my <a href="/portfolio">portfolio</a></li>
-                    <li>Read about my working <a href="/process">process</a></li>
+                    <li>Look at the work in my <a href="/portfolio">portfolio<span class="glyphicon glyphicon-arrow-right"></span></a></li>
+                    <li>Read about my working <a href="/process">process<span class="glyphicon glyphicon-arrow-right"></span></a></li>
                 </ul>
-
                 <h2>Fellow Designers:</h2>
                 <ul>
-                    <li>Cast an eye over my <a href="/design">design</a> articles</li>
-                    <li>Browse my <a href="/development">development</a> articles</li>
+                    <li>Check out my <a href="/design">design articles<span class="glyphicon glyphicon-arrow-right"></span></a></li>
+                    <li>Browse my <a href="/development">development articles<span class="glyphicon glyphicon-arrow-right"></span></a></li>
                 </ul>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="paper" id="portfolio">
+<section class="paper" id="portfolio">
     <div class="container narrow">
         <div class="row">
             <div class="col-sm-12">
@@ -38,11 +37,29 @@ layout: empty
                 <img src="/images/portfolio/happy-voting/happy-voting-imac.png" />
             </div>
             <div class="col-sm-3">
-                <img src="/images/portfolio/happy-voting/happy-voting-iphone.png" />
+                <img src="/images/portfolio/happy-voting/happy-voting-iphone.png" class="iphone" />
             </div>
             <div class="col-sm-12">
                 <blockquote>Happy Voting was an international, independent campaign focussed on improving young voter turnout in the 2014 European Elections. <a href="/portfolio/2014/happy-voting/">Learn More...</a></blockquote>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="paper last" id="articles">
+    <div class="container narrow">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Latest Articles</h2>
+            </div>
+            <div class="col-sm-6">
+                <q>Make your site snappy to surf to delight your visitors. Read about the advantages of the Sticky Menu UX pattern and discover solutions to it's limitations</q>
+                <a href="/design/2014/sticky-menus/">Read more...</a>
+            </div>
+            <div class="col-sm-6">
+                <q>Simple Python script to generate random EAN13 numbers</q>
+                <a href="/development/2014/random-ean13-number-generator/">Read more...</a>
+            </div>
+        </div>
+    </div>
+</section>
