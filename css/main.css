@@ -341,28 +341,18 @@ nav .nav-desktop ul {
     transform: translateX(0px);
 }
 
-.container.pushed {
+.pushed {
     transition: 0.6s;
     transform: translateX(300px);
 }
 
-.container.pulled {
+.pulled {
     transition: 0.6s;
     transform: translateX(0px);
 }
 
 div#spacer {
     margin-top: 215px;
-}
-
-footer.pushed {
-    transition: 0.6s;
-    transform: translateX(300px);
-}
-
-footer.pulled {
-    transition: 0.6s;
-    transform: translateX(0px);
 }
 
 #push-menu ul {
@@ -561,7 +551,8 @@ article img {
 }
 
 #about-me h1 {
-    font-size: 28px;
+    font-size: 1.5em;
+    text-align: center;
     margin-bottom: 30px;
 }
 
@@ -583,9 +574,41 @@ article img {
     margin: 0px 0px 0px 24px;
 }
 
+/* xs */
+@media only screen and (max-width : 768px) {
+    #about-me img {
+        max-width: 500px;
+        width: 100%;
+        margin: 20px auto 50px auto;
+        display: block;
+    }
+}
+
+/* > xs */
 @media only screen and (min-width : 768px) {
-    img.iphone {
+    #portfolio img.iphone {
         margin-top: 112px;
+    }
+}
+
+/* xs */
+@media only screen and (max-width : 768px) {
+    #portfolio img {
+        max-height: 300px;
+        margin: 20px auto;
+        display: block;
+    }
+}
+
+/* xs */
+@media only screen and (max-width : 768px) {
+    #articles {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #articles q {
+        margin-top: 30px;
     }
 }
 

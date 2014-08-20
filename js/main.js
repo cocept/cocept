@@ -35,6 +35,7 @@ $(document).ready(function() {
 		toggleReplaceClass($('#push-menu'), "pushed", "pulled");
 		toggleReplaceClass($('body > .container'), "pushed", "pulled");
 		toggleReplaceClass($('header .container'), "pushed", "pulled");
+		toggleReplaceClass($('body > section'), "pushed", "pulled");
 		toggleReplaceClass($('footer'), "pushed", "pulled");
 	});
 
