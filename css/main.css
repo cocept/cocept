@@ -471,6 +471,11 @@ div#spacer {
     margin: 0px auto 45px auto;
 }
 
+.grey-hero {
+    background-color: #eaeaea;
+    border-bottom: 3px solid #d8d8d8;
+}
+
 /* posts */
 .meta {
     display: block;
@@ -563,8 +568,6 @@ form#contact div.row {
 
 #about-me {
     padding: 205px 0px 15px 0px;
-    background-color: #eaeaea;
-    border-bottom: 3px solid #d8d8d8;
 }
 
 #about-me, #about-me h1, #about-me h2 {
