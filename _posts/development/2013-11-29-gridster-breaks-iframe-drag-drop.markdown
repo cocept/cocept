@@ -1,5 +1,6 @@
 ---
 title: Gridster iFrame breaks Drag and Drop
+redirect_from: /posts/20-gridster-iframe-breaks-drag-and-drop/
 ---
 
 <p><a href="http://gridster.net">Gridster</a>&nbsp;is an open source javascript<strong> dashboard plugin</strong>. It provides a nice simple way to make an auto reshuffling dashboard with very flexible contents.&nbsp;</p>
