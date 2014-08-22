@@ -287,12 +287,13 @@ nav {
     top: 0px;
     z-index: 100;
     width: 100%;
-    transition: height 0.5s;
+    transition: 0.5s;
 }
 
 nav.scrolled {
     height: 100px;
-    transition: height 0.5s;
+    opacity: 0.9;
+    transition: 0.5s;
 }
 
 nav.scrolled .nav-desktop > div, nav.scrolled .nav-mobile {
