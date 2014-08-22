@@ -5,7 +5,7 @@ published: true
 
 A Sticky Menu is a menu that stays put even when you scroll down. I'm using one on this page - scroll to the top and the menu bar hugs the top of the page. Scroll down slightly and it follows you instead of disappearing. 
 
-Hit play on the video below and watch as the navigation bar at the top stays put as the user scrolls down the page:
+Hit play on the video below and watch as the navigation bar at the top of [makebetterapps.com](https://makebetterapps.com) stays put as the user scrolls down the page:
 
 <img src="/images/design/sticky-menu-still.gif" data-gif-src="/images/design/sticky-menu.gif" />
 
@@ -35,15 +35,16 @@ Navigation is typically designed to be bold so the user notices it. Having somet
 
 ## The solution
 
-As you will have noticed by now, when you scroll down on this page two things happen:
+As you will have noticed by now, when you scroll down on this page three things happen:
 
 - The navigation bar sticks to the top of the page 
 - It's height is shrunk slightly
+- It's made semi-transparent
 
 > De-emphasize your navigation when it gets in the way of your other valuable content
 
-I decided to adopt the Sticky Menu paradigm because of the **sheer efficiency gains** that my visitors would enjoy. To **de-emphasize** it after scrolling I slightly reduce it's vertical height. The result is a more efficient navigation experience. 
+I decided to adopt the Sticky Menu paradigm because of the **sheer efficiency gains** that my visitors would enjoy. Reducing the nav bar's height frees up valuable screen real estate, and making it semi-transparent reduces it's weight and **de-emphasizes** it. The result is a more efficient and pleasent navigation experience. 
 
-The shrinking action is also animated smoothly using CSS3. This is a touch that will go towards delighting the user with very little processing overhead.
+The nav styling changes are also animated smoothly using CSS3. This is a touch that will go towards delighting the user with very little processing overhead.
 
 *[UX]: User Experience
