@@ -11,6 +11,7 @@ permalink: /:categories/:year/:title
 # Gems
 gems:
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 # Custom directories
 include: ["_pages"]
