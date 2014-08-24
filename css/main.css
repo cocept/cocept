@@ -237,27 +237,27 @@ nav #links > ul > li > a, nav #links > ul > li > a:hover {
     text-decoration: none;
 }
 
-nav #links > ul > li > a:hover, nav #logo a:hover {
+nav #links > ul > li > a:hover, nav .logo a:hover {
     border-bottom: solid 3px #ff4081;
 }
 
-nav #logo {
+nav .logo {
     font-size: 4em;
     font-weight: bold;
     font-family: "Droid Sans";
 }
 
-nav #logo a {
+nav .logo a {
     color: white;
 }
 
-nav #logo a:hover {
+nav .logo a:hover {
     text-decoration: none;
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-    #logo {
+    .logo {
         text-align: center;
     }
 }
@@ -301,7 +301,7 @@ nav.scrolled .nav-desktop > div, nav.scrolled .nav-mobile {
     transition: margin-top 0.5s;
 }
 
-nav.scrolled #logo a:hover {
+nav.scrolled .logo a:hover {
     border: none;
 }
 
@@ -314,7 +314,7 @@ nav .nav-desktop ul {
     margin-top: 60px;
 }
 
-.nav-mobile #logo {
+.nav-mobile .logo {
     margin: auto;
 }
 

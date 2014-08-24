@@ -1,5 +1,6 @@
 ---
 title: Sticky Menu UX Pattern
+description: "The advantages and disadvantages of using the Sticky Menu UX Pattern and it's limitations, and best practices"
 published: true
 ---
 
@@ -7,7 +8,7 @@ A Sticky Menu is a menu that stays put even when you scroll down. I'm using one 
 
 Hit play on the video below and watch as the navigation bar at the top of [makebetterapps.com](https://makebetterapps.com) stays put as the user scrolls down the page:
 
-<img src="/images/design/sticky-menu-still.gif" data-gif-src="/images/design/sticky-menu.gif" />
+<img src="/images/design/sticky-menu-still.gif" data-gif-src="/images/design/sticky-menu.gif" alt="Sitcky Menu example from makebetterapps.com" />
 
 > Your site must be snappy to surf to delight your visitors
 
