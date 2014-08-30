@@ -19,7 +19,7 @@ Let's explore some of the reasons Push Menu's can be effective on the web.
 
 To help the users effectively navigate a website, the navigation options are typically **categorised and sorted into a hierarchical structure**.
 
-As Push Menus are given the luxury of taking up the entire screen when they are visible, there is no **need to compromise on the amount of content** presented as long as it's format has been well designed.
+As Push Menus are given the luxury of taking up the entire screen when they are visible, there is **no need to compromise on the amount of content** presented as long as it's format has been well designed.
 
 Lots of push menus therefore provide comprehensive navigation options and **maintain the concept of a hierarchy** using spacing, typography, colouring and various other design techniques.
 
@@ -53,9 +53,9 @@ Fortunately the benefits of the Push Menu has outweighted it's negatives so heav
 
 ### Platform Compatability
 
-Certain older browsers and devices might have difficulty displaying a Push Menu, depending on the way it has been developed.
+Certain older browsers and devices might have difficulty displaying a Push Menu, depending on the way it has been implemented.
 
-Most rely on CSS3 transformations meaning that the menu won't work on older browsers. Some rely on javascript, meaning that browser's with javascript disabled will have a significant experience disadvantage.
+Most rely on CSS3 transformations meaning that the menu won't work on older browsers. Some rely on javascript, meaning that browsers with javascript disabled will have a significant experience disadvantage.
 
 ### Slower Usage
 
