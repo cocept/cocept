@@ -1,6 +1,7 @@
 ---
 title: Move All User Folders to Another Hard Drive - Windows 7
 redirect_from:
+  - /how-to/136/move-all-user-folders-to-another-hard-drive-windows-7/
   - /how-to/move-all-user-folders-to-another-hard-drive-windows-7/
   - /posts/26-move-all-user-folders-to-another-hard-drive-windows-7/
 ---
