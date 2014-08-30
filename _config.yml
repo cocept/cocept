@@ -59,6 +59,7 @@ defaults:
 prose:
   rooturl: '_posts'
   siteurl: 'http://maxmumford.github.io'
+  media: 'images'
   metadata:
     _posts:
       - name: "title"
