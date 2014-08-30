@@ -326,12 +326,12 @@ nav .nav-desktop ul {
     margin-top: -11px;
 }
 
-#push-menu ul {
+div#push-menu ul {
     margin: 10px 0px;
 }
 
 /* push menu */
-#push-menu {
+div#push-menu {
     width: 300px;
     background-color: #41169a;
     color: white;
@@ -347,13 +347,13 @@ nav .nav-desktop ul {
     line-height: 35px;
 }
 
-#push-menu.pushed {
+div#push-menu.pushed {
     visibility: visible;
     transition: 0.6s;
     transform: translateX(300px);
 }
 
-#push-menu.pulled {
+div#push-menu.pulled {
     transition: 0.6s;
     transform: translateX(0px);
 }
@@ -372,20 +372,20 @@ div#spacer {
     margin-top: 215px;
 }
 
-#push-menu ul {
+div#push-menu ul {
     list-style-type: none;
     color: #cccccc;
 }
 
-#push-menu ul a {
+div#push-menu ul a {
     color: white;
 }
 
-#push-menu ul .category {
+div#push-menu ul .category {
     margin-bottom: 30px;
 }
 
-#push-menu ul .category > div {
+div#push-menu ul .category > div {
     border-bottom: 1px solid #ccc;
 }
 

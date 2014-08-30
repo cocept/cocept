@@ -3,15 +3,13 @@ published: true
 title: Push Menus
 ---
 
-## Push Menu
-
 A Push Menu is a navigational menu that is placed off canvas and brought into view when the user performs a particular action. 
 
 Checkout [this example of a push menu](http://jasny.github.io/bootstrap/examples/navmenu-push/) by clicking the menu icon at the top left of the page. Watch as the menu slides into view and pushes the rest of the screen away at the same time.
 
 <img src="/images/design/push-menu-still.gif" data-gif-src="/images/design/push-menu.gif" alt="Push Menu example from makebetterapps.com" />
 
-Let's explore some of the reasons Push Menu's can be effective on the web.
+Let's explore some of the reasons Push Menus can be effective on the web.
 
 ## Pros
 

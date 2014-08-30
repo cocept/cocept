@@ -32,7 +32,7 @@ $(document).ready(function() {
 	// hamgburger icon
 	$('#hamburger').click(function(){
 		$(this).toggleClass("active");
-		toggleReplaceClass($('#push-menu'), "pushed", "pulled");
+		toggleReplaceClass($('div#push-menu'), "pushed", "pulled");
 		toggleReplaceClass($('body > .container'), "pushed", "pulled");
 		toggleReplaceClass($('header .container'), "pushed", "pulled");
 		toggleReplaceClass($('body > section'), "pushed", "pulled");
