@@ -122,9 +122,12 @@ article ul, ol {
 
 blockquote {
     transition: border-left 0.5s;
-    padding-left: 27px;
     margin-bottom: 25px !important;
     border-left: solid 7px #ff4081;
+    padding-left: 27px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #eaeaea;
 }
 
 blockquote p {
