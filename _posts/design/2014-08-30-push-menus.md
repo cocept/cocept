@@ -5,7 +5,7 @@ title: Push Menus
 
 A Push Menu is a navigational menu that is placed off canvas and brought into view when the user performs a particular action. 
 
-Checkout [this example of a push menu](http://jasny.github.io/bootstrap/examples/navmenu-push/) by clicking the menu icon at the top left of the page. Watch as the menu slides into view and pushes the rest of the screen away at the same time.
+Check out [this example of a push menu](http://jasny.github.io/bootstrap/examples/navmenu-push/) by clicking the hamburger menu icon at the top left of the page. Watch as the menu slides into view and pushes the rest of the screen away at the same time.
 
 <img src="/images/design/push-menu-still.gif" data-gif-src="/images/design/push-menu.gif" alt="Push Menu example from makebetterapps.com" />
 
@@ -15,27 +15,25 @@ Let's explore some of the reasons Push Menus can be effective on the web.
 
 ### Great at Handling Complexity
 
-To help the users effectively navigate a website, the navigation options are typically **categorised and sorted into a hierarchical structure**.
+Out of all the ways to display navigation options, Push Menus probably afford the designer the largest amount of space to work with and the greatest flexibility.
 
-As Push Menus are given the luxury of taking up the entire screen when they are visible, there is **no need to compromise on the amount of content** presented as long as it's format has been well designed.
-
-Lots of push menus therefore provide comprehensive navigation options and **maintain the concept of a hierarchy** using spacing, typography, colouring and various other design techniques.
+Lots of Push Menus provide comprehensive navigation options and **maintain the feeling of hierarchy** using spacing, typography, colouring and various other design techniques.
 
 ### Screen Real Estate
 
-On the higher screen sizes drop down menus lend themselves very well to the problem of displaying hierarchical navigation without consuming too much space. 
+As Push Menus are completely hidden off-screen when they are not needed, the only screen real estate they take up is the mechanism to show them, typically a button.
 
-However drop down menus are very difficult to adapt to screens that are small or touch sensitive.
-
-As Push Menus are only visible when they are needed, they provide another way that you can maintain that hierarchical nav structure while still being lean with screen real estate for your more important content. 
+This makes them one of the most spacially effective ways to display large amounts of navigation options.
 
 ### Follows Convention
 
-The Push Menu UX pattern has been pioneered by big names like Facebook and Google. The hamburger icon as seen below has become a universal symbol to represent a menu, despite breaking the UX Designer's rule of Visibility (More on that later):
+The Push Menu breaks rule number 1 of UX Design, Visibility (More on that below). Some users therefore have difficulty when trying to navigate with it.
+
+However since being pioneered by big names like Facebook and Google, the concept is much more universally understood. 
+
+Thanks to convention Push Menus are now familiar enough to users that their invisibility is less of a problem. Designers can now benefit from their flexibility.
 
 ![Hamburger Icon](/images/design/hamburger.jpg)
-
-Users are now comfortable with using Push Menus to get around, and this affords designers much more freedom when designing navigation.
 
 > Great at handling hierarchical and complex navigation structures, and can save you some valuable screen real estate
 
@@ -45,9 +43,7 @@ Users are now comfortable with using Push Menus to get around, and this affords 
 
 As mentioned above, the Push Menu breaks the UX Designer's [number 1 rule of visibility](http://www.nngroup.com/articles/ten-usability-heuristics/)!
 
-In order to be effective, all functionality on a page should be visible to the user. This is not the case with a menu that is off screen, and an icon that could be misconstrued for a tasty snack.
-
-Fortunately the benefits of the Push Menu has outweighted it's negatives so heavily that it has become a staple part of the diet of the every day web user.
+In order to be effective, all functionality on a page should be visible to the user. This is not the case with a menu that is off screen, and the "hamburger" icon that could be misconstrued for a tasty snack.
 
 ### Platform Compatability
 
