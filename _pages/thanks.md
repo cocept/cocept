@@ -6,6 +6,6 @@ permalink: /thanks/
 
 ## Thanks!
 
-Your message has been receievd and I'll reply as soon as possible.
+Your message has been receieved and I'll reply as soon as possible.
 
 /Max

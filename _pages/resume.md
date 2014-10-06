@@ -10,6 +10,7 @@ permalink: /resume/
 
 <form action="//forms.brace.io/maxmumford@gmail.com" method="POST" id="contact">
     <input type="hidden" name="_next" value="{{site.url}}/thanks" />
+    <input type="text" name="_gotcha" style="display:none" />
 
 	<div class="form-group">
         <label>Name</label>
