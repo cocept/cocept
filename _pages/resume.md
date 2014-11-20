@@ -6,7 +6,7 @@ permalink: /resume/
 
 ## Resume
 
-This page is still under construction. In the meantime you can [click here to download my CV directly](http://goo.gl/oChxdU).
+This page is still under construction. In the meantime you can [click here to download my CV directly](http://goo.gl/UHQG5p).
 
 <h2>Talk To Me</h2>
 
