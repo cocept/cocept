@@ -1,10 +1,12 @@
 ---
-layout: under_construction
+layout: page
 title: Resume
 permalink: /resume/
 ---
 
-<br />
+## Resume
+
+This page is still under construction. In the meantime you can [click here to download my CV directly](http://goo.gl/oChxdU).
 
 <h2>Talk To Me</h2>
 
