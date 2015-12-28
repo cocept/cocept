@@ -19,7 +19,7 @@ redirect_from: /projects/8-happy-voting/
 
 Happy Voting was an **international**, independent campaign focussed on improving **young voter turnout** in the 2014 **European Elections**.
 
-The official website **designed and built** by **MaxMakeDesign** was the publishing platform for the campaign's viral video.
+The official website **designed and built** by **Cocept** was the publishing platform for the campaign's viral video.
 
 The campaign was publicised through tight integration between it's website and social media sites, along with more traditional exposure like newspapers, radio and TV.
 

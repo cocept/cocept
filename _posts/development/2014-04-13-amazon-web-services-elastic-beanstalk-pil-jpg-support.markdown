@@ -9,4 +9,4 @@ redirect_from:
 
 <p>This will install the libjpeg binaries when deploying your application, providing PIL with jpg decoding support.</p>
 
-<p>Click <a href="http://maxmakedesign.co.uk/posts/43-install-pil-on-amazon-beanstalk">here</a>&nbsp;for instructions on how to install PIL on an AWS EB instance.</p>
+<p>Click <a href="http://cocept.io/posts/43-install-pil-on-amazon-beanstalk">here</a>&nbsp;for instructions on how to install PIL on an AWS EB instance.</p>

@@ -11,7 +11,7 @@ This page is still under construction. In the meantime you can [click here to do
 
 <h2>Talk To Me</h2>
 
-<form action="//formspree.io/max@maxmakedesign.co.uk" method="POST" id="contact">
+<form action="//formspree.io/max@cocept.io" method="POST" id="contact">
     <input type="hidden" name="_next" value="{{site.url}}/thanks" />
     <input type="text" name="_gotcha" style="display:none" />
 

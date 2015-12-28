@@ -1,7 +1,7 @@
 # Site settings
-title: "MaxMakeDesign: Home of Max Mumford, Python and Umbraco Web Developer"
+title: "Cocept: Home of Max Mumford, Python and Umbraco Web Developer"
 description: "Welcome to my digital home. Checkout my Development and Design work, articles, blog and photography."
-url: "http://www.maxmakedesign.co.uk"
+url: "http://www.cocept.io"
 
 # Build settings
 markdown: kramdown
@@ -58,7 +58,7 @@ defaults:
 # prose.io config
 prose:
   rooturl: '_posts'
-  siteurl: 'http://maxmumford.github.io'
+  siteurl: 'http://cocept.github.io'
   media: 'images'
   metadata:
     _posts:
