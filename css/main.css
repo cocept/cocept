@@ -186,6 +186,25 @@ img {
     max-width: 100%;
 }
 
+small {
+    font-size: 0.7em;
+    color: #888;
+}
+
+.highlighter-rouge {
+    margin-bottom: 25px;
+    padding: 2px;
+    border: 1px solid #ececec;
+    border-radius: 9px;
+    font-family: monospace;
+    font-size: 0.8em;
+}
+
+pre.highlight {
+    padding: 5px 13px;
+    border-radius: 9px;
+}
+
 /* form */
 .btn.btn-primary {
     transition: 0.5s;
@@ -245,7 +264,7 @@ nav #links > ul > li > a:hover, nav .logo a:hover {
 }
 
 nav .logo {
-    font-size: 4em;
+    font-size: 3.3em;
     font-weight: bold;
     font-family: "Droid Sans";
 }
