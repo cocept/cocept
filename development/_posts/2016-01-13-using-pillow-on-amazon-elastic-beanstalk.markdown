@@ -8,7 +8,7 @@ I often use Amazon Elastic Beanstalk (EB) for project deployment. Several times 
 
 In order to manipulate image files using Python on Amazon EC2 you need to have the Pillow library installed. Pillow is a newer, better maintained and supported fork of PIL. If it is missing from your environment you will see an error message like this:
 
-{% highlight python %}
+{% highlight text %}
 ImportError: No module named Image
 {% endhighlight %}
 
@@ -26,7 +26,7 @@ When you next deploy your application to Amazon Elastic Beanstalk all applicatio
 
 If you try to manipulate JPG images with Pillow on EB, chances are you will run into the following error message:
 
-{% highlight python %}
+{% highlight text %}
 --enable-jpeg requested but jpeg not found, aborting
 {% endhighlight %}
 
@@ -55,7 +55,7 @@ The above will tell EB to install libjpeg-turbo-devel and libpng-devel using the
 
 If you try and load a font using the Pillow imaging library on EB you might run into the following error message:
 
-{% highlight python %}
+{% highlight text %}
 ImportError: The _imagingft C module is not installed
 {% endhighlight %}
 
@@ -80,12 +80,12 @@ packages:
 
 You may get the below error when trying to install libjpeg:
 
-{% highlight python %}
+{% highlight text %}
 ToolError: Yum does not have libjpeg-devel-6b available for installation
 {% endhighlight %}
 
 The solution is to **install the following package instead**:
 
-{% highlight python %}
+{% highlight yaml %}
 libjpeg-turbo-devel: []
 {% endhighlight %}

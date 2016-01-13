@@ -191,7 +191,7 @@ small {
     color: #888;
 }
 
-.highlighter-rouge {
+.highlight {
     margin-bottom: 25px;
     padding: 2px;
     border: 1px solid #ececec;
@@ -200,7 +200,7 @@ small {
     font-size: 0.8em;
 }
 
-pre.highlight {
+.highlight pre {
     padding: 5px 13px;
     border-radius: 9px;
 }
