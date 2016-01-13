@@ -8,13 +8,17 @@ I often use Amazon Elastic Beanstalk (EB) for project deployment. Several times 
 
 In order to manipulate image files using Python on Amazon EC2 you need to have the Pillow library installed. Pillow is a newer, better maintained and supported fork of PIL. If it is missing from your environment you will see an error message like this:
 
-    ImportError: No module named Image
+{% highlight python %}
+ImportError: No module named Image
+{% endhighlight %}
 
 ### Installing Pillow
 
 To install Pillow, **create** a file called **requirements.txt** in the **root** of your application. Inside it, put the following:
 
-	Pillow==3.0.0
+{% highlight txt %}
+Pillow==3.0.0
+{% endhighlight %}
 
 When you next deploy your application to Amazon Elastic Beanstalk all applications referenced in your requirements.txt file will be automatically installed, along with all their dependencies, using the python package manager Pip.
 
@@ -22,7 +26,9 @@ When you next deploy your application to Amazon Elastic Beanstalk all applicatio
 
 If you try to manipulate JPG images with Pillow on EB, chances are you will run into the following error message:
 
-	--enable-jpeg requested but jpeg not found, aborting
+{% highlight python %}
+--enable-jpeg requested but jpeg not found, aborting
+{% endhighlight %}
 
 This is because your environment is missing the required libraries to manipulate the JPG files. To rectify this you'll have to install the libjpeg library. 
 
@@ -34,10 +40,12 @@ This is because your environment is missing the required libraries to manipulate
 
 <!-- Hack to fix code after list markdown bug -->
 
-    packages:
-      yum:
-        libjpeg-turbo-devel: []
-        libpng-devel: []
+{% highlight yaml %}
+packages:
+  yum:
+    libjpeg-turbo-devel: []
+    libpng-devel: []
+{% endhighlight %}
 
 <small>Note: This file uses the yaml syntax - when you copy and paste the above, ensure the indentation is maintained and uses spaces not tabs.</small>
 
@@ -47,7 +55,9 @@ The above will tell EB to install libjpeg-turbo-devel and libpng-devel using the
 
 If you try and load a font using the Pillow imaging library on EB you might run into the following error message:
 
-    ImportError: The _imagingft C module is not installed
+{% highlight python %}
+ImportError: The _imagingft C module is not installed
+{% endhighlight %}
 
 This error is caused by the fact that you are missing the required libraries to load and manipulate font files.
 
@@ -58,9 +68,11 @@ This error is caused by the fact that you are missing the required libraries to 
 
 <!-- Hack to fix code after list markdown bug -->
 
-    packages:
-	  yum:
-	    freetype-devel: []
+{% highlight yaml %}
+packages:
+  yum:
+    freetype-devel: []
+{% endhighlight %}
 
 <small>Note: If you already have a packages / yum section, add freetype-devel: [] to it instead of creating an additional packages or yum section.</small>
 
@@ -68,8 +80,12 @@ This error is caused by the fact that you are missing the required libraries to 
 
 You may get the below error when trying to install libjpeg:
 
-    ToolError: Yum does not have libjpeg-devel-6b available for installation
+{% highlight python %}
+ToolError: Yum does not have libjpeg-devel-6b available for installation
+{% endhighlight %}
 
 The solution is to **install the following package instead**:
 
-    libjpeg-turbo-devel: []
+{% highlight python %}
+libjpeg-turbo-devel: []
+{% endhighlight %}

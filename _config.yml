@@ -21,7 +21,7 @@ include: ["_pages"]
 defaults:
   -
     scope:
-      type: "post"
+      type: "posts"
       path: ""
     values:
       author: "Max Mumford"
@@ -29,28 +29,28 @@ defaults:
   -
     scope:
       path: "design"
-      type: "post"
+      type: "posts"
     values:
       layout: "post"
       category: "design"
   -
     scope:
       path: "development"
-      type: "post"
+      type: "posts"
     values:
       layout: "post"
       category: "development"
   -
     scope:
       path: "blog"
-      type: "post"
+      type: "posts"
     values:
       layout: "post"
       category: "blog"
   -
     scope:
       path: "portfolio"
-      type: "post"
+      type: "posts"
     values:
       layout: "portfolio"
       category: "portfolio"
