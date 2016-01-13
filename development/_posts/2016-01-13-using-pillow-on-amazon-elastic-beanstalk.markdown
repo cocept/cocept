@@ -16,7 +16,7 @@ ImportError: No module named Image
 
 To install Pillow, **create** a file called **requirements.txt** in the **root** of your application. Inside it, put the following:
 
-{% highlight txt %}
+{% highlight plaintext %}
 Pillow==3.0.0
 {% endhighlight %}
 
