@@ -20,7 +20,7 @@ Check the source code of your blog posts and you'll see something like this:
 
 ## Usage
 
- - git clone yourself a copy of the repository, which you'll find here: https://github.com/maxmumford/wordpress-seo-spam-remover
+ - git clone yourself a copy of the repository, which you'll find here:  [https://github.com/maxmumford/wordpress-seo-spam-remover](https://github.com/maxmumford/wordpress-seo-spam-remover)
  - Follow the setup instructions and install the python mysql connector and meld
  - Run the script with the bash command below:
  
@@ -30,10 +30,10 @@ Check the source code of your blog posts and you'll see something like this:
 
 When you run the script it'll do the following:
 
- - connects to your wordpress mysql database
+ - connect to your wordpress mysql database
  - finds all posts containing the string "\_all\_wplink\_"
- - uses a simple regex to identify and remove the div from the post html
- - presents you with a diff of all the changes it will make to the database
+ - uses a simple regex to identify and remove the spam from the post contents
+ - present you with a diff of all the changes it will make to the database
  - asks you to confirm you are happy with the diff
  - if you select yes it will update your database accordingly
  - if you select no, no changes to your database will be made
