@@ -14,9 +14,13 @@ Switching to Wordpress' alternative uploader (http://mywordpresssite.com/wp-admi
 
 ## The Fix
 
-The solution was to increase the maximum size of file uploads in Nginx. **Find your nginx config file** and add the following line to it:
+The solution was to increase the maximum size of file uploads in Nginx. **Find your nginx config file** and add the following line to your server block:
 
 <script src="https://gist.github.com/maxmumford/ffa01471c0498a2d3ff2.js"></script>
+
+For reference, here is what my nginx server block looks like with the line added:
+
+<script src="https://gist.github.com/maxmumford/1a6f690eceb6ecbb6daa.js"></script>
 
 20M means the file uploads can be up to 20 megabytes. After setting it, restart your nginx service and you should be good to go!
 
