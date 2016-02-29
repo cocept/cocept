@@ -1,6 +1,6 @@
 # Site settings
-title: "Cocept: Home of Max Mumford, Python and Umbraco Web Developer"
-description: "Welcome to my digital home. Checkout my Development and Design work, articles, blog and photography."
+title: "Cocept: Website Development House in Brighton"
+description: "Welcome to Cocept, a website development house based in Brighton, UK"
 url: "http://www.cocept.io"
 
 # Build settings
@@ -41,13 +41,6 @@ defaults:
     values:
       layout: "post"
       category: "development"
-  -
-    scope:
-      path: "blog"
-      type: "posts"
-    values:
-      layout: "post"
-      category: "blog"
   -
     scope:
       path: "portfolio"
