@@ -1,15 +1,13 @@
 ---
 layout: page
-title: Resume
-permalink: /resume/
+title: Contact Cocept
+permalink: /contact/
 published: true
 ---
 
-## Resume
+## Contact Cocept
 
-This page is still under construction. In the meantime you can [click here to download my CV directly](http://goo.gl/UHQG5p).
-
-<h2>Talk To Me</h2>
+Interested in working together? You can get in touch using the form below. We usually respond within a couple of hours.
 
 <form action="//formspree.io/max@cocept.io" method="POST" id="contact">
     <input type="hidden" name="_next" value="{{site.url}}/thanks" />

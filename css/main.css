@@ -246,40 +246,51 @@ nav .row {
     width: 760px;
 }
 
-nav .nav-desktop > div, nav .nav-mobile > div {
+nav .nav-desktop > div {
     margin-top: 60px;
     transition: margin-top 0.5s
 }
 
 nav #links {
-    text-align: right;
+    text-align: left;
 }
 
 nav #links > ul > li > a, nav #links > ul > li > a:hover {
     text-decoration: none;
 }
 
-nav #links > ul > li > a:hover, nav .logo a:hover {
+nav #links > ul > li > a:hover, nav #logo a:hover {
     border-bottom: solid 3px #ff4081;
 }
 
-nav .logo {
-    font-size: 3.3em;
+nav #logo {
+    font-size: 1.1em;
     font-weight: bold;
     font-family: "Droid Sans";
+    text-align: center;
+    margin-top: 20px;
 }
 
-nav .logo a {
+nav #logo a {
     color: white;
 }
 
-nav .logo a:hover {
+nav #logo a:hover {
     text-decoration: none;
+}
+
+nav #logo img {
+    transition: width 0.5s;
+    width: 82px;
+}
+
+nav .nav-desktop ul {
+    margin: 0px;
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-    .logo {
+    #logo {
         text-align: center;
     }
 }
@@ -312,41 +323,68 @@ nav {
     transition: 0.5s;
 }
 
+/* Scrolled styling */
 nav.scrolled {
     height: 100px;
     opacity: 0.9;
     transition: 0.5s;
 }
 
-nav.scrolled .nav-desktop > div, nav.scrolled .nav-mobile {
+nav.scrolled .nav-desktop > div {
     margin-top: 27px;
     transition: margin-top 0.5s;
 }
 
-nav.scrolled .logo a:hover {
+nav.scrolled #logo a:hover {
     border: none;
 }
 
-nav .nav-desktop ul {
-    margin: 0px;
+nav.scrolled #logo {
+    margin-top: 12px;
+    transition: margin-top 0.5s;
+}
+
+nav.scrolled #logo img {
+    width: 55px;
+}
+
+nav.scrolled #logo .company_name {
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 /* nav xs */
-.nav-mobile {
-    margin-top: 60px;
-}
-
-.nav-mobile .logo {
-    margin: auto;
-}
-
-.nav-mobile #hamburger {
+nav .nav-mobile #hamburger {
     float: left;
-    margin-top: -11px;
+    margin-top: 29px;
+    margin-bottom: 50px; /* push logo text right */
+    transition: margin-top 0.5s, margin-bottom 0.5s;
+}
+
+nav .nav-mobile #logo {
+    margin-top: 20px;
+}
+
+nav .nav-mobile #logo span {
+    display: block;
 }
 
 div#push-menu ul {
     margin: 10px 0px;
+}
+
+/* nav xs scrolled */
+nav.scrolled .nav-mobile #hamburger {
+    margin-top: 8px;
+}
+
+nav.scrolled .nav-mobile #logo {
+    margin-top: 12px;
+}
+
+nav.scrolled .nav-mobile .company_name {
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 /* push menu */
@@ -633,14 +671,14 @@ form#contact div.row {
 
 /* > xs */
 @media only screen and (min-width : 768px) {
-    #portfolio img.iphone {
+    #work img.iphone {
         margin-top: 112px;
     }
 }
 
 /* xs */
 @media only screen and (max-width : 768px) {
-    #portfolio img {
+    #work img {
         max-height: 300px;
         margin: 20px auto;
         display: block;
