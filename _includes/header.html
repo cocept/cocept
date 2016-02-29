@@ -50,4 +50,125 @@
             </div>
         </div>
     </nav>
+
+    <canvas>
+        
+    </canvas>
+
 </header>
+
+<style type="text/css">
+    canvas {
+        width: 100%;
+        height: 400px;
+        margin-top: 160px;
+        background-color: #333;
+    }
+
+    #about-me {
+        margin-top: -30px;
+        padding-top: 20px;
+    }
+</style>
+
+<script type="text/javascript">
+
+    var Circle = function(){};
+    Circle.prototype = {
+        start_position_x: 0,
+        start_position_y: 0,
+        end_position_x: 0,
+        end_position_y: 0,
+        radius: 0,
+    };
+
+    var ctx;
+    var canvas_width;
+    var canvas_height;
+
+    var mouse_position_x;
+    var mouse_position_y;
+    
+    var number_of_circles_to_draw = 100;
+    var circle_radius = 5;
+    var min_mouse_distance = 100;
+    var circles = [];
+
+    // save mouse position
+    $(document).mousemove(function(e) {  
+        mouse_position_x = e.pageX;
+        mouse_position_y = e.pageY;
+    });
+
+    function calculateDistanceFromMouseToElement(element) {
+        return Math.floor(
+            Math.sqrt(
+                Math.pow(
+                    mouse_position_x - (element.offset().left+(element.width()/2)), 2
+                ) + Math.pow(
+                    mouse_position_y - (element.offset().top+(element.height()/2)), 2)
+                )
+            );
+    }
+
+    function init() {
+        ctx = $('canvas')[0].getContext("2d");
+        canvas_width = $("canvas").width();
+        canvas_height = $("canvas").height();
+        return setInterval(draw, 10);
+    }
+
+    function draw_circle(x,y,r) {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI*2, true);
+        ctx.fillStyle = "black";
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    function clear() {
+        ctx.clearRect(0, 0, canvas_width, canvas_height);
+    }
+
+    function draw() {
+        // set canvas dimensions
+        ctx.canvas.width  = window.innerWidth;
+        ctx.canvas.height = 400;
+        clear();
+
+        // populate circles
+        if(circles.length == 0){
+            for (i = 0; i < number_of_circles_to_draw; i++){
+                var circle = new Circle();
+                circle.start_position_x = Math.floor(Math.random() * canvas_width) + 1;
+                circle.start_position_y = Math.floor(Math.random() * canvas_height) + 1;
+                circle.end_position_x = Math.floor(Math.random() * canvas_width) + 1;
+                circle.end_position_y = Math.floor(Math.random() * canvas_height) + 1;
+                circle.radius = circle_radius;
+                circles.push(circle);
+            }
+        }
+
+        // redraw circles
+        var distance = calculateDistanceFromMouseToElement($('.logo.col-sm-3'));
+        var distance_as_percentage = distance / min_mouse_distance * 100;
+        for(i = 0; i < circles.length; i++){
+            // if mouse is not within min_mouse_distance, draw circles at starting position
+            if(distance > min_mouse_distance){
+                circle = circles[i];
+                draw_circle(circle.start_position_x, circle.start_position_y, circle.radius);
+            }
+            // otherwise calculate circle position relative to mouse distance
+            else {
+                circle = circles[i];
+                position_progress_x = (circle.start_position_x - circle.end_position_x) * (distance_as_percentage / 100);
+                position_progress_y = (circle.start_position_y - circle.end_position_y) * (distance_as_percentage / 100);
+                draw_circle(position_progress_x, position_progress_y, circle.radius);
+            }
+        }
+
+        
+    }
+
+    init();
+</script>
