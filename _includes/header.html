@@ -65,11 +65,6 @@
         background-color: #333;
     }
 
-    #about-me {
-        margin-top: -30px;
-        padding-top: 20px;
-    }
-
     nav {
         margin-top: -8px;
     }
@@ -91,13 +86,17 @@
 <script type="text/javascript">
     
     // settings
+    var target_element_selector = '.nav-desktop #logo img'; // the element the mouse must be on to reveal the image
     var circle_radius = 5;
     var image_width = 645;
     var image_height = 400;
-    var min_mouse_distance = 500;
+    var min_mouse_distance = 350;
     var target_distance_leniency = 15; // mouse can be this far away from target element and still be considered "on it"
     var start_position_off_canvas_limit_x = 50; // how far the circle start positions can be off the canvas
     var start_position_off_canvas_limit_y = 50; 
+    var circle_movement_speed = 0.05; // the speed modifier for circles. 0.05 is a smooth and medium speed value
+    var noise_x = 5; // amount of random movement on the x axis to add when circle is in the end_position
+    var noise_y = 5;
 
     function randomNumberBetween(min, max){
         return Math.floor(Math.random() * max) + min;
@@ -133,6 +132,13 @@
             return this_new;      
         }
 
+        this.equals = function(coordinates){
+            if (coordinates.x == this.x && coordinates.y == this.y)
+                return true;
+            else
+                return false;
+        }
+
         this.toString = function()
         {
             return "x: " + this.x + ", y: " + this.y;
@@ -165,8 +171,8 @@
 
         // lerp function - move gradually frame by frame
         this.lerp = function(target_position){
-            this.position.x += (target_position.x - this.position.x) * 0.2;
-            this.position.y += (target_position.y - this.position.y) * 0.2;
+            this.position.x += (target_position.x - this.position.x) * circle_movement_speed;
+            this.position.y += (target_position.y - this.position.y) * circle_movement_speed;
         }
 
         // update this.position according to how far towards the end position the circle should be
@@ -174,8 +180,29 @@
             if(distance_as_percentage > 100 || distance_as_percentage < 0)
                 throw "distance_as_percentage must be between 0 and 100";
             distance_as_percentage /= 100;
-            this.position = this.start_position.minus(this.end_position).times(distance_as_percentage).plus(this.end_position);
+            this.lerp(this.start_position.minus(this.end_position).times(distance_as_percentage).plus(this.end_position));
             return this;
+        }
+
+        // draw the circle on the canvas
+        this.draw = function(last_circle){
+            draw_position = this.position;
+
+            // if position is end, add some noise
+            if (distance_as_percentage == 0){
+                var draw_position_noise_x = randomNumberBetween(0 - noise_x, noise_x)
+                var draw_position_noise_y = randomNumberBetween(0 - noise_y, noise_y);
+                draw_position = new Coordinates(draw_position_noise_x + this.position.x, 
+                                                draw_position_noise_y + this.position.y);
+            }
+
+            // draw the circle
+            draw_circle(draw_position, this.radius);
+
+            // draw connecting lines
+            if(last_circle != null){
+                draw_line(last_circle.position, draw_position);
+            }
         }
     };
 
@@ -283,7 +310,7 @@
         clear();
 
         // calculate mouse distance to element
-        distance = calculateDistanceFromMouseToElement($('.logo.col-sm-3'));
+        distance = calculateDistanceFromMouseToElement($(target_element_selector));
         distance_as_percentage = Math.max((distance / min_mouse_distance * 100) - target_distance_leniency, 0);
 
         // update circle positions
@@ -302,12 +329,7 @@
 
             $.each(circle_group, function(index, circle){
                 // draw circle
-                draw_circle(circle.position, circle.radius);
-
-                // draw connecting lines
-                if(last_circle != null){
-                    draw_line(last_circle.position, circle.position);
-                }
+                circle.draw(last_circle);
                 last_circle = circle;
             });
         });
