@@ -1,4 +1,7 @@
+<canvas></canvas>
+
 <header>
+    <div id="nav_ghost" class="hidden"></div>
     <nav role="navigation">
         <div id="top-strip"></div>  
         <div class="container">
@@ -54,17 +57,12 @@
         </div>
     </nav>
 
-    <canvas>
-        
-    </canvas>
-
 </header>
 
 <style type="text/css">
     canvas {
         width: 100%;
-        height: 400px;
-        margin-top: 160px;
+        height: 440px;
         background-color: #333;
     }
 
@@ -72,12 +70,41 @@
         margin-top: -30px;
         padding-top: 20px;
     }
+
+    nav {
+        margin-top: -8px;
+    }
+
+    div#nav_ghost {
+        background-color: #eaeaea;
+        height: 170px;
+        margin-top: -8px;
+    }
+
+    div#nav_ghost.hidden {
+        display: none;
+    }
+
 </style>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/json-minify/0.1/minify.json.min.js"></script>
 
 <script type="text/javascript">
+    
+    // settings
+    var circle_radius = 5;
+    var image_width = 645;
+    var image_height = 400;
+    var min_mouse_distance = 500;
+    var target_distance_leniency = 15; // mouse can be this far away from target element and still be considered "on it"
+    var start_position_off_canvas_limit_x = 50; // how far the circle start positions can be off the canvas
+    var start_position_off_canvas_limit_y = 50; 
 
+    function randomNumberBetween(min, max){
+        return Math.floor(Math.random() * max) + min;
+    }
+
+    // represents x and y coordinates
     var Coordinates = function(x,y){
         this.x = x;
         this.y = y;
@@ -117,8 +144,9 @@
     var Circle = function(end_position, start_position, radius){
         // if start position not defined, set it to random value
         if (typeof start_position === 'undefined') { 
-            start_position = new Coordinates(Math.floor(Math.random() * canvas_width) + 1, 
-                                             Math.floor(Math.random() * canvas_height) + 1);
+            rand_x = randomNumberBetween(0 - start_position_off_canvas_limit_x, canvas_width + (start_position_off_canvas_limit_x * 2));
+            rand_y = randomNumberBetween(0 - start_position_off_canvas_limit_y, canvas_height + (start_position_off_canvas_limit_y * 2));
+            start_position = new Coordinates(rand_x, rand_y);
         }
         if (typeof radius === 'undefined') { 
             radius = circle_radius;
@@ -161,37 +189,50 @@
     var mouse_position = new Coordinates(0, 0);
     var distance;
     var distance_as_percentage;
-    
-    // settings
-    var number_of_circles_to_draw = 100;
-    var circle_radius = 5;
-    var image_width = 645;
-    var image_height = 400;
-    var min_mouse_distance = 500; //Math.max(window.innerWidth, window.innerHeight);
 
     // populate circles from circles.json
+    var circle_json;
     var circle_groups = [];
+
+    function parseCircleJsonIntoCircles(number_of_duplicates){
+        // number_of_duplicates default
+        if(typeof(number_of_duplicates) === 'undefined')
+            number_of_duplicates = 3
+
+        // clear existing circles
+        circle_groups = [];
+
+        // circles in the same array will be connected by a line
+        for(var i = 0; i < number_of_duplicates; i++) {
+            $.each(circle_json, function(index, coordinate_group){
+                var group = [];
+                $.each(coordinate_group, function(index, coordinates){
+                    group.push(new Circle(new Coordinates(coordinates.x, coordinates.y)));
+                });
+                circle_groups.push(group);
+            });
+        }
+    }
+
     $(document).ready(function(){
         $.ajax({
             url: '/circles.json', 
             dataType: 'text',
             success: function(data){
                 // minify json to remove comments before parsing
-                data = JSON.parse(JSON.minify(data));
-
-                // circles in the same array will be connected by a line
-                $.each(data, function(index, coordinate_group){
-                    var group = [];
-                    $.each(coordinate_group, function(index, coordinates){
-                        group.push(new Circle(new Coordinates(coordinates.x, coordinates.y)));
-                    });
-                    circle_groups.push(group);
-                });
+                circle_json = JSON.parse(JSON.minify(data));
+                parseCircleJsonIntoCircles();
             },
             fail: function(){
                 console.log('There was a problem loading the circles');
             }
         });
+    });
+
+    // on window resize, reparse circles
+    $(window).resize(function() {
+        canvas_width = $("canvas").width();
+        parseCircleJsonIntoCircles();
     });
 
     // save mouse position
@@ -239,12 +280,12 @@
     function draw() {
         // set canvas dimensions
         ctx.canvas.width  = window.innerWidth;
-        ctx.canvas.height = 400;
+        ctx.canvas.height = 440;
         clear();
 
         // calculate mouse distance to element
         distance = calculateDistanceFromMouseToElement($('.logo.col-sm-3'));
-        distance_as_percentage = distance / min_mouse_distance * 100;
+        distance_as_percentage = Math.max((distance / min_mouse_distance * 100) - target_distance_leniency, 0);
 
         // update circle positions
         $.each(circle_groups, function(index, circle_group){

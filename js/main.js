@@ -19,13 +19,15 @@ $(document).ready(function() {
 	// sticky nav
 	$(document).scroll(function() {
 		var scrollAmount = $(document).scrollTop();
-		if (scrollAmount > 0){
+		if (scrollAmount > 440){
 			$('nav').addClass('scrolled');
 			$('#content').addClass('scrolled');
+			$('#nav_ghost').removeClass('hidden');
 		}
 		else {
 			$('nav').removeClass('scrolled');
 			$('#content').removeClass('scrolled');
+			$('#nav_ghost').addClass('hidden');
 		}
 	})
 

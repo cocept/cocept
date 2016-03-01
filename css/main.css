@@ -315,7 +315,7 @@ nav #links ul.dropdown-menu a {
     font-size: 1.4em;
 }
 
-nav {
+nav.scrolled {
     position: fixed;
     top: 0px;
     z-index: 100;
