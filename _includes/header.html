@@ -1,36 +1,57 @@
+{% if page.url == "/index.html" %}
 <canvas></canvas>
+<div class="canvas__text">
+    <h1>
+        Clean and Clear Websites
+    </h1>
+    <h2>
+        For a world suffering from hurry sickness
+    </h2>
+</div>
+{% endif %}
 
 <header>
+    {% if page.url == "/index.html" %}
+    <nav role="navigation" class="canvas">
+    {% else %}
     <nav role="navigation">
-        <div id="top-strip"></div>  
+    {% endif %}
+        <div id="top-strip"></div>
         <div class="container">
-            <div class="nav-mobile visible-xs"><!-- mobile -->
-                <div id="hamburger">
-                    <a><span></span></a>
-                </div>
-                <div id="logo">
+
+            <!-- mobile -->
+            <!-- <div class="nav-mobile visible-xs">
+                <div id="logo__container">
                     <a href="/">
                         <img src="/images/logo.png" />
                         <span class="company_name">Cocept</span>
                     </a>
                 </div>
-            </div>
-            <div class="row nav-desktop hidden-xs"><!-- desktop -->
-                <div class="col-sm-3" id="logo">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="/">
-                                <img src="/images/logo.png" />
-                            </a>
-                        </div>
+            </div> -->
+
+            <!-- mobile test -->
+            <div class="row nav-mobile visible-xs">
+                <div class="col-sm-12" id="logo__container">
+                    <div id="hamburger">
+                        <a><span></span></a>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="/" class="company_name">Cocept</a>
-                        </div>
+                    <div>
+                        <a href="/">
+                            <img src="/images/logo.png" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/">
+                            <span class="company_name">Cocept</span>
+                        </a>
                     </div>
                 </div>
-                <div class="col-sm-9" id="links">
+            </div>
+        </div>
+
+            <!-- desktop -->
+            <div class="row nav-desktop hidden-xs">
+                <div class="col-sm-5 right" id="links">
                     <ul>
                         <li>
                             <a href="/portfolio/">Work</a>
@@ -38,6 +59,22 @@
                         <li>
                             <a href="/training/">Training</a>
                         </li>
+                    </ul>
+                </div>
+                <div class="col-sm-2" id="logo__container">
+                    <div>
+                        <a href="/">
+                            <img src="/images/logo.png" />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="/">
+                            <span class="company_name">Cocept</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-5" id="links">
+                    <ul>
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">
                                 Articles <b class="caret"></b>
@@ -65,6 +102,15 @@
         background-color: #333;
     }
 
+    .canvas__text {
+        position: absolute;
+        top: 150px;
+        left: 0px;
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+
     nav {
         margin-top: -8px;
     }
@@ -86,12 +132,12 @@
 <script type="text/javascript">
     
     // settings
-    var target_element_selector = '.nav-desktop #logo img'; // the element the mouse must be on to reveal the image
+    var target_element_selector = '.nav-desktop #logo__container img'; // the element the mouse must be on to reveal the image
     var circle_radius = 5;
     var image_width = 645;
     var image_height = 400;
-    var min_mouse_distance = 350;
-    var target_distance_leniency = 15; // mouse can be this far away from target element and still be considered "on it"
+    var min_mouse_distance = 250;
+    var target_distance_leniency = 40; // mouse can be this far away from target element and still be considered "on it"
     var start_position_off_canvas_limit_x = 50; // how far the circle start positions can be off the canvas
     var start_position_off_canvas_limit_y = 50; 
     var circle_movement_speed = 0.05; // the speed modifier for circles. 0.05 is a smooth and medium speed value
