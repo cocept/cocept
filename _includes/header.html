@@ -1,6 +1,6 @@
 <!-- page url: {{page.url}} -->
 
-{% if page.url == "/index.html" %}
+{% if page.url == "/index.html" or page.url == "/" %}
 <canvas></canvas>
 <div class="canvas__text">
     <h1>
@@ -13,7 +13,7 @@
 {% endif %}
 
 <header>
-    {% if page.url == "/index.html" %}
+    {% if page.url == "/index.html" or page.url == "/" %}
     <nav role="navigation" class="canvas">
     {% else %}
     <nav role="navigation">
