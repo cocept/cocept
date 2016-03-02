@@ -21,7 +21,12 @@ $(document).ready(function() {
 	// sticky nav
 	$(document).scroll(function() {
 		var scrollAmount = $(document).scrollTop();
-		if (scrollAmount > 440){
+		if($('nav').hasClass('canvas'))
+			var scrollTrigger = 400;
+		else
+			var scrollTrigger = 0;
+
+		if (scrollAmount > scrollTrigger){
 			$('nav').addClass('scrolled');
 			$('#content').addClass('scrolled');
 			$('#nav_ghost').removeClass('hidden');
