@@ -43,6 +43,8 @@ $(document).ready(function() {
 		$(this).toggleClass("active");
 		toggleReplaceClass($('div#push-menu'), "pushed", "pulled");
 		toggleReplaceClass($('body > .container'), "pushed", "pulled");
+		toggleReplaceClass($('canvas'), "pushed", "pulled");
+		toggleReplaceClass($('.canvas__text'), "pushed", "pulled");
 		toggleReplaceClass($('header .container'), "pushed", "pulled");
 		toggleReplaceClass($('body > section'), "pushed", "pulled");
 		toggleReplaceClass($('footer'), "pushed", "pulled");

@@ -1,6 +1,6 @@
 # Site settings
-title: "Cocept: Website Development House in Brighton"
-description: "Welcome to Cocept, a website development house based in Brighton, UK"
+title: "Cocept: Website Design & Development Agency in Brighton"
+description: "Welcome to Cocept, a website design & development agency based in Brighton, UK"
 url: "http://www.cocept.io"
 
 # Build settings
@@ -22,8 +22,8 @@ include: ["_pages"]
 defaults:
   -
     scope:
-      type: "posts"
       path: ""
+      type: "posts"
     values:
       author: "Max Mumford"
       author_link: "https://plus.google.com/+MaxMumford/"
@@ -48,22 +48,10 @@ defaults:
     values:
       layout: "portfolio"
       category: "portfolio"
-
-# prose.io config
-prose:
-  rooturl: '_posts'
-  siteurl: 'http://cocept.github.io'
-  media: 'images'
-  metadata:
-    _posts:
-      - name: "title"
-        field:
-          element: "text"
-          label: "Title"
-          value: ""
-    _drafts:
-      - name: "title"
-        field:
-          element: "text"
-          label: "Title"
-          value: ""
+  -
+    scope:
+      path: "showcase"
+      type: "posts"
+    values:
+      layout: "empty"
+      category: "showcase"

@@ -224,9 +224,9 @@ Canvas.prototype.clear = function() {
 
 Canvas.prototype.setDimensions = function() {
     // set and save canvas dimensions
-    this.config.canvas_element.attr('width', window.innerWidth);
+    this.config.canvas_element.attr('width', document.body.clientWidth);
     this.config.canvas_element.attr('height', this.config.canvas_height);
-    this.canvas_width = window.innerWidth;
+    this.canvas_width = document.body.clientWidth;
     this.canvas_height = this.config.canvas_height;
 };
 
