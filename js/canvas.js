@@ -237,28 +237,34 @@ Canvas.prototype.draw = function() {
     // clear existing drawings
     this.clear();
 
-    // calculate mouse distance to element
-    this.distance = this.calculateDistanceFromMouseToElement($(this.config.target_element_selector));
-    if(this.distance != null){
-        this.distance_as_percentage = Math.max((this.distance / this.config.min_mouse_distance * 100) 
-                                        - this.config.target_distance_leniency, 0);
+    if(this.config.freeze == false){
+        // calculate mouse distance to element
+        this.distance = this.calculateDistanceFromMouseToElement($(this.config.target_element_selector));
+        if(this.distance != null){
+            this.setDistanceAsPercentage(Math.max((this.distance / this.config.min_mouse_distance * 100) 
+                                            - this.config.target_distance_leniency, 0));
+        }
+        else {
+            this.setDistanceAsPercentage(100);
+        }
+
+        // update circle positions
+        var context = this;
+        $.each(this.circle_groups, function(index, circle_group){
+            $.each(circle_group, function(index, circle){
+                if(context.distance_as_percentage > 100){
+                    context.setDistanceAsPercentage(100);
+                }
+                circle.update_position(context.distance_as_percentage);
+            });
+        });
     }
     else {
-        this.distance_as_percentage = 100;
+        this.setDistanceAsPercentage(100);
     }
 
-    // update circle positions
-    var context = this;
-    $.each(this.circle_groups, function(index, circle_group){
-        $.each(circle_group, function(index, circle){
-            if(context.distance_as_percentage > 100){
-                context.distance_as_percentage = 100;
-            }
-            circle.update_position(context.distance_as_percentage);
-        });
-    });
-
     // redraw circles
+    var context = this;
     $.each(this.circle_groups, function(index, circle_group){
         var last_circle = null;
 
@@ -270,10 +276,48 @@ Canvas.prototype.draw = function() {
     });
 }
 
+// event triggered when mouse distance as percentage hits zero
+Canvas.prototype.onDistanceAsPercentageIsZero = function(){
+    // fade out canvas text
+    $('.canvas__text').stop().fadeTo(1000, 0);
+
+    // grow logo in place
+    $('#logo__container img').addClass('grow');
+}
+
+// event triggered when mouse distance as percentage leaves zero
+Canvas.prototype.onDistanceAsPercentageIsNotZero = function(){
+    // fade in canvas text
+    $('.canvas__text').stop().fadeTo(1000, 1);
+
+    // shrink logo in place
+    $('#logo__container img').removeClass('grow');
+}
+
+// set distance_as_percentage variable and trigger related events
+Canvas.prototype.setDistanceAsPercentage = function(new_value){
+    if(new_value > this.config.max_distance_as_percentage)
+        new_value = this.config.max_distance_as_percentage;
+
+    this._old_distance_as_percentage = this.distance_as_percentage;
+    this.distance_as_percentage = new_value;
+
+    // trigger events
+    if(this._old_distance_as_percentage != 0 && new_value == 0)
+        this.onDistanceAsPercentageIsZero();
+    if(this._old_distance_as_percentage == 0 && new_value != 0)
+        this.onDistanceAsPercentageIsNotZero()
+}
+
+Canvas.prototype.stop = function() {
+    clearInterval(this.interval_id);
+};
+
 // setup the canvas
 $(document).ready(function(){
 
     var canvas_config = {
+        freeze: false,
         ctx: $('canvas')[0].getContext("2d"),
         canvas_element: $('canvas'),
         framerate: 25,
@@ -289,9 +333,15 @@ $(document).ready(function(){
         start_position_off_canvas_limit_y: 50, 
         circle_movement_speed: 0.075, // the speed modifier for circles. 0.05 is a smooth and medium speed value
         noise_x: 5, // amount of random movement on the x axis to add when circle is in the end_position
-        noise_y: 5
+        noise_y: 5,
+        max_distance_as_percentage: 75 // the highest value for distance as percentage
     }
+
+    // run just once if device is small
+    if(document.body.clientWidth <= 768)
+        canvas_config.freeze = true;
 
     window.cocept.canvas = new Canvas();
     window.cocept.canvas.init(canvas_config);
+
 });
