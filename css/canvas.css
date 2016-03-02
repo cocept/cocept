@@ -14,13 +14,3 @@ canvas {
 nav {
     margin-top: -8px;
 }
-
-div#nav_ghost {
-    background-color: #eaeaea;
-    height: 170px;
-    margin-top: -8px;
-}
-
-div#nav_ghost.hidden {
-    display: none;
-}

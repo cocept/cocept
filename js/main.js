@@ -22,17 +22,19 @@ $(document).ready(function() {
 	$(document).scroll(function() {
 		var scrollAmount = $(document).scrollTop();
 		if($('nav').hasClass('canvas'))
-			var scrollTrigger = 400;
+			var scrollTrigger = 440;
 		else
 			var scrollTrigger = 0;
 
 		if (scrollAmount > scrollTrigger){
 			$('nav').addClass('scrolled');
+			$('#nav_ghost').addClass('scrolled');
 			$('#content').addClass('scrolled');
 			$('#nav_ghost').removeClass('hidden');
 		}
 		else {
 			$('nav').removeClass('scrolled');
+			$('#nav_ghost').removeClass('scrolled');
 			$('#content').removeClass('scrolled');
 			$('#nav_ghost').addClass('hidden');
 		}

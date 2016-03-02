@@ -292,6 +292,16 @@ nav .nav-desktop ul {
     margin: 0px;
 }
 
+div#nav_ghost {
+    background-color: #f0f0f0;
+    height: 170px;
+    margin-top: -8px;
+}
+
+div#nav_ghost.hidden {
+    display: none;
+}
+
 /* navigation desktop canvas */
 nav.canvas {
     height: 95px;
@@ -305,6 +315,9 @@ nav.canvas .nav-desktop > div {
     margin-top: 23px;
 }
 
+div#nav_ghost.canvas {
+    height: 95px;
+}
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {

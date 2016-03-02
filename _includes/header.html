@@ -3,6 +3,14 @@
 {% endif %}
 
 <header>
+
+    <!-- this div is shown when the nav position is set to fixed, so the page content doesn't jump upwards -->
+    {% if page.canvas %}
+    <div id="nav_ghost" class="canvas hidden"></div>
+    {% else %}
+    <div id="nav_ghost" class="hidden"></div>
+    {% endif %}
+
     {% if page.canvas %}
     <nav role="navigation" class="canvas">
     {% else %}
