@@ -276,8 +276,8 @@ $(document).ready(function(){
     var canvas_config = {
         ctx: $('canvas')[0].getContext("2d"),
         canvas_element: $('canvas'),
-        framerate: 10,
-        circles_json_path: '/circles.json',
+        framerate: 25,
+        circles_json_path: '/data/circles.json',
         target_element_selector: '.nav-desktop #logo__container img', // the element the mouse must be on to reveal the image
         circle_radius: 5,
         image_width: 645,
@@ -287,7 +287,7 @@ $(document).ready(function(){
         target_distance_leniency: 40, // mouse can be this far away from target element and still be considered "on it"
         start_position_off_canvas_limit_x: 50, // how far the circle start positions can be off the canvas
         start_position_off_canvas_limit_y: 50, 
-        circle_movement_speed: 0.05, // the speed modifier for circles. 0.05 is a smooth and medium speed value
+        circle_movement_speed: 0.075, // the speed modifier for circles. 0.05 is a smooth and medium speed value
         noise_x: 5, // amount of random movement on the x axis to add when circle is in the end_position
         noise_y: 5
     }
