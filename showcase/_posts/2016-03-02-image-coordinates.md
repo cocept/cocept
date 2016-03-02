@@ -146,7 +146,7 @@ $(document).ready(function(){
 </div>
 
 <div id="image_container" onclick="on_click(event)" class="hidden">
-	<img src="crosshairs.png" class="cross hidden">
+	<img src="/images/showcase/image-coordinates/crosshairs.png" class="cross hidden">
 </div>
 
 <div class="container narrow page">
