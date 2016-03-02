@@ -1,7 +1,6 @@
 ---
 layout: empty
 title: Image Coordinates
-permalink: /showcase/image-coordinates/
 ---
 
 <style type="text/css">
