@@ -1,0 +1,26 @@
+canvas {
+    background-color: #333;
+}
+
+.canvas__text {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+nav {
+    margin-top: -8px;
+}
+
+div#nav_ghost {
+    background-color: #eaeaea;
+    height: 170px;
+    margin-top: -8px;
+}
+
+div#nav_ghost.hidden {
+    display: none;
+}

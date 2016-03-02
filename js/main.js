@@ -1,3 +1,5 @@
+window.cocept = {}
+
 // add class1 to element if 1 and 2 are both not applied
 // otherwise toggle between class 1 and 2
 function toggleReplaceClass(element, class1, class2){
