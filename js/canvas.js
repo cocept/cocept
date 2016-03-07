@@ -1,3 +1,24 @@
+// builds an rgba string to use for canvas fill style
+window.cocept.build_rgba = function(red, green, blue, alpha) {
+    var rgba = 'rgba(' 
+                + red
+                + ', ' 
+                + green
+                + ', ' 
+                + blue
+                + ', ' 
+                + alpha 
+                + ')';
+    return rgba;
+};
+
+window.cocept.randomNumberBetween = function(min, max, can_be_negative){
+    var num = Math.floor(Math.random() * max) + min;
+    if(can_be_negative)
+        num *= Math.floor(Math.random()*2) == 1 ? 1 : -1; // this will add minus sign in 50% of cases
+    return num;
+}
+
 // represents x and y coordinates
 var Coordinates = function(x,y){
     this.x = x;
@@ -43,14 +64,13 @@ var Coordinates = function(x,y){
 }
 
 // Represents a circle on the canvas
-var Circle = function(start_position, end_position, circle_movement_speed, canvas, radius){
+var Circle = function(start_position, end_position, canvas, canvas_config){
 
     // remember all params
     this.start_position = start_position;
     this.end_position = end_position;
-    this.circle_movement_speed = circle_movement_speed;
     this.canvas = canvas;
-    this.radius = radius;
+    this.canvas_config = canvas_config
 
     // set current position
     this.position = new Coordinates(start_position.x, start_position.y);
@@ -63,8 +83,8 @@ var Circle = function(start_position, end_position, circle_movement_speed, canva
 
     // lerp function - move gradually frame by frame
     this.lerp = function(target_position){
-        this.position.x += (target_position.x - this.position.x) * this.circle_movement_speed;
-        this.position.y += (target_position.y - this.position.y) * this.circle_movement_speed;
+        this.position.x += (target_position.x - this.position.x) * this.canvas_config.circle_movement_speed;
+        this.position.y += (target_position.y - this.position.y) * this.canvas_config.circle_movement_speed;
     }
 
     // update this.position according to how far towards the end position the circle should be
@@ -79,6 +99,11 @@ var Circle = function(start_position, end_position, circle_movement_speed, canva
         return this;
     }
 
+    // calculates the circle colour based on the distance as percentage
+    this.get_colour = function(distance_as_percentage){
+        return window.cocept.build_rgba(this.canvas_config.circle_colour[0], this.canvas_config.circle_colour[1], this.canvas_config.circle_colour[2], 1);
+    }
+
     // draw the circle on the canvas
     this.draw = function(last_circle, distance_as_percentage, noise_x, noise_y){
         if(typeof(this.position) === 'undefined' || isNaN(this.position.x) || isNaN(this.position.y))
@@ -89,29 +114,24 @@ var Circle = function(start_position, end_position, circle_movement_speed, canva
         if(typeof(noise_y) === 'undefined')
             noise_y = 0;
 
-        draw_position = this.position;
-
         // if position is end, add some noise
         if (distance_as_percentage == 0){
-            var draw_position_noise_x = Circle.randomNumberBetween(0 - noise_x, noise_x)
-            var draw_position_noise_y = Circle.randomNumberBetween(0 - noise_y, noise_y);
-            draw_position = new Coordinates(draw_position_noise_x + this.position.x, 
+            var draw_position_noise_x = window.cocept.randomNumberBetween(0, noise_x, true)
+            var draw_position_noise_y = window.cocept.randomNumberBetween(0, noise_y, true);
+            this.position = new Coordinates(draw_position_noise_x + this.position.x, 
                                             draw_position_noise_y + this.position.y);
         }
 
         // draw the circle
-        this.canvas.draw_circle(draw_position, this.radius);
+        var colour = this.get_colour(distance_as_percentage);
+        this.canvas.draw_circle(this.position, this.canvas_config.circle_radius, colour);
 
         // draw connecting lines
         if(last_circle != null){
-            this.canvas.draw_line(last_circle.position, draw_position);
+            this.canvas.draw_line(last_circle.position, this.position, colour);
         }
     }
 };
-
-Circle.randomNumberBetween = function(min, max){
-    return Math.floor(Math.random() * max) + min;
-}
 
 // Represents the canvas itself and provides functions for setup and drawing etc
 var Canvas = function(){}
@@ -121,6 +141,7 @@ Canvas.prototype.init = function(config) {
     // remember options and dimensions
     this.config = config;
     this.setDimensions();
+    this.text_alpha = 1;
 
     // get circles json
     $.ajax({
@@ -167,16 +188,15 @@ Canvas.prototype.parseCircleJsonIntoCircles = function(number_of_duplicates){
             var group = [];
             $.each(coordinate_group, function(index, coordinates){
                 // calculate circle start and end positions
-                rand_x = Circle.randomNumberBetween(0 - context.config.start_position_off_canvas_limit_x, 
+                rand_x = window.cocept.randomNumberBetween(0 - context.config.start_position_off_canvas_limit_x, 
                                                     context.canvas_width + (context.config.start_position_off_canvas_limit_x * 2));
-                rand_y = Circle.randomNumberBetween(0 - context.config.start_position_off_canvas_limit_y, 
+                rand_y = window.cocept.randomNumberBetween(0 - context.config.start_position_off_canvas_limit_y, 
                                                     context.canvas_height + (context.config.start_position_off_canvas_limit_y * 2));
                 start_position = new Coordinates(rand_x, rand_y);
                 end_position = new Coordinates(coordinates.x, coordinates.y);
 
                 // create circle
-                var circle = new Circle(start_position, end_position, context.config.circle_movement_speed, 
-                                            context, context.config.circle_radius);
+                var circle = new Circle(start_position, end_position, context, context.config);
 
                 // make circle end position relative to the canvas dimensions
                 circle.make_end_position_relative(context.canvas_width, context.canvas_height, 
@@ -203,18 +223,20 @@ Canvas.prototype.calculateDistanceFromMouseToElement = function(element) {
         );
 }
 
-Canvas.prototype.draw_circle = function(position, radius) {
+Canvas.prototype.draw_circle = function(position, radius, colour) {
     this.config.ctx.beginPath();
     this.config.ctx.arc(position.x, position.y, radius, 0, Math.PI*2, true);
-    this.config.ctx.fillStyle = "black";
+    this.config.ctx.fillStyle = colour;
     this.config.ctx.fill();
     this.config.ctx.closePath();
 }
 
-Canvas.prototype.draw_line = function(start_position, end_position){
+Canvas.prototype.draw_line = function(start_position, end_position, colour){
     this.config.ctx.beginPath();
     this.config.ctx.moveTo(start_position.x, start_position.y);
     this.config.ctx.lineTo(end_position.x, end_position.y);
+    this.config.ctx.strokeStyle = colour;
+    this.config.ctx.lineWidth = this.line_width;
     this.config.ctx.stroke();
 }
 
@@ -263,6 +285,9 @@ Canvas.prototype.draw = function() {
         this.setDistanceAsPercentage(100);
     }
 
+    // calculate line width
+    this.calculate_line_width();
+
     // redraw circles
     var context = this;
     $.each(this.circle_groups, function(index, circle_group){
@@ -274,24 +299,62 @@ Canvas.prototype.draw = function() {
             last_circle = circle;
         });
     });
+
+    // calculate text alpha
+    this.calculate_text_alpha();
+
+    // draw text line 1
+    this.config.ctx.fillStyle = window.cocept.build_rgba(this.config.text_colour[0], this.config.text_colour[1], this.config.text_colour[2], this.text_alpha);
+    this.config.ctx.textBaseline = 'middle';
+    this.config.ctx.textAlign = "center";
+
+    this.config.ctx.font = this.config.text_line_1_size() + "px " + this.config.text_font;
+    this.config.ctx.fillText(this.config.text_line_1, this.canvas_width / 2, this.canvas_height / 2);
+
+    // draw text line 2
+    this.config.ctx.font = this.config.text_line_2_size() + "px " + this.config.text_font;
+    this.config.ctx.fillText(this.config.text_line_2, this.canvas_width / 2, 
+                                (this.canvas_height / 2) + this.config.text_line_1_size() + this.config.text_line_2_margin_top);
+}
+
+Canvas.prototype.calculate_line_width = function() {
+    // calculate target line width
+    var target_line_width = this.config.line_width_max * Math.pow(  (100 - this.distance_as_percentage) / 100, 2 );
+
+    // lerp line width
+    if(typeof(this.line_width) != 'undefined'){
+        var difference = target_line_width - this.line_width;
+        this.line_width += difference * 0.1;
+    }
+    else {
+        this.line_width = target_line_width;
+    }
+
+    // enforce minimum line width
+    this.line_width = Math.max(this.line_width, this.config.line_width_min);
+
+    return this.line_width;
+
+};
+
+// updates the canvas text alpha depending on the distance as percentage
+Canvas.prototype.calculate_text_alpha = function(){
+    if(this.distance_as_percentage == 0 && this.text_alpha > 0)
+        this.text_alpha -= this.config.text_alpha_delta;
+    else if(this.distance_as_percentage != 0 && this.text_alpha < 1)
+        this.text_alpha += this.config.text_alpha_delta;
 }
 
 // event triggered when mouse distance as percentage hits zero
 Canvas.prototype.onDistanceAsPercentageIsZero = function(){
-    // fade out canvas text
-    $('.canvas__text').stop().fadeTo(1000, 0);
-
     // grow logo in place
-    $('#logo__container img').addClass('grow');
+    $('.nav-desktop #logo__container img').addClass('grow');
 }
 
 // event triggered when mouse distance as percentage leaves zero
 Canvas.prototype.onDistanceAsPercentageIsNotZero = function(){
-    // fade in canvas text
-    $('.canvas__text').stop().fadeTo(1000, 1);
-
     // shrink logo in place
-    $('#logo__container img').removeClass('grow');
+    $('.nav-desktop #logo__container img').removeClass('grow');
 }
 
 // set distance_as_percentage variable and trigger related events
@@ -317,24 +380,58 @@ Canvas.prototype.stop = function() {
 $(document).ready(function(){
 
     var canvas_config = {
-        freeze: false,
-        ctx: $('canvas')[0].getContext("2d"),
+        // CANVAS //
+        ctx: $('canvas')[0].getContext("2d"), // canvas 2d context
         canvas_element: $('canvas'),
+        canvas_height: 440,
+
+        // WORKINGS //
+        freeze: false, // stop animating after first draw
         framerate: 25,
-        circles_json_path: '/data/circles.json',
         target_element_selector: '.nav-desktop #logo__container img', // the element the mouse must be on to reveal the image
-        circle_radius: 5,
         image_width: 645,
         image_height: 400,
-        canvas_height: 440,
+        max_distance_as_percentage: 75, // the highest value for distance as percentage
+
+        // MOUSE //
         min_mouse_distance: 250,
         target_distance_leniency: 40, // mouse can be this far away from target element and still be considered "on it"
+
+        // CIRCLES //
+        circle_colour: [0, 0, 0],
+        circles_json_path: '/data/circles.json',
+        circle_radius: 5,
         start_position_off_canvas_limit_x: 50, // how far the circle start positions can be off the canvas
         start_position_off_canvas_limit_y: 50, 
         circle_movement_speed: 0.075, // the speed modifier for circles. 0.05 is a smooth and medium speed value
-        noise_x: 5, // amount of random movement on the x axis to add when circle is in the end_position
-        noise_y: 5,
-        max_distance_as_percentage: 75 // the highest value for distance as percentage
+        noise_x: 2, // amount of random movement on the x axis to add when circle is in the end_position
+        noise_y: 2,
+        line_width_max: 6, // the maximum line width - used when mouse is on target element
+        line_width_min: 1,
+
+        // TEXT //
+        text_colour: [255, 255, 255], // array with 3 ints - rgb
+        text_font: 'Droid Sans',
+        text_line_1_size: function(){
+            if (document.body.clientWidth <= 380)
+                return 20;
+            else if(document.body.clientWidth <= 768)
+                return 30;
+            else
+                return 50;
+        },
+        text_line_2_size: function(){
+            if (document.body.clientWidth <= 380)
+                return 12;
+            else if(document.body.clientWidth <= 768)
+                return 20;
+            else
+                return 35;
+        },
+        text_line_2_margin_top: 15,
+        text_line_1: 'Clean and Clear Websites',
+        text_line_2: 'for a world suffering from hurry sickness',
+        text_alpha_delta: 0.05 // the amount of alpha to or add each frame
     }
 
     // run just once if device is small

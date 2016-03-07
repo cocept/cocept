@@ -263,7 +263,7 @@ nav #links > ul > li > a:hover {
     border-bottom: solid 3px #ff4081;
 }
 
-nav #logo__container a:hover span {
+nav .nav-desktop #logo__container a:hover span {
     border-bottom: solid 3px #ff4081;
 }
 

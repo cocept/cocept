@@ -2,7 +2,7 @@ window.cocept = {}
 
 // add class1 to element if 1 and 2 are both not applied
 // otherwise toggle between class 1 and 2
-function toggleReplaceClass(element, class1, class2){
+window.cocept.toggleReplaceClass = function(element, class1, class2){
 	if(element.hasClass(class1)){
 		element.removeClass(class1);
 		element.addClass(class2);
@@ -43,13 +43,13 @@ $(document).ready(function() {
 	// hamgburger icon
 	$('#hamburger').click(function(){
 		$(this).toggleClass("active");
-		toggleReplaceClass($('div#push-menu'), "pushed", "pulled");
-		toggleReplaceClass($('body > .container'), "pushed", "pulled");
-		toggleReplaceClass($('canvas'), "pushed", "pulled");
-		toggleReplaceClass($('.canvas__text'), "pushed", "pulled");
-		toggleReplaceClass($('header .container'), "pushed", "pulled");
-		toggleReplaceClass($('body > section'), "pushed", "pulled");
-		toggleReplaceClass($('footer'), "pushed", "pulled");
+		window.cocept.toggleReplaceClass($('div#push-menu'), "pushed", "pulled");
+		window.cocept.toggleReplaceClass($('body > .container'), "pushed", "pulled");
+		window.cocept.toggleReplaceClass($('canvas'), "pushed", "pulled");
+		window.cocept.toggleReplaceClass($('.canvas__text'), "pushed", "pulled");
+		window.cocept.toggleReplaceClass($('header .container'), "pushed", "pulled");
+		window.cocept.toggleReplaceClass($('body > section'), "pushed", "pulled");
+		window.cocept.toggleReplaceClass($('footer'), "pushed", "pulled");
 	});
 
 	// go to top button
@@ -81,7 +81,7 @@ $(document).ready(function() {
 				img.attr('data-state', 'playing');
 
 				// toggle play / pause
-				toggleReplaceClass($(this), 'glyphicon-play', 'glyphicon-stop');
+				window.cocept.toggleReplaceClass($(this), 'glyphicon-play', 'glyphicon-stop');
 			}
 			else {
 				// swap image and state
@@ -89,7 +89,7 @@ $(document).ready(function() {
 				img.attr('data-state', 'paused');
 
 				// toggle play / pause
-				toggleReplaceClass($(this), 'glyphicon-play', 'glyphicon-stop');
+				window.cocept.toggleReplaceClass($(this), 'glyphicon-play', 'glyphicon-stop');
 			}
 		})
 	});
