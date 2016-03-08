@@ -8,7 +8,7 @@ markdown: kramdown
 highlighter: rouge
 
 # Permalinks
-permalink: /:categories/:year/:title
+permalink: /:categories/:year/:title/
 
 # Gems
 gems:
@@ -46,7 +46,7 @@ defaults:
       path: "portfolio"
       type: "posts"
     values:
-      permalink: /:categories/:title
+      permalink: /:categories/:title/
       layout: "portfolio"
       category: "portfolio"
   -
@@ -54,6 +54,6 @@ defaults:
       path: "showcase"
       type: "posts"
     values:
-      permalink: /:categories/:title
+      permalink: /:categories/:title/
       layout: "empty"
       category: "showcase"

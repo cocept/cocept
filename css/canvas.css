@@ -14,3 +14,7 @@ nav .nav-desktop #logo__container img {
 nav .nav-desktop #logo__container img.grow {
 	transform: scale(1.2, 1.2) translateY(-8px);
 }
+
+div#nav_ghost.canvas {
+    background-color: #f0f0f0;
+}
