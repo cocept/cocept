@@ -44,7 +44,49 @@ function PMT(ir, np, pv, fv, type) {
     return pmt;
 }
 
-var PropertyInvestmentCalculator = function(){ }
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    url = url.toLowerCase(); // This is just to avoid case sensitiveness  
+    name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+// Performs actual calculation of property investment calculator settings
+var PropertyInvestmentCalculator = function(){
+	this.defaults = "number_of_tenants=5"
+					+ "&rent_per_tenant_per_week=100"
+					+ "&yearly_bills=2000"
+					+ "&voids=10"
+					+ "&management=10"
+					+ "&yearly_maintenance=1000"
+					+ "&property_purchase_price=70000"
+					+ "&conversion_cost=50000"
+					+ "&commercial_multiplier=7"
+					+ "&post_conversion_valuation=100000"
+					+ "&mortgage_ltv=65"
+					+ "&mortgage_apr=6"
+					+ "&mortgage_term=20"
+					+ "&property_name=";
+
+	this.toastr_options = {
+	    "closeButton": false,
+	    "debug": false,
+	  	"positionClass": "toast-bottom-center",
+	  	"showDuration": "300",
+	  	"hideDuration": "1000",
+	  	"timeOut": "5000",
+	  	"extendedTimeOut": "1000",
+	  	"preventDuplicates": true,
+	  	"showEasing": "swing",
+	  	"hideEasing": "linear",
+	  	"showMethod": "fadeIn",
+	  	"hideMethod": "fadeOut"
+	};
+}
 
 PropertyInvestmentCalculator.prototype.calculate = function(){
 	// get elements
@@ -77,17 +119,57 @@ PropertyInvestmentCalculator.prototype.calculate = function(){
 	var result_profit_yearly_elem = $('#profit_yearly');
 	var result_profit_monthly_elem = $('#profit_monthly');
 
-	// toggle visibility
-	var mortgage_valuation_basis = result_mortgage_valuation_basis_elem.prop('checked') ? 'commercial' : 'bricks_and_mortar';
-	if(mortgage_valuation_basis == 'commercial'){
-		$('#commercial_multiplier__container').show();
-		$('#commercial_valuation__container').show();
-		$('#post_conversion_valuation__container').hide();
+	// validate required fields
+	var passed_validation = true;
+	required_fields = [
+						setting_number_of_tenants_elem,
+						setting_rent_per_tenant_per_week_elem,
+						setting_yearly_bills_elem,
+						setting_voids_elem,
+						setting_management_elem,
+						setting_yearly_maintenance_elem,
+						setting_property_purchase_price_elem,
+						setting_conversion_cost_elem,
+						setting_mortgage_ltv_elem,
+						setting_mortgage_apr_elem,
+						setting_mortgage_term_elem
+					]
+
+	var mortgage_valuation_basis = $('#mortgage_valuation_basis').prop("checked") ? 'commercial' : 'bricks_and_mortar';
+	if(mortgage_valuation_basis == 'commercial')
+		required_fields.push(setting_commercial_multiplier_elem);
+	else
+		required_fields.push(setting_post_conversion_valuation_elem);
+
+	$.each(required_fields, function(index, element){
+		var data = element.val();
+		if(data.length == 0){
+			passed_validation = false;
+			$(element).parent().parent().addClass('has-error');
+		}
+		else {
+			$(element).parent().parent().removeClass('has-error');
+		}
+	});
+
+	if(passed_validation == false){
+		$('#results_valdation_failed').removeClass('hidden');
+	  	toastr.options = $.extend(this.toastr_options, {
+	  		"onclick": function(){
+	  			$.scrollTo( $('#settings'), 300 ) 
+		  	}
+	  	});
+		toastr.error('Missing some required fields');
+		return;
 	}
 	else{
-		$('#commercial_multiplier__container').hide();
-		$('#commercial_valuation__container').hide();
-		$('#post_conversion_valuation__container').show();
+	  	toastr.options = $.extend(this.toastr_options, {
+	  		"onclick": function(){
+	  			$.scrollTo( $('#results'), 300 ) 
+		  	}
+	  	});
+		toastr.info('The results have been calculated. Click here to see them.');
+		$('#results_valdation_failed').addClass('hidden');
 	}
 
 	// yearly rental income
@@ -170,7 +252,73 @@ PropertyInvestmentCalculator.prototype.calculate = function(){
 	result_profit_monthly_elem.val(profit_monthly);
 
 	// format currency
-	$('#results input').formatCurrency({colorize:true, region: 'en-GB'});
+	$('#results input[type="text"]').formatCurrency({colorize:true, region: 'en-GB'});
+}
+
+// Handles persistance of property investment calculator data using localStorage
+var PropertyInvestmentPersister = function(){
+	this.localStorageKey = 'property_investment_calculator_saves';
+}
+
+PropertyInvestmentPersister.prototype.load = function(){
+	var existing_data = localStorage.getItem(this.localStorageKey);
+	if(existing_data != null)
+		existing_data = JSON.parse(existing_data);
+	else
+		existing_data = {};
+	return existing_data;
+}
+
+PropertyInvestmentPersister.prototype.save = function(data){
+	localStorage.setItem(this.localStorageKey, JSON.stringify(data));
+	return true;
+}
+
+PropertyInvestmentPersister.prototype.saveNew = function(property_name, form_data_to_save){
+	// load existing data and append new data to it
+	var data = this.load();
+	data[property_name] = form_data_to_save;
+	return this.save(data);
+}
+
+PropertyInvestmentPersister.prototype.remove = function(property_name){
+	// load existing data, remove property_name and save it
+	var data = this.load();
+	delete(data[property_name]);
+	return this.save(data);
+}
+
+// builds a url that contains all of the serialized form data
+PropertyInvestmentPersister.prototype.build_url = function(form_data){
+	return [location.protocol, '//', location.host, location.pathname].join('') + '?' + form_data;
+}
+
+function rebuildSavedPropertiesList(property_investment_persister){
+	// show saved properties
+	var data = property_investment_persister.load();
+	$('#saved_properties tr').remove();
+	if(jQuery.isEmptyObject(data) === false){
+		$('#saved_properties').removeClass('hidden');
+
+		var prototype = $('#saved_properties__container').data('prototype');
+		$.each(data, function(property_name, serialized_data){
+			var row_class = (getParameterByName('property_name') == property_name) ? 'active' : '';
+			var element = prototype
+							.split('__property_name__').join(property_name)
+							.split('__serialized_data__').join(serialized_data)
+							.split('__row_class__').join(row_class);
+			element = $(element);
+			$('#saved_properties__container').append(element);
+			element.find('a.delete').on('click', function(e){
+				var property_name = $(e.target).data('propertyName');
+				property_investment_persister.remove(property_name);
+				location.reload();
+			});
+		});
+	}
+	else {
+		$('#saved_properties').addClass('hidden');
+	}
 }
 
 $(document).ready(function(){
@@ -187,17 +335,64 @@ $(document).ready(function(){
     	new Clipboard('.copy');
 	})();
 
-	// init property investment calculator
-	var pic = new PropertyInvestmentCalculator();
-	pic.calculate();
-
 	// bind settings on change
 	$('#settings input').bind('input', function(){
-  		pic.calculate();
+  		property_investment_calculator.calculate();
 	});
 
-	// bind checkbox
+	// bind checkbox on change
 	$('input[type="checkbox"]').change(function(){
-		pic.calculate();
+		property_investment_calculator.calculate();
 	});
+
+	// bind valuation basis toggle
+	var on_change_valuation_basis = function(e) {
+		var basis = $('#mortgage_valuation_basis').prop("checked") ? 'commercial' : 'bricks_and_mortar';
+		if(basis == 'commercial'){
+			$('#commercial_multiplier__container').show();
+			$('#commercial_valuation__container').show();
+			$('#post_conversion_valuation__container').hide();
+		}
+		else{
+			$('#commercial_multiplier__container').hide();
+			$('#commercial_valuation__container').hide();
+			$('#post_conversion_valuation__container').show();
+		}
+	};
+	$('#mortgage_valuation_basis').change(on_change_valuation_basis);
+	on_change_valuation_basis();
+
+	// initialize data persister and calculator
+	var property_investment_persister = new PropertyInvestmentPersister();
+	var property_investment_calculator = new PropertyInvestmentCalculator();
+
+	// bind save modal button
+	$('#save_button').on('click', function(){
+		// save data
+		var data = $('form').serialize();
+		var property_name = $('#property_name').val();
+		property_investment_persister.saveNew(property_name, data);
+		
+		// show success message
+		rebuildSavedPropertiesList(property_investment_persister);
+		var url = property_investment_persister.build_url(data);
+		$('#save_url').attr('href', url).text('Results for property "' + property_name + '"');
+		$('#save_message').removeClass('hidden');
+	});
+
+	// set toastr options
+	toastr.options = property_investment_calculator.toastr_options;
+	
+	// show saved properties
+	rebuildSavedPropertiesList(property_investment_persister);
+
+	// deserialize data from url or defaults
+	var data = location.search.substr(1);
+	if(data.length == 0 && getParameterByName('defaults') != 'false')
+		data = property_investment_calculator.defaults;
+	$('form').deserialize(data);
+
+	// init property investment calculator and call calculate
+	property_investment_calculator.calculate();
+
 });
