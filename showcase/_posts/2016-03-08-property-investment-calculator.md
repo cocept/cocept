@@ -31,7 +31,7 @@ title: Property Investment Calculator
 	    &lt;span class=&quot;glyphicon glyphicon-home&quot;&gt;&lt;/span&gt;
 	&lt;/td&gt;
 	&lt;td  class=&quot;name&quot;&gt;
-	    &lt;a href=&quot;__serialized_data__&quot;&gt;
+	    &lt;a href=&quot;?__serialized_data__&quot;&gt;
 	        __property_name__
 	    &lt;/a&gt;
 	&lt;/td&gt;
