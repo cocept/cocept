@@ -385,7 +385,7 @@ nav.scrolled #logo__container .company_name {
 
 /* nav xs */
 nav .nav-mobile #hamburger {
-    float: left;
+    position: absolute;
     margin-top: 29px;
     margin-bottom: 50px; /* push logo text right */
     transition: margin-top 0.5s, margin-bottom 0.5s;
