@@ -43,13 +43,15 @@ $(document).ready(function() {
 	// hamgburger icon
 	$('#hamburger').click(function(){
 		$(this).toggleClass("active");
-		window.cocept.toggleReplaceClass($('div#push-menu'), "pushed", "pulled");
-		window.cocept.toggleReplaceClass($('body > .container'), "pushed", "pulled");
-		window.cocept.toggleReplaceClass($('canvas'), "pushed", "pulled");
-		window.cocept.toggleReplaceClass($('.canvas__text'), "pushed", "pulled");
-		window.cocept.toggleReplaceClass($('header .container'), "pushed", "pulled");
-		window.cocept.toggleReplaceClass($('body > section'), "pushed", "pulled");
-		window.cocept.toggleReplaceClass($('footer'), "pushed", "pulled");
+		window.cocept.toggleReplaceClass($(   'div#push-menu'
+											+ ', body > .container'
+											+ ', canvas'
+											+ ', .canvas__text'
+											+ ', header .container'
+											+ ', body > section'
+											+ ', footer'
+											+ ', .scroll_padding'
+										), "pushed", "pulled");
 	});
 
 	// go to top button
