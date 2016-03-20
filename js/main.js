@@ -22,7 +22,7 @@ $(document).ready(function() {
 	$(document).scroll(function() {
 		var scrollAmount = $(document).scrollTop();
 		if($('nav').hasClass('canvas'))
-			var scrollTrigger = 440;
+			var scrollTrigger = $('.scroll_padding:visible').outerHeight();
 		else
 			var scrollTrigger = 0;
 

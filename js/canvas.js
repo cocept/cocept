@@ -254,36 +254,36 @@ Canvas.prototype.setDimensions = function() {
 
 Canvas.prototype.draw = function() {
 
+    // check if canvas is visible
+    if($('canvas:visible').length == 0){
+        return;
+    }
+
     this.setDimensions();
 
     // clear existing drawings
     this.clear();
 
-    if(this.config.freeze == false){
-        // calculate mouse distance to element
-        this.distance = this.calculateDistanceFromMouseToElement($(this.config.target_element_selector));
-        if(this.distance != null){
-            this.setDistanceAsPercentage(Math.max((this.distance / this.config.min_mouse_distance * 100) 
-                                            - this.config.target_distance_leniency, 0));
-        }
-        else {
-            this.setDistanceAsPercentage(100);
-        }
-
-        // update circle positions
-        var context = this;
-        $.each(this.circle_groups, function(index, circle_group){
-            $.each(circle_group, function(index, circle){
-                if(context.distance_as_percentage > 100){
-                    context.setDistanceAsPercentage(100);
-                }
-                circle.update_position(context.distance_as_percentage);
-            });
-        });
+    // calculate mouse distance to element
+    this.distance = this.calculateDistanceFromMouseToElement($(this.config.target_element_selector));
+    if(this.distance != null){
+        this.setDistanceAsPercentage(Math.max((this.distance / this.config.min_mouse_distance * 100) 
+                                        - this.config.target_distance_leniency, 0));
     }
     else {
         this.setDistanceAsPercentage(100);
     }
+
+    // update circle positions
+    var context = this;
+    $.each(this.circle_groups, function(index, circle_group){
+        $.each(circle_group, function(index, circle){
+            if(context.distance_as_percentage > 100){
+                context.setDistanceAsPercentage(100);
+            }
+            circle.update_position(context.distance_as_percentage);
+        });
+    });
 
     // calculate line width
     this.calculate_line_width();
@@ -386,7 +386,6 @@ $(document).ready(function(){
         canvas_height: 440,
 
         // WORKINGS //
-        freeze: false, // stop animating after first draw
         framerate: 25,
         target_element_selector: '.nav-desktop #logo__container img', // the element the mouse must be on to reveal the image
         image_width: 645,
@@ -433,10 +432,6 @@ $(document).ready(function(){
         text_line_2: 'for a world suffering from hurry sickness',
         text_alpha_delta: 0.05 // the amount of alpha to or add each frame
     }
-
-    // run just once if device is small
-    if(document.body.clientWidth <= 768)
-        canvas_config.freeze = true;
 
     window.cocept.canvas = new Canvas();
     window.cocept.canvas.init(canvas_config);
