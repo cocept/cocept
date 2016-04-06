@@ -1,10 +1,10 @@
-// add custom function to jquery to return the value having been sanitized (remove percentage sign etc)
+// Sanitize values from settings fields
 $.fn.valSanitized = function(){
     var value = $(this).val();
     return value.replace('%', '');
 };
 
-// add custom function to jquery to return the value having been sanitized (remove percentage sign etc)
+// sanitize integers
 $.fn.valInt = function(){
     var value = $(this).valSanitized();
     if(value == "")
@@ -12,9 +12,17 @@ $.fn.valInt = function(){
     return parseInt(value);
 };
 
+// sanitize floats
+$.fn.valFloat = function(){
+    var value = $(this).valSanitized();
+    if(value == "")
+    	value = 0;
+    return parseFloat(value);
+};
+
 // get an input value as a percent (0-1)
 $.fn.valPercent = function(){
-	return $(this).valInt() / 100;
+	return $(this).valFloat() / 100;
 }
 
 function PMT(ir, np, pv, fv, type) {
@@ -159,6 +167,7 @@ PropertyInvestmentCalculator.prototype.calculate = function(){
 	  			$.scrollTo( $('#settings'), 300 ) 
 		  	}
 	  	});
+	  	toastr.remove();
 		toastr.error('Missing some required fields');
 		return;
 	}
@@ -168,6 +177,7 @@ PropertyInvestmentCalculator.prototype.calculate = function(){
 	  			$.scrollTo( $('#results'), 300 ) 
 		  	}
 	  	});
+	  	toastr.remove();
 		toastr.info('The results have been calculated. Click here to see them.');
 		$('#results_valdation_failed').addClass('hidden');
 	}
