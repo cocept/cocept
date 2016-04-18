@@ -1,0 +1,11 @@
+cocept:
+    image: starefossen/github-pages
+    ports:
+        - "4000"
+    working_dir: /usr/src/app
+    volumes:
+        - .:/usr/src/app
+    command: jekyll serve --future --incremental --watch --force_polling -H 0.0.0.0 -P 4000
+    environment:
+        - VIRTUAL_HOST=cocept.io
+        - VIRTUAL_PORT=4000
