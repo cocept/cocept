@@ -5,12 +5,13 @@ redirect_from:
   - /posts/34-android-studio-ubuntu-toolsjar-is-not-in-the-android-studio-classpath-please-ensure-javahome-points-to-jdk-rather-than-jre/
 ---
 
-<p>When setting up&nbsp;<strong>Android Studio</strong> on <b>Ubuntu&nbsp;</b>you might get the following error message:</p>
+When setting up&nbsp;<strong>Android Studio</strong> on <b>Ubuntu&nbsp;</b>you might get the following error message:
+
 <script src="https://gist.github.com/maxmumford/7719073.js"></script>
 
-<p>This is caused by having&nbsp;<strong>JAVA JRE&nbsp;</strong>installed&nbsp;<strong>as opposed to JAVA JDK.</strong></p>
+This is caused by having&nbsp;<strong>JAVA JRE&nbsp;</strong>installed&nbsp;<strong>as opposed to JAVA JDK.</strong>
 
-<p>The solution is simple:</p>
+The solution is simple:
 
 <ul>
 	<li><strong>sudo apt-get install openjdk-7-jdk</strong></li>

@@ -2,20 +2,26 @@
 layout: page
 ---
 
-<div class="home">
+<div class="index">
 
   <h1>{{ page.category_name | capitalize }} Posts</h1>
 
   {{ content }}
 
-  <ul class="posts">
-    {% for post in site.categories[page.category_name] %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+    <ul class="posts">
+        {% for post in site.categories[page.category_name] %}
+            <li>
+                <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                <div class="post-excerpt">
+                    {{ post.excerpt }}
+                </div>
+                <div class="post-read-more__container">
+                    <a href="{{ post.url | prepend: site.baseufl }}" class="btn btn-default post-read-more">Read More</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 
   {% capture post_count %}{{ site.categories[page.category_name] | size }}{% endcapture %}
   {% if post_count == '0' %}

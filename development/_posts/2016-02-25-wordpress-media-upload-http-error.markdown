@@ -2,9 +2,9 @@
 title:  Fix for Wordpress Media Upload Http Error on Nginx
 ---
 
-## The Error
-
 I ran into an issue when **uploading large files to Wordpress** using the new drag and drop media uploader. The file would upload to 100% then immediatly show an enigmatic error message: **"Http error"**. It looked like this:
+
+<!-- more -->
 
 ![Wordpress media upload http error screenshot](/images/development/wordpress-media-upload-http-error.png)
 

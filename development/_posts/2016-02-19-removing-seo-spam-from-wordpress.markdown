@@ -2,8 +2,6 @@
 title:  Removing SEO Spam from Wordpress Blog Posts
 ---
 
-## Some Background
-
 I was commissioned to repair, update and secure a Wordpress website that was may years out of date and had been hacked to pieces. 
 
 A quick check using [Sucuri Site Check](https://sitecheck.sucuri.net/) revealed that the vast majority of posts had had SEO spam injected into their contents in the database. That's about 200 posts. 

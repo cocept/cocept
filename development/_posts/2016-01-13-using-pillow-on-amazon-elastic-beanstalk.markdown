@@ -4,6 +4,8 @@ title: Using the Pillow Imaging Library on Amazon Elastic Beanstalk
 
 I often use Amazon Elastic Beanstalk (EB) for project deployment. Several times now I've hosted projects on EB that use Pillow, Python's image manipulation library, and have run into a slew of problems. I have documented solutions to each one I encountered below:
 
+<!-- more -->
+
 ### Missing the Pillow library?
 
 In order to manipulate image files using Python on Amazon EC2 you need to have the Pillow library installed. Pillow is a newer, better maintained and supported fork of PIL. If it is missing from your environment you will see an error message like this:

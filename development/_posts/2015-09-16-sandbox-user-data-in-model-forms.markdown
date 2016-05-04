@@ -2,8 +2,6 @@
 title:  Sandboxing User Data in Model Forms
 ---
 
-## Introduction
-
 A lot of online applications nowadays are built using Multi Tenant Data Architecture, meaning the data for multiple clients is stored in the same database. This can obviously cause some data security concerns because the developers have to ensure that their client's data is sandboxed and not accessible by other clients.
 
 While some frameworks let you handle this issue in a graceful and DRY way with a high level security layer, Django does not. It is in fact quite difficult to implement an application wide, high level solution for this particular problem.

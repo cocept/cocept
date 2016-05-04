@@ -101,7 +101,11 @@ var Circle = function(start_position, end_position, canvas, canvas_config){
 
     // calculates the circle colour based on the distance as percentage
     this.get_colour = function(distance_as_percentage){
-        return window.cocept.build_rgba(this.canvas_config.circle_colour[0], this.canvas_config.circle_colour[1], this.canvas_config.circle_colour[2], 1);
+        return window.cocept.build_rgba(this.canvas_config.circle_colour[0], 
+                                        this.canvas_config.circle_colour[1], 
+                                        this.canvas_config.circle_colour[2], 
+                                        this.canvas_config.circle_colour[3]
+        );
     }
 
     // draw the circle on the canvas
@@ -397,7 +401,7 @@ $(document).ready(function(){
         target_distance_leniency: 40, // mouse can be this far away from target element and still be considered "on it"
 
         // CIRCLES //
-        circle_colour: [0, 0, 0],
+        circle_colour: [255, 255, 255, 0.1],
         circles_json_path: '/data/circles.json',
         circle_radius: 5,
         start_position_off_canvas_limit_x: 50, // how far the circle start positions can be off the canvas

@@ -285,7 +285,7 @@ nav #logo__container a:hover {
 
 nav #logo__container img {
     transition: width 0.5s;
-    width: 82px;
+    width: 55px;
 }
 
 nav .nav-desktop ul {
@@ -375,7 +375,7 @@ nav.scrolled #logo__container {
 }
 
 nav.scrolled #logo__container img {
-    width: 55px;
+    width: 34px;
 }
 
 nav.scrolled #logo__container .company_name {
@@ -752,6 +752,49 @@ form#contact div.row {
 
 #articles a {
     font-size: 1.5em;
+}
+
+/* post index */
+/* ----------------------------------------------------------*/
+.index .posts {
+    margin: 0px;
+}
+
+.index .posts li {
+    list-style-type: none;
+    margin-bottom: 40px;
+    background-color: #f3f3f3;
+    padding: 22px 30px 5px 30px;
+
+    -webkit-box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
+
+    transition: transform 0.2s;
+}
+
+.index .posts li:hover {
+    transform: rotate(1deg) scale(1.05);
+}
+
+.index .posts li .post-date {
+    display: block;
+    color: #999999;
+}
+
+.index .posts li .post-link {
+    font-size: 24px;
+    display: block;
+}
+
+.index .posts li .post-read-more__container {
+    text-align: right;
+    margin-top: -60px;
+    margin-bottom: 20px;
+}
+
+.index .posts li .post-read-more {
+
 }
 
 /* small screen optimization */

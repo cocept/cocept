@@ -5,8 +5,6 @@ redirect_from:
   - /posts/6-what-is-phpgtd-how-do-you-install-it/
 ---
 
-<h1>Introduction</h1>
-
 <p>From time to time we all get a bit <strong>overwhelmed</strong> trying to keep track of everything that&rsquo;s on our mental to-do list, and when we&rsquo;re feeling like this it&rsquo;s hard to stay <strong>focussed</strong> and just <strong>get things done </strong>&ndash; it&rsquo;s a catch 22. Well, GTD stands for &ldquo;Getting Things Done&rdquo;, an acronym coined by a man called David Allen. He wrote a book about getting things done, which describes how you need to first empty your mind of all the clutter before taking on specific tasks. This process allows you to become much more focused and, well, get things done.</p>
 
 <p>From the theory of GTD comes PHP-GTD &ndash; a bundle of PHP scripts which help you get all of your projects, next actions, to do lists, ideas and prospective future actions into a physical form and out of your head. Essentially a GTD tailored itinerary. The software is free and does actually work, I use it myself. It takes a bit of getting used to but I will describe how to use it later in this tutorial.</p>

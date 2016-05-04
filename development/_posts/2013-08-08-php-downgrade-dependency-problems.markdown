@@ -6,6 +6,7 @@ redirect_from:
 ---
 
 <p>After using the <strong>php version downgrade script</strong> to downgrade your PHP version from 5.4 to 5.3, you might experience an issue where <strong>installing php plugins</strong> leads to the below&nbsp;<strong>dependency errors</strong>. In my case, I was installing a list of packages as advised on <a href="http://www.howtoforge.com/installing-apache2-with-php5-and-mysql-support-on-ubuntu-11.04-lamp">this guide</a>.</p>
+
 <script src="https://gist.github.com/maxmumford/7718983.js"></script>
 
 <p><strong><span class="highlight">Update</span></strong>: A new, simpler solution can be found here:&nbsp;</p>

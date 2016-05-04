@@ -5,8 +5,6 @@ redirect_from:
   - /posts/28-mosync-qr-code-scanner/
 ---
 
-<h2>Introduction</h2>
-
 <p>In this tutorial I will show you how to easily create a cross-device QR code decoder using nothing but <a href="http://www.mosync.com/">MoSync</a>, HTML 5 and a couple of Javascript libraries.</p>
 
 <p>I will assume you already have a blank MoSync project setup that you can work on.</p>

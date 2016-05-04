@@ -57,3 +57,6 @@ defaults:
       permalink: /:categories/:title/
       layout: "empty"
       category: "showcase"
+
+# Params
+mailchimp_popup_delay: 20000

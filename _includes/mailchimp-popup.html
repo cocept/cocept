@@ -1,0 +1,13 @@
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">
+function showMailchimpPopup(delay){
+	setTimeout(function(){ 
+
+		require(["mojo/signup-forms/Loader"], function(L) { 
+			L.start({"baseUrl":"mc.us9.list-manage.com","uuid":"f6701c962ecb7b8fd40cff897","lid":"989dd513fd"}) 
+		});
+
+	}, delay);
+}
+showMailchimpPopup( {{ site.mailchimp_popup_delay }} )
+</script>
