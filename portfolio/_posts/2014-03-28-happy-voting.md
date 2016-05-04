@@ -1,6 +1,8 @@
 ---
 title:  Happy Voting
-redirect_from: /projects/8-happy-voting/
+redirect_from: 
+ - /projects/8-happy-voting/
+ - /portfolio/2014/happy-voting/
 ---
 
 <blockquote>
