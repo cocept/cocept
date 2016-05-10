@@ -123,7 +123,7 @@ $(document).ready(function(){
 
 					<h1>Image Coordinate Generator</h1>
 
-					<p>You can use this tool to get coordinates each time you click an image. I built it because I needed an easy way to get a long list of coordinates to create a "dot to dot" type animation (as seen on the home page).</p>
+					<p>You can use this tool to get coordinates each time you click an image. I built it because I needed an easy way to get a long list of coordinates to create a "dot to dot" type animation (as seen <a href="/showcase/animated-dot-to-dot-canvas">here</a>).</p>
 
 					<p>Feel free to take the source code of this page and modify it yourself - the more useful it can be to the community the better!</p>
 
