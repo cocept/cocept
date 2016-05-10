@@ -9,7 +9,7 @@ layout: page
     {{ content }}
 
     <ul class="portfolio posts">
-        {% for post in site.categories[layout.collection] %}
+        {% for post in site.categories[page.collection] %}
             <li>
                 <a href="{{ post.url | prepend: site.baseurl }}">
                     {% if post.banner %}
@@ -34,7 +34,7 @@ layout: page
         {% endfor %}
     </ul>
 
-   {% capture post_count %}{{ site.categories[layout.collection] | size }}{% endcapture %}
+   {% capture post_count %}{{ site.categories[page.collection] | size }}{% endcapture %}
    {% if post_count == '0' %}
         {% include not-found.html %}
    {% endif %}
