@@ -2,7 +2,11 @@
 layout: page
 ---
 
-{% assign collection = layout.collection | default(page.collection) %}
+{% if page.collection %}
+    {% assign collection = page.collection %}
+{% else %}
+    {% assign collection = layout.collection %}
+{% endif %}
 
 <div class="index">
 
