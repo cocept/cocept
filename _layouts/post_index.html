@@ -2,10 +2,15 @@
 layout: page
 ---
 
+{% comment %} fix jekyll bug https://github.com/jekyll/jekyll/issues/4439 {% endcomment %}
 {% if page.collection %}
     {% assign collection = page.collection %}
 {% else %}
     {% assign collection = layout.collection %}
+{% endif %}
+
+{% if page.show_date or layout.show_date %}
+    {% assign show_date = true %}
 {% endif %}
 
 <div class="index">
@@ -23,7 +28,7 @@ layout: page
                     {% endif %}
                 </a>
                 <div class="post__text_content">
-                    {% if layout.show_date == true %}
+                    {% if show_date == true %}
                         <span class="post__date">{{ post.date | date: "%b %-d, %Y" }}</span>
                     {% endif %}
                     <a class="post__link" href="{{ post.url | prepend: site.baseurl }}">
