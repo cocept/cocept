@@ -1,21 +1,12 @@
 ---
-layout: page
+layout: post_index
+title: Portfolio
+collection: portfolio
+show_date: false
 ---
 
-<div class="index">
+<p class="text-center">
+    Below you'll find a carefully curated selection of our work.
+</p>
 
-  <h1>Work by Cocept</h1>
-
-  <p>Here you'll find a carefuly curated subset of the projects Cocept has been involved in recently.</p>
-
-  {{ content }}
-
-  <ul class="posts">
-    {% for post in site.categories["portfolio"] %}
-      <li>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-</div>
+{{ content }}

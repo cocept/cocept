@@ -1,19 +1,11 @@
 ---
-layout: page
+layout: post_index
+title: Showcase
+collection: showcase
 ---
 
-<div class="index">
+<p class="text-center">
+    Below you'll find some of Cocept's side projects. We generally build these to give back to the open source community, and as a source of inbound marketing.
+</p>
 
-  <h1>Cocept Showcase</h1>
-
-  {{ content }}
-
-  <ul class="posts">
-    {% for post in site.categories["showcase"] %}
-      <li>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-</div>
+{{ content }}

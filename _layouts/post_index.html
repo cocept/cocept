@@ -4,36 +4,39 @@ layout: page
 
 <div class="index">
 
-  <h1>{{ page.category_name | capitalize }} Posts</h1>
+    <h3 class="text-center">{{ page.title }}</h3>
 
-  {{ content }}
+    {{ content }}
 
-    <ul class="posts">
-        {% for post in site.categories[page.category_name] %}
+    <ul class="portfolio posts">
+        {% for post in site.categories[layout.collection] %}
             <li>
-                <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                <div class="post-excerpt">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    {% if post.banner %}
+                        <div style="background-image: url({{ post.banner }});" class="post__banner"></div>
+                    {% endif %}
+                </a>
+                <div class="post__text_content">
+                    {% if layout.show_date == true %}
+                        <span class="post__date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                    {% endif %}
+                    <a class="post__link" href="{{ post.url | prepend: site.baseurl }}">
+                        {{ post.title }}
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                     {{ post.excerpt }}
                 </div>
-                <div class="post-read-more__container">
-                    <a href="{{ post.url | prepend: site.baseufl }}" class="btn btn-default post-read-more">Read More</a>
-                </div>
+                <a class="btn btn-default post__read_more" href="{{ post.url | prepend: site.baseurl }}">
+                    Read More
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
             </li>
         {% endfor %}
     </ul>
 
-  {% capture post_count %}{{ site.categories[page.category_name] | size }}{% endcapture %}
-  {% if post_count == '0' %}
-      <h2>Sorry, no posts here! Try somewhere else:</h2>
-      <ul>
-          <li><a href="/portfolio">Portfolio</a></li>
-          <li><a href="/design">Design</a></li>
-          <li><a href="/development">Development</a></li>
-          <li><a href="/blog">Blog</a></li>
-      </ul>
-  {% endif %}
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+   {% capture post_count %}{{ site.categories[layout.collection] | size }}{% endcapture %}
+   {% if post_count == '0' %}
+        {% include not-found.html %}
+   {% endif %}
 
 </div>

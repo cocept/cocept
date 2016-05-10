@@ -1,6 +1,5 @@
 ---
-layout: post_index
-category_name: design
-title: Design
+layout: design_index
+title: Design Articles
 permalink: /design/
 ---

@@ -1,6 +1,8 @@
 ---
 layout: empty
 title: Image Coordinates
+excerpt: Plot coordinates on an image using this handy tool. We used it for creating our canvas animation, definitely not for creating copious amounts of dot to dot exercises to do on a lazy Sunday...
+banner: /images/showcase/image-coordinates/banner.png
 ---
 
 <style type="text/css">

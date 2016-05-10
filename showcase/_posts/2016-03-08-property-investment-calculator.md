@@ -1,6 +1,8 @@
 ---
 layout: page
 title: Property Investment Calculator
+excerpt: Use this property investment calculator to decide if a potential investment is worth your time and hard earned money.
+banner: /images/showcase/property-investment-calculator/banner.png
 ---
 
 <h2>Property Investment Calculator</h2>

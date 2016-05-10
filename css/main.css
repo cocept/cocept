@@ -762,39 +762,50 @@ form#contact div.row {
 
 .index .posts li {
     list-style-type: none;
-    margin-bottom: 40px;
     background-color: #f3f3f3;
-    padding: 22px 30px 5px 30px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
 
     -webkit-box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
     box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
 
-    transition: transform 0.2s;
+    border: solid 2px #e3e3e3;
+    border-radius: 8px;
+
+    transition: transform 0.4s ease-in-out;
 }
 
 .index .posts li:hover {
-    transform: rotate(1deg) scale(1.05);
+    transform: scale(1.05);
 }
 
-.index .posts li .post-date {
+.index .posts li .post__banner {
+    min-height: 200px;
+    background-size: cover;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.index .posts li .post__text_content {
+    padding: 22px 30px;
+}
+
+.index .posts .post__date {
     display: block;
     color: #999999;
 }
 
-.index .posts li .post-link {
-    font-size: 24px;
+.index .posts .post__link {
+    font-size: 28px;
     display: block;
+    margin: 0px 0px 15px 0px;
 }
 
-.index .posts li .post-read-more__container {
-    text-align: right;
-    margin-top: -60px;
-    margin-bottom: 20px;
-}
-
-.index .posts li .post-read-more {
-
+.index .posts .post__read_more {
+    position: absolute;
+    bottom: -2px;
+    right: -4px;
 }
 
 /* small screen optimization */

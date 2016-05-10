@@ -1,3 +1,5 @@
+---
+---
 // builds an rgba string to use for canvas fill style
 window.cocept.build_rgba = function(red, green, blue, alpha) {
     var rgba = 'rgba(' 
@@ -432,8 +434,8 @@ $(document).ready(function(){
                 return 35;
         },
         text_line_2_margin_top: 15,
-        text_line_1: 'Clean and Clear Websites',
-        text_line_2: 'for a world suffering from hurry sickness',
+        text_line_1: "{{ site.canvas_line_1 }}",
+        text_line_2: "{{ site.canvas_line_2 }}",
         text_alpha_delta: 0.05 // the amount of alpha to or add each frame
     }
 

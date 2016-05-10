@@ -1,6 +1,5 @@
 ---
-layout: post_index
-category_name: development
-title: Development
+layout: development_index
+title: Development Articles
 permalink: /development/
 ---

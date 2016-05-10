@@ -1,5 +1,7 @@
 ---
 title:  P&O and Cunard Christmas Ecard Website
+banner: /images/portfolio/cuk/banner.png
+excerpt: We helped P&O and Cunard increase their customer satisfaction and engagement with this complimentary service provided throughout the Christmas period
 ---
 
 <blockquote>

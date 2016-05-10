@@ -1,6 +1,8 @@
 ---
 title:  J9 Accommodation
 link: http://j9accommodation.co.uk
+banner: /images/portfolio/j9/banner.png
+excerpt: We increased enquiries by 24% by modernising the tenant facing website of one of the UKs largest landlords
 ---
 
 <blockquote>
