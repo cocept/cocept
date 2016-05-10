@@ -2,6 +2,8 @@
 layout: page
 ---
 
+{% assign collection = layout.collection | default(page.collection) %}
+
 <div class="index">
 
     <h3 class="text-center">{{ page.title }}</h3>
@@ -9,7 +11,7 @@ layout: page
     {{ content }}
 
     <ul class="portfolio posts">
-        {% for post in site.categories[page.collection] %}
+        {% for post in site.categories[collection] %}
             <li>
                 <a href="{{ post.url | prepend: site.baseurl }}">
                     {% if post.banner %}
@@ -34,7 +36,7 @@ layout: page
         {% endfor %}
     </ul>
 
-   {% capture post_count %}{{ site.categories[page.collection] | size }}{% endcapture %}
+   {% capture post_count %}{{ site.categories[collection] | size }}{% endcapture %}
    {% if post_count == '0' %}
         {% include not-found.html %}
    {% endif %}
