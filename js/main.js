@@ -19,11 +19,10 @@ window.cocept.toggleReplaceClass = function(element, class1, class2){
 $(document).ready(function() {
 
 	// sticky nav
-	$(document).scroll(function() {
-		var scrollAmount = $(document).scrollTop();
-		var scrollTrigger = 0;
+	window.cocept.scrollTrigger = $('nav[role="navigation"]').offset().top;
 
-		if (scrollAmount > scrollTrigger){
+	$(document).scroll(function() {
+		if (window.pageYOffset > window.cocept.scrollTrigger){
 			$('nav').addClass('scrolled');
 			$('#nav_ghost').addClass('scrolled');
 			$('#content').addClass('scrolled');

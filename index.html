@@ -1,5 +1,6 @@
 ---
 layout: empty
+hero: true
 ---
  
 <section id="about-me" class="grey-hero">
@@ -48,20 +49,37 @@ layout: empty
     </div>
 </section>
 
-<section class="paper last" id="articles">
+<section class="paper highlight" id="mailchimp">
     <div class="container narrow">
         <div class="row">
+
             <div class="col-sm-12">
-                <h2>Latest Articles</h2>
+                <h2>
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    Stay Cutting Edge
+                </h2>
+                <h3>Get the latest <span class="highlight">tech tips</span> for <span class="highlight">business professionals</span> dropped into your inbox once a month.</h3>
+                {% include mailchimp_form.html %}
             </div>
-            <div class="col-sm-6">
-                <q>Make your site snappy to surf to delight your visitors. Read about the advantages of the Sticky Menu UX pattern and discover solutions to it's limitations</q>
-                <a href="/design/2014/sticky-menus/">Read more...</a>
+
+        </div>
+    </div>
+</section>
+
+<section class="paper last highlight darker">
+    <div class="container narrow">
+        <div class="row">
+
+            <div class="col-sm-12">
+                <h2>
+                    <span class="glyphicon glyphicon-ok"></span>
+                    Let's Get To Work!
+                </h2>
+                <h3>If you're interested in <span class="highlight">working together</span> drop us a line using the form below:</h3>
+
+                {% include contact.html %}
             </div>
-            <div class="col-sm-6">
-                <q>Simple Python script to generate random EAN13 numbers</q>
-                <a href="/development/2014/random-ean13-number-generator/">Read more...</a>
-            </div>
+
         </div>
     </div>
 </section>

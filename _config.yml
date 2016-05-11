@@ -60,3 +60,5 @@ defaults:
 
 # Params
 mailchimp_popup_delay: 20000
+hero_line_1: We Help Boost <span class="highlight">Bottom Lines</span>
+hero_line_2: by building better websites
