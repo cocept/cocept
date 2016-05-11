@@ -301,23 +301,6 @@ div#nav_ghost.hidden {
     display: none;
 }
 
-/* navigation desktop canvas */
-nav.canvas {
-    height: 95px;
-}
-
-nav.canvas #logo__container {
-    margin-top: -60px;
-}
-
-nav.canvas .nav-desktop > div {
-    margin-top: 23px;
-}
-
-div#nav_ghost.canvas {
-    height: 95px;
-}
-
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
     #logo__container {
@@ -411,25 +394,6 @@ nav.scrolled .nav-mobile #logo__container {
 nav.scrolled .nav-mobile .company_name {
     opacity: 0;
     transition: opacity 0.5s;
-}
-
-/* nav xs canvas */
-nav.canvas .nav-mobile #hamburger {
-    margin-top: 75px;
-    margin-bottom: 50px; /* push logo text right */
-}
-
-nav.canvas .nav-mobile #logo__container {
-    margin-top: -60px;
-}
-
-/* nav xs scrolled canvas */
-nav.scrolled.canvas .nav-mobile #logo__container {
-    margin-top: 12px;
-}
-
-nav.scrolled.canvas .nav-mobile #hamburger {
-    margin-top: 3px;
 }
 
 /* push menu */

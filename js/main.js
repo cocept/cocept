@@ -21,10 +21,7 @@ $(document).ready(function() {
 	// sticky nav
 	$(document).scroll(function() {
 		var scrollAmount = $(document).scrollTop();
-		if($('nav').hasClass('canvas'))
-			var scrollTrigger = $('.scroll_padding:visible').outerHeight();
-		else
-			var scrollTrigger = 0;
+		var scrollTrigger = 0;
 
 		if (scrollAmount > scrollTrigger){
 			$('nav').addClass('scrolled');
@@ -45,8 +42,6 @@ $(document).ready(function() {
 		$(this).toggleClass("active");
 		window.cocept.toggleReplaceClass($(   'div#push-menu'
 											+ ', body > .container'
-											+ ', canvas'
-											+ ', .canvas__text'
 											+ ', header .container'
 											+ ', body > section'
 											+ ', footer'

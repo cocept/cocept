@@ -13,7 +13,23 @@ This showcase is part tutorial part tech demo. HTML 5 introduced an awesome new 
 
 Check out the end product below - an animated dot to dot that changes when you mouse over an element on screen:
 
-<img src="/images/showcase/animated-dot-to-dot-canvas/animated-canvas.png" data-gif-src="/images/showcase/animated-dot-to-dot-canvas/animated-canvas.gif" alt="Animated dot to dot canvas preview" />
+<div class="visible-xs">
+	<img src="/images/showcase/animated-dot-to-dot-canvas/animated-canvas.png" data-gif-src="/images/showcase/animated-dot-to-dot-canvas/animated-canvas.gif" alt="Animated dot to dot canvas preview" />
+</div>
+<div class="visible-sm visible-md visible-lg">
+	<canvas></canvas>
+	<div class="text-center">
+		<a href="#" id="canvasTrigger" class="btn btn-primary" onclick="return false;">
+			<span class="glyphicon glyphicon-flash"></span>
+			Mouse Over Me
+		</a>
+	</div>
+    <link rel="stylesheet" href="/css/showcase/animated-dot-to-dot-canvas/canvas.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/json-minify/0.1/minify.json.min.js"></script>
+    <script type="text/javascript" src="/js/showcase/animated-dot-to-dot-canvas/canvas.js"></script>
+    <script type="text/javascript" src="/js/showcase/animated-dot-to-dot-canvas/animated-dot-to-dot-canvas.js"></script>
+</div>
+
 
 ## The Code
 
