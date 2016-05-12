@@ -18,6 +18,8 @@ window.cocept.toggleReplaceClass = function(element, class1, class2){
 
 $(document).ready(function() {
 
+	$("body").removeClass("preventAnimationsUntilLoad");
+
 	// sticky nav
 	window.cocept.scrollTrigger = $('nav[role="navigation"]').offset().top;
 

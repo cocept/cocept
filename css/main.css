@@ -868,6 +868,13 @@ form#contact div.row {
 /* animations */
 /* ---------------------------------------------------------*/
 
+body.preventAnimationsUntilLoad * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
 .slideInBottomLeft {
     animation-name: slideInBottomLeft;
 }
