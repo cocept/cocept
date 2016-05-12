@@ -878,6 +878,7 @@ body.preventAnimationsUntilLoad * {
 
 .slideInBottomLeft {
     animation-name: slideInBottomLeft;
+    transform: translateX(-200px) translateY(200px);
 }
 
 @keyframes slideInBottomLeft{
