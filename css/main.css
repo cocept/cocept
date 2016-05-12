@@ -869,24 +869,35 @@ form#contact div.row {
 /* ---------------------------------------------------------*/
 
 body.preventAnimationsUntilLoad * {
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -ms-transition: none !important;
-    -o-transition: none !important;
     animation: none !important;
+    animation-name: none !important;
 }
 
 .slideInBottomLeft {
     animation-name: slideInBottomLeft;
     transform: translateX(-200px) translateY(200px);
+    -webkit-transform: translateX(-200px) translateY(200px);
+}
+
+@-webkit-keyframes slideInBottomLeft{
+    from {
+        transform: translateX(-200px) translateY(200px);
+        -webkit-transform: translateX(-200px) translateY(200px);
+    }
+    to {
+        transform: translateX(0px) translateY(0px);
+        -webkit-transform: translateX(0px) translateY(0px);
+    }
 }
 
 @keyframes slideInBottomLeft{
     from {
         transform: translateX(-200px) translateY(200px);
+        -webkit-transform: translateX(-200px) translateY(200px);
     }
     to {
         transform: translateX(0px) translateY(0px);
+        -webkit-transform: translateX(0px) translateY(0px);
     }
 }
 
@@ -902,11 +913,24 @@ body.preventAnimationsUntilLoad * {
                bob 0.7s ease-in-out 1s infinite alternate;
 }
 
-@keyframes bob {
+@-webkit-keyframes bob {
     from {
+        -webkit-transform: translateY(0px);
         transform: translateY(0px);
     }
     to {
         transform: translateY(10px);
+        -webkit-transform: translateY(10px);
+    }
+}
+
+@keyframes bob {
+    from {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(10px);
+        -webkit-transform: translateY(10px);
     }
 }

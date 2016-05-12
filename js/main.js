@@ -94,7 +94,7 @@ $(document).ready(function() {
 
 $(window).load(function(){
 
-	console.log('Animating...');
+	// take the breaks off CSS animations
 	$("body").removeClass("preventAnimationsUntilLoad");
 
 });
