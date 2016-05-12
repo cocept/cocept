@@ -635,10 +635,6 @@ article img {
     position: relative;
     top: 12px;
     right: 20px;
-
-    transform: translateX(-1000px) translateY(1000px);
-    animation:  easeInFromBottomLeft 3s ease both 0.3s 1,
-                bob 0.7s ease-in-out 3s infinite alternate;
 }
 
 /* gif player */
@@ -871,20 +867,16 @@ form#contact div.row {
 
 /* animations */
 /* ---------------------------------------------------------*/
-@keyframes easeInFromBottomLeft{
+
+.slideInBottomLeft {
+    animation-name: slideInBottomLeft;
+}
+
+@keyframes slideInBottomLeft{
     from {
-        transform: translateX(-1000px) translateY(1000px);
+        transform: translateX(-200px) translateY(200px);
     }
     to {
         transform: translateX(0px) translateY(0px);
-    }
-}
-
-@keyframes bob {
-    from {
-        transform: translateY(0px);
-    }
-    to {
-        transform: translateY(10px);
     }
 }
