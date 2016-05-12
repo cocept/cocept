@@ -1,0 +1,25 @@
+---
+# this template is the base for the page and post templates
+layout: empty
+---
+
+	<div class="container page">
+		<div class="row">
+			<div class="col-md-8">
+				{{ content }}
+			</div>
+
+			<div class="col-md-4 hidden-sm hidden-xs">
+				<div class="affix">
+					<img src="/images/graphics/overload.jpg">
+					<h3>
+						Tech Overload?
+					</h3>
+					<p>
+						Stay cutting edge with Cocept's monthly tech tips newsletter for business professionals.
+					</p>
+					{% include promo_column.html %}
+				</div>
+			</div>
+		</div>
+	</div>

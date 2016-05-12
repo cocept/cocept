@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page_narrow_full
 title: Thanks
 permalink: /thanks/
 ---
