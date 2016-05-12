@@ -880,3 +880,24 @@ form#contact div.row {
         transform: translateX(0px) translateY(0px);
     }
 }
+
+.bob {
+    animation-name: bob;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.slideInBottomLeft.bob {
+    animation: slideInBottomLeft 1s ease both 0s 1,
+               bob 0.7s ease-in-out 1s infinite alternate;
+}
+
+@keyframes bob {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(10px);
+    }
+}
