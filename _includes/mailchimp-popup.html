@@ -1,13 +1,46 @@
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-<script type="text/javascript">
-function showMailchimpPopup(delay){
-	setTimeout(function(){ 
+<script type="text/javascript" src="/js/pgwbrowser.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.1/js.cookie.min.js"></script>
+<script>
+$(document).ready(function(){
 
-		require(["mojo/signup-forms/Loader"], function(L) { 
-			L.start({"baseUrl":"mc.us9.list-manage.com","uuid":"f6701c962ecb7b8fd40cff897","lid":"989dd513fd"}) 
-		});
+    window.cocept.osGroup = $.pgwBrowser().os.group;
+    window.cocept.mailchimpCookieName = "mailchimpModalClosed";
+    var hotCornerSelector = null;
 
-	}, delay);
-}
-showMailchimpPopup( {{ site.mailchimp_popup_delay }} )
+    // set hot corner element based on operating system (should be near "window close" button)
+    if(window.cocept.osGroup == "Mac OS" || window.cocept.osGroup == "Linux")
+        hotCornerSelector = ".hot-corner-top-left";
+    else if (window.cocept.osGroup == "Windows" || window.cocept.osGroup == "Chrome OS")
+        hotCornerSelector = ".hot-corner-top-right";
+
+    // mobile device so don't setup hot corner
+    if (hotCornerSelector == null)
+        return;
+
+    $( hotCornerSelector ).hover(function(){
+        // check for modal close cookie
+        if( Cookies.get( window.cocept.mailchimpCookieName ) == undefined )
+            $('#mailchimpFormModal').modal('show');
+	});
+
+    $('#mailchimpFormModal').on('hidden.bs.modal', function () {
+        // set modal close cookie
+        console.log('closing');
+        Cookies.set( window.cocept.mailchimpCookieName, true, { expires: 7 } );
+    })
+});
 </script>
+
+<!-- Modal -->
+<div class="modal fade" id="mailchimpFormModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="/images/graphics/summer-working.jpg">
+                <h1>Leaving so soon?</h1>
+                <h3>Stay in touch by subscribing to our newsletter</h3>
+                {% include mailchimp_form.html %}
+            </div>
+        </div>
+    </div>
+</div>
