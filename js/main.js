@@ -18,6 +18,7 @@ window.cocept.toggleReplaceClass = function(element, class1, class2){
 
 $(document).ready(function() {
 
+	console.log('Document ready');
 	$("body").removeClass("preventAnimationsUntilLoad");
 
 	// sticky nav
