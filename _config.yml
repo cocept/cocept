@@ -23,6 +23,11 @@ defaults:
   -
     scope:
       path: ""
+    values:
+      hero: false
+  -
+    scope:
+      path: ""
       type: "posts"
     values:
       author: "Max Mumford"
@@ -62,3 +67,22 @@ defaults:
 mailchimp_popup_delay: 20000
 hero_line_1: We Help Boost <span class="highlight">Bottom Lines</span>
 hero_line_2: by building better websites
+navigation: 
+  - text: Home
+    url: /
+    icon: home
+  - text: Portfolio
+    url: /portfolio/
+    icon: briefcase
+  - text: Showcase
+    url: /showcase/
+    icon: heart
+  - text: Development
+    url: /development/
+    icon: pencil
+  - text: Design
+    url: /design/
+    icon: pencil
+  - text: Contact
+    url: /contact/
+    icon: envelope

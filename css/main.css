@@ -1,3 +1,9 @@
+/* colours 
+salmon: #f15758;
+teal: #25b5ad;
+*/
+
+
 /* Reset */
 /* ----------------------------------------------------------*/
 
@@ -156,6 +162,37 @@ strong, b {
     font-weight: bold;
 }
 
+/* cocept font */
+@font-face {
+    font-family: 'cocept';
+    src:    url('/fonts/cocept.eot?tpbd4p');
+    src:    url('/fonts/cocept.eot?tpbd4p#iefix') format('embedded-opentype'),
+        url('/fonts/cocept.ttf?tpbd4p') format('truetype'),
+        url('/fonts/cocept.woff?tpbd4p') format('woff'),
+        url('/fonts/cocept.svg?tpbd4p#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="cocept-icon-"], [class*=" cocept-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'cocept' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cocept-icon-logo:before {
+    content: "\e900";
+}
+
 /* elements */
 /* ----------------------------------------------------------*/
 
@@ -217,6 +254,9 @@ small {
 
 /* misc */
 /* ----------------------------------------------------------*/
+.outRight {
+    transform: translateX(100%);
+}
 
 a span.glyphicon {
     font-size: 80%;
@@ -235,280 +275,160 @@ a span.glyphicon {
 /* layout */
 /* ----------------------------------------------------------*/
 
+/* header */
+header.top {
+    min-height: 73px;
+}
+
 /* navigation */
-#top-strip {
-    height: 20px;
-    background-color: #41169a;
-}
-
 nav {
-    background-color: #512db1;
-    height: 170px;
-    transition: 0.5s;
+    display: block;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+
+    transition: background-color 0.5s;
 }
 
-nav .nav-desktop .row {
-    margin-right: auto;
-    margin-left: auto;
-    width: 760px;
-}
-
-nav .nav-desktop > div {
-    margin-top: 60px;
-    transition: margin-top 0.5s
-}
-
-nav #links.right {
-    text-align: right;
-}
-
-nav #links > ul > li > a, nav #links > ul > li > a:hover {
+nav a, nav a:hover, nav a:focus, nav a:active {
     text-decoration: none;
 }
 
-nav #links > ul > li > a:hover {
-    border-bottom: solid 3px #f15758;
-}
-
-nav .nav-desktop #logo__container a:hover span {
-    border-bottom: solid 3px #f15758;
-}
-
-nav #logo__container {
-    font-size: 1.1em;
-    font-weight: bold;
-    font-family: "Droid Sans";
-    text-align: center;
-    margin-top: 20px;
-}
-
-nav #logo__container a {
+nav .nav-section {
+    display: inline-block;
+    width: 10vw;
+    min-width: 150px;
+    font-family: 'Open Sans', sans-serif;
     color: white;
 }
 
-nav #logo__container a:hover {
-    text-decoration: none;
+nav .nav-section a {
+    color: white;
 }
 
-nav #logo__container img {
-    transition: width 0.5s;
-    width: 55px;
+nav .branding {
+    float: left;
+    padding: 20px 0px 20px 20px;
 }
 
-nav .nav-desktop ul {
+nav .branding a {
+    transition: transform 0.5s;
+    display: inline-block;
+    font-size: 22px;
+}
+
+nav .branding a:hover {
+    transform: scale(1.1);
+}
+
+nav .menu-button {
+    float: right;
+    padding: 20px 20px 20px 0px;
+    text-align: right;
+    font-size: 22px;
+}
+
+nav .menu-button .text {
+    vertical-align: top;
+    padding-right: 3px;
+}
+
+nav .menu-button .hamburger:focus{
+    outline: none;
+}
+
+nav .menu-button .hamburger .hamburger-inner, 
+nav .menu-button .hamburger .hamburger-inner::before, 
+nav .menu-button .hamburger .hamburger-inner::after {
+    background-color: white;
+}
+
+/* nav.solid */
+nav.solid {
+    background-color: #f3f3f3;
+}
+
+nav.solid .nav-section {
+    color: #333;
+}
+
+nav.solid .nav-section a {
+    color: #333;
+}
+
+nav.solid .menu-button .hamburger .hamburger-inner, 
+nav.solid .menu-button .hamburger .hamburger-inner::before, 
+nav.solid .menu-button .hamburger .hamburger-inner::after {
+    background-color: #333;
+}
+
+/* nav.push-menu */
+nav.push-menu {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 80;
+
+    padding-top: 73px;
+    color: white;
+    text-align: right;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fed30d+0,25b5ad+77&0.87+0,0+96,0.36+96 */
+background: -moz-radial-gradient(top right, ellipse cover, rgba(254,211,13,0.87) 0%, rgba(37,181,173,0.46) 77%, rgba(37,181,173,0.36) 96%); /* FF3.6-15 */
+background: -webkit-radial-gradient(top right, ellipse cover, rgba(254,211,13,0.87) 0%,rgba(37,181,173,0.46) 77%,rgba(37,181,173,0.36) 96%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at top right, rgba(254,211,13,0.87) 0%,rgba(37,181,173,0.46) 77%,rgba(37,181,173,0.36) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#defed30d', endColorstr='#5c25b5ad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+nav.push-menu.open {
+    opacity: 1;
+}
+
+nav.push-menu ul {
+    padding: 0px;
     margin: 0px;
 }
 
-div#nav_ghost {
-    height: 170px;
-    margin-top: -8px;
-}
-
-div#nav_ghost.hidden {
-    display: none;
-}
-
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-    #logo__container {
-        text-align: center;
-    }
-}
-
-nav #links > ul {
-    display: inline;
+nav.push-menu li {
     list-style-type: none;
+    padding: 0px 30px;
+    margin: 0px;
 }
 
-nav #links li {
-    display: inline;
-    list-style-type: none;
+nav.push-menu li.active {
+    border-right: 5px solid #f15758;
+    padding-right: 25px;
 }
 
-nav #links > ul > li > a {
+nav.push-menu a {
     color: white;
-    font-size: 1.5em;
-    margin: 13px;
+    font-size: 7vmin;
+    line-height: 10vmin;
+    position: relative;
 }
 
-nav #links ul.dropdown-menu a {
-    font-size: 1.4em;
+nav.push-menu a:hover {
+    font-style: italic;
 }
 
-nav.scrolled {
-    position: fixed;
-    top: 0px;
-    z-index: 100;
-    width: 100%;
-}
-
-/* Scrolled styling */
-nav.scrolled {
-    height: 100px;
-    opacity: 0.9;
-}
-
-nav.scrolled .nav-desktop > div {
-    margin-top: 27px;
-    transition: margin-top 0.5s;
-}
-
-nav.scrolled #logo__container a:hover {
-    border: none;
-}
-
-nav.scrolled #logo__container {
-    margin-top: 12px;
-    transition: margin-top 0.5s;
-}
-
-nav.scrolled #logo__container img {
-    width: 34px;
-}
-
-nav.scrolled #logo__container .company_name {
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-/* nav xs */
-nav .nav-mobile #hamburger {
-    position: absolute;
-    margin-top: 29px;
-    margin-bottom: 50px; /* push logo text right */
-    transition: margin-top 0.5s, margin-bottom 0.5s;
-}
-
-nav .nav-mobile #logo__container {
-    margin-top: 20px;
-}
-
-div#push-menu ul {
-    margin: 10px 0px;
-}
-
-/* nav xs scrolled */
-nav.scrolled .nav-mobile #hamburger {
-    margin-top: 8px;
-}
-
-nav.scrolled .nav-mobile #logo__container {
-    margin-top: 12px;
-}
-
-nav.scrolled .nav-mobile .company_name {
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-/* push menu */
-div#push-menu {
-    width: 300px;
-    background-color: #41169a;
-    color: white;
-    height: 100%;
-    position: fixed;
-    top: 0px;
-    left: -300px;
-    visibility: hidden;
-    z-index: 101;
-
-    padding: 20px;
-    font-size: 1.2em;
-    line-height: 35px;
-}
-
-div#push-menu.pushed {
-    visibility: visible;
-    transition: 0.6s;
-    transform: translateX(300px);
-}
-
-div#push-menu.pulled {
-    transition: 0.6s;
-    transform: translateX(0px);
-}
-
-.pushed {
-    transition: 0.6s;
-    transform: translateX(300px);
-}
-
-.pulled {
-    transition: 0.6s;
-    transform: translateX(0px);
-}
-
-div#spacer {
-    margin-top: 215px;
-}
-
-div#push-menu ul {
-    list-style-type: none;
-    color: #cccccc;
-}
-
-div#push-menu ul a {
-    color: white;
-}
-
-div#push-menu ul .category {
-    margin-bottom: 30px;
-}
-
-div#push-menu ul .category > div {
-    border-bottom: 1px solid #ccc;
-}
-
-/* hamburger icon */
-#hamburger { 
-    display: block;
-    height: 40px;
-    width: 40px;
-    padding: 17px 2px;
-    cursor: pointer; 
-    text-align: center;
-    margin-top: -6px;
-}
-
-#hamburger span, #hamburger span:before, #hamburger span:after {
-    cursor: pointer;
-    border-radius: 1px;
-    height: 5px;
-    width: 35px;
-    background: white;
-    position: absolute;
-    display: block;
+nav.push-menu a:after {
     content: '';
+    display: block;
+    border-bottom: 5px solid #f15758;
+    width: 0;
+    position: absolute;
+    right: 0;
+    -webkit-transition: 0.6s ease;
+    transition: 0.6s ease;
 }
 
-#hamburger span:before {
-    top: -10px; 
-}
-
-#hamburger span:after {
-    bottom: -10px;
-}
-
-#hamburger span, #hamburger span:before, #hamburger span:after {
-    transition: all 500ms ease-in-out;
-}
-
-#hamburger.active span {
-    background-color: transparent;
-}
-
-#hamburger.active span:before, #hamburger.active span:after {
-    top: 0;
-}
-
-#hamburger.active span:before {
-    transform: rotate(45deg);
-}
-
-#hamburger.active span:after {
-    transform: translateY(-10px) rotate(-45deg);
-    top: 10px;
+nav.push-menu a:hover:after { 
+    width: 100%; 
 }
 
 /* footer */

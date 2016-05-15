@@ -2,51 +2,120 @@ window.cocept = {}
 
 // add class1 to element if 1 and 2 are both not applied
 // otherwise toggle between class 1 and 2
-window.cocept.toggleReplaceClass = function(element, class1, class2){
-	if(element.hasClass(class1)){
-		element.removeClass(class1);
-		element.addClass(class2);
+$.fn.toggleReplaceClass = function(class1, class2){
+  if( !class1 || !class2 )
+    return this;
+
+  return this.each(function(){
+    var $elm = $(this);
+
+    if( $elm.hasClass(class1) || $elm.hasClass(class2) )
+      $elm.toggleClass(class1 +' '+ class2);
+
+    else
+      $elm.addClass(class1);
+  });
+};
+
+window.cocept.openMenu = function(){
+	window.cocept.togglingMenu = true;
+
+	// unhide and add open class
+	$('nav.push-menu').removeClass('outRight')
+					  .addClass('open');
+
+	// animate each menu item into view
+	var totalDelay = 0;
+  	$('nav.push-menu li').each(function(i) {
+	    var $li = $(this);
+	    var delay = i*100;
+
+	    setTimeout(function() {
+	    	$li.addClass('slideInRight').removeClass('slideOutRight');
+	    	$li.removeClass('hidden');
+	    }, delay); // delay 100 ms for each element
+
+	    totalDelay = totalDelay + delay;
+	});
+
+	setTimeout(function(){
+		window.cocept.togglingMenu = undefined;
+	}, totalDelay);
+}
+
+window.cocept.closeMenu = function(){
+	window.cocept.togglingMenu = true;
+
+	// unhide and add open class
+	$('nav.push-menu').removeClass('open');
+
+	// animate each menu item out of view
+	var totalDelay = 0;
+  	$('nav.push-menu li').each(function(i) {
+	    var $li = $(this);
+	    var delay = i*100;
+
+	    setTimeout(function() {
+	    	$li.removeClass('slideInRight').addClass('slideOutRight');
+	    }, delay); // delay 100 ms for each element
+
+	    totalDelay = totalDelay + delay;
+	});
+
+	setTimeout(function(){
+		$('nav.push-menu').addClass('outRight');
+		window.cocept.togglingMenu = undefined;
+	}, totalDelay);
+}
+
+// toggle the main menu
+window.cocept.toggleMenu = function(){
+	// don't do anything if already toggling
+	if( window.cocept.togglingMenu == undefined ){
+		if( window.cocept.isMenuOpen() )
+			window.cocept.closeMenu();
+		else 
+			window.cocept.openMenu();
+		$('#menu-button-hamburger').toggleClass('is-active');
 	}
-	else if(element.hasClass(class2)){
-		element.removeClass(class2);
-		element.addClass(class1);
-	}
-	else {
-		element.addClass(class1)
-	}
+}
+
+window.cocept.isMenuOpen = function(){
+	return $('nav.push-menu').hasClass('open');
 }
 
 $(document).ready(function() {
 
-	// sticky nav
-	window.cocept.scrollTrigger = $('nav[role="navigation"]').offset().top;
-
-	$(document).scroll(function() {
-		if (window.pageYOffset > window.cocept.scrollTrigger){
-			$('nav').addClass('scrolled');
-			$('#nav_ghost').addClass('scrolled');
-			$('#content').addClass('scrolled');
-			$('#nav_ghost').removeClass('hidden');
-		}
-		else {
-			$('nav').removeClass('scrolled');
-			$('#nav_ghost').removeClass('scrolled');
-			$('#content').removeClass('scrolled');
-			$('#nav_ghost').addClass('hidden');
-		}
-	})
-
-	// hamgburger icon
-	$('#hamburger').click(function(){
-		$(this).toggleClass("active");
-		window.cocept.toggleReplaceClass($(   'div#push-menu'
-											+ ', body > .container'
-											+ ', header .container'
-											+ ', body > section'
-											+ ', footer'
-											+ ', .scroll_padding'
-										), "pushed", "pulled");
+	// menu button
+	$('#menu-button-hamburger, #menu-button-text').click(function(){
+		window.cocept.toggleMenu();
 	});
+
+	// close menu on ESC press
+	$(document).keyup(function(e) {
+  		if ( e.keyCode === 27 && window.cocept.isMenuOpen() ) // esc
+  			window.cocept.toggleMenu();	
+	});
+
+	// open menu on M press
+	$(document).keyup(function(e) {
+  		if ( e.keyCode === 77 ) // M
+  			window.cocept.toggleMenu();	
+	});
+
+ 	// toggle nav.solid when scrolling past hero 
+ 	$hero = $('.hero');
+ 	if($hero.length > 0){
+	 	var inview = new Waypoint.Inview({
+		    element: $('.hero')[0],
+		    enter: function(direction) {
+			  	$('nav').removeClass('solid');
+		  	},
+			exited: function(direction) {
+		    	$('nav').addClass('solid');
+			}
+		});
+	}
 
 	// go to top button
 	$('#to-top').click(function(){
@@ -77,7 +146,7 @@ $(document).ready(function() {
 				img.attr('data-state', 'playing');
 
 				// toggle play / pause
-				window.cocept.toggleReplaceClass($(this), 'glyphicon-play', 'glyphicon-stop');
+				$(this).toggleReplaceClass('glyphicon-play', 'glyphicon-stop');
 			}
 			else {
 				// swap image and state
@@ -85,7 +154,7 @@ $(document).ready(function() {
 				img.attr('data-state', 'paused');
 
 				// toggle play / pause
-				window.cocept.toggleReplaceClass($(this), 'glyphicon-play', 'glyphicon-stop');
+				$(this).toggleReplaceClass('glyphicon-play', 'glyphicon-stop');
 			}
 		})
 	});

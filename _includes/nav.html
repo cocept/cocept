@@ -1,0 +1,38 @@
+{% if page.hero == false %}
+	{% assign class = "class='solid'" %}
+{% endif %}
+
+<nav role="navigation" {{ class }}>
+    <div class="nav-section branding">
+    	<a href="/">
+    		<span class="cocept-icon-logo"></span> Cocept
+    	</a>
+    </div>
+    <div class="nav-section menu-button">
+    	<a class="text" id="menu-button-text" href="#">Menu</a>
+    	<button class="hamburger hamburger--elastic" id="menu-button-hamburger" type="button">
+		    <span class="hamburger-box">
+		        <span class="hamburger-inner"></span>
+		    </span>
+		</button>  
+    </div>
+    <div class="clear"></div>
+</nav>
+
+<nav role="navigation" class="push-menu outRight">
+	<ul>
+		{% for link in site.navigation %}
+			{% assign active = nil %}
+			{% if page.url == link.url or (link.url != "/" and page.url contains link.url) %}
+				{% assign active = 'active' %}
+			{% endif %}
+
+			<li class="animated hidden {% if forloop.first %}first{% endif %} {{ active }} {% if forloop.last %}last{% endif %}">
+				<a class="{{ active }}" href="{{ link.url }}">
+					{{ link.text }}
+					<span class="glyphicon glyphicon-{{ link.icon }}"></span>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</nav>
