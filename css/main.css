@@ -228,15 +228,16 @@ small {
     color: #888;
 }
 
-.highlight {
+/* call text to attention */
+.disport {
     font-family: monospace;
     background-color: #f15758;
     color: #222;
 }
 
+/* code highlighting */
 .highlight pre {
     padding: 5px 13px;
-    border-radius: 9px;
 }
 
 /* form */
@@ -454,7 +455,7 @@ nav.push-menu a:hover:after {
 
 #to-top:hover {
     text-decoration: none;
-    background-color: #41169a;
+    background-color: #25b5ad;
     transform: translateY(-10px);
     transition: background-color 0.5s, transform 0.5s;
 }
@@ -617,6 +618,17 @@ form#contact div.row {
     margin-bottom: 20px;
 }
 
+/* aesthetics */
+.colorful-border {
+    border-image: -webkit-linear-gradient(left, #E18728, #BE4C39 33%, #9351A6 66%, #4472B9, #4CA454, #D49B00) 2%; 
+    border-image: -ms-linear-gradient(left, #E18728, #BE4C39 33%, #9351A6 66%, #4472B9, #4CA454, #D49B00) 2%; 
+    border-image: -moz-linear-gradient(left, #E18728, #BE4C39 33%, #9351A6 66%, #4472B9, #4CA454, #D49B00) 2%;
+}
+
+.colorful-border.colorful-border-top {
+    border-top: 3px;
+}
+
 /* pages */
 /* ----------------------------------------------------------*/
 
@@ -631,13 +643,13 @@ form#contact div.row {
     margin-bottom: 60px;
 }
 
-.paper.highlight {
+.paper.disport {
     background-color: #25b5ad;
     color: white;
     border-bottom: none;
 }
 
-.paper.highlight.darker {
+.paper.disport.darker {
     background-color: #0C9C94;
 }
 
@@ -738,7 +750,7 @@ form#contact div.row {
 
 /* post */
 /* ----------------------------------------------------------*/
-.post .paper.highlight {
+.post .paper.disport {
     padding: 30px 20px;
     margin-bottom: 30px;
 }
@@ -756,32 +768,27 @@ form#contact div.row {
     position: relative;
     overflow: hidden;
 
-    -webkit-box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
-    box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
-
-    border: solid 2px #e3e3e3;
-    border-radius: 8px;
-
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s, box-shadow 0.5s;
 }
 
 .index .posts li:hover {
     transform: scale(1.05);
+
+    -webkit-box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 44px -20px rgba(0,0,0,0.75);
 }
 
 .index .posts li .post__banner {
     min-height: 200px;
     background-size: cover;
-    border-radius: 8px 8px 0px 0px;
 }
 
 .index .posts li .post__text_content {
     padding: 22px 30px;
 }
 
-.index .posts .post__date {
-    display: block;
+.index .posts .post__date, .index .posts .post__category {
     color: #999999;
 }
 

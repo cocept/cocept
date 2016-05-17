@@ -1,26 +1,22 @@
 ---
 layout: page
+title: Cocept's Blog Posts
+redirect_from:
+ - /development/
+ - /design/
 ---
-
-{% comment %} fix jekyll bug https://github.com/jekyll/jekyll/issues/4439 {% endcomment %}
-{% if page.collection %}
-    {% assign collection = page.collection %}
-{% else %}
-    {% assign collection = layout.collection %}
-{% endif %}
-
-{% if page.show_date or layout.show_date %}
-    {% assign show_date = true %}
-{% endif %}
 
 <div class="index">
 
     <h3 class="text-center">{{ page.title }}</h3>
 
-    {{ content }}
-
     <ul class="portfolio posts">
-        {% for post in site.categories[collection] %}
+    	{% assign categoriesToSkip = "portfolio|side-projects" | split: "|" %}
+        {% for post in site.posts %}
+        	{% if categoriesToSkip contains post.category %}
+        		{% continue %}
+        	{% endif %}
+
             {% if post.banner == nil %}
                 {% assign liClass = "colorful-border colorful-border-top" %}
             {% endif %}
@@ -31,9 +27,8 @@ layout: page
                     {% endif %}
                 </a>
                 <div class="post__text_content">
-                    {% if show_date == true %}
-                        <span class="post__date">{{ post.date | date: "%b %-d, %Y" }}</span>
-                    {% endif %}
+                    <span class="post__date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                    <span class="post__category">| Category: {{ post.category }}</span>
                     <a class="post__link" href="{{ post.url | prepend: site.baseurl }}">
                         {{ post.title }}
                         <span class="glyphicon glyphicon-chevron-right"></span>
@@ -47,10 +42,5 @@ layout: page
             </li>
         {% endfor %}
     </ul>
-
-   {% capture post_count %}{{ site.categories[collection] | size }}{% endcapture %}
-   {% if post_count == '0' %}
-        {% include not-found.html %}
-   {% endif %}
 
 </div>

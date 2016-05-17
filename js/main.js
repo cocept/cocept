@@ -89,6 +89,7 @@ $(document).ready(function() {
 	// menu button
 	$('#menu-button-hamburger, #menu-button-text').click(function(){
 		window.cocept.toggleMenu();
+		return false;
 	});
 
 	// close menu on ESC press
