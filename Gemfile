@@ -6,5 +6,5 @@ gem 'jekyll-sitemap'
 group :development do
   gem "capistrano", "~> 3.4"
   gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
 end
-
