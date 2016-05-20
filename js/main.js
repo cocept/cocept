@@ -100,7 +100,8 @@ $(document).ready(function() {
 
 	// open menu on M press
 	$(document).keyup(function(e) {
-  		if ( e.keyCode === 77 ) // M
+		var tag = e.target.tagName.toLowerCase();
+  		if ( e.keyCode === 77 && tag != 'input' && tag != 'textarea' ) // M
   			window.cocept.toggleMenu();	
 	});
 
