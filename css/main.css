@@ -1,6 +1,7 @@
 /* colours 
 salmon: #f15758;
 teal: #25b5ad;
+teal darker 10%: #0C9C94;
 */
 
 
@@ -249,8 +250,8 @@ small {
 
 .btn.btn-primary:hover {
     transition: 0.5s;
-    background-color: #41169a;
-    border-color: #41169a;
+    background-color: #25b5ad;
+    border-color: #25b5ad;
 }
 
 /* misc */
@@ -608,7 +609,7 @@ article img {
 .gif-player a:hover {
     text-decoration: none;
     cursor: pointer;
-    background-color: #41169a;
+    background-color: #25b5ad;
     transform: rotate(-15deg);
 }
 
@@ -620,6 +621,7 @@ form#contact div.row {
 
 /* aesthetics */
 .colorful-border {
+    border-style: solid;
     border-image: -webkit-linear-gradient(left, #E18728, #BE4C39 33%, #9351A6 66%, #4472B9, #4CA454, #D49B00) 2%; 
     border-image: -ms-linear-gradient(left, #E18728, #BE4C39 33%, #9351A6 66%, #4472B9, #4CA454, #D49B00) 2%; 
     border-image: -moz-linear-gradient(left, #E18728, #BE4C39 33%, #9351A6 66%, #4472B9, #4CA454, #D49B00) 2%;
@@ -649,8 +651,16 @@ form#contact div.row {
     border-bottom: none;
 }
 
+.paper.disport .btn-primary:hover {
+    background-color: #0C9C94;
+}
+
 .paper.disport.darker {
     background-color: #0C9C94;
+}
+
+.paper.disport.darker .btn-primary:hover {
+    background-color: #25b5ad;
 }
 
 .paper h2 {
