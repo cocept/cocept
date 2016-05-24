@@ -2,6 +2,7 @@
 salmon: #f15758;
 teal: #25b5ad;
 teal darker 10%: #0C9C94;
+teal darker 20%: #00837B;
 */
 
 
@@ -435,30 +436,41 @@ nav.push-menu a:hover:after {
 
 /* footer */
 /* ----------------------------------------------------------*/
-#to-top {
-    display: block;
+footer {
+    padding: 20px 20px 10px 20px;
+    background-color: #00837B;
     text-align: center;
-    vertical-align: middle;
-    margin: 30px auto;
-    border-radius: 50%;
-    cursor: pointer;
-    color: white;
-    font-size: 6.8em;
-    padding-top: 56px;
-    width: 100px;
-    height: 100px;
-
-    background-color: #f15758;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    transition: background-color 0.5s, transform 0.5s;
 }
 
-#to-top:hover {
+footer .right {
+    float: right;
+}
+
+footer .social-icon {
     text-decoration: none;
-    background-color: #25b5ad;
-    transform: translateY(-10px);
-    transition: background-color 0.5s, transform 0.5s;
+    margin: 0px 3px;
+}
+
+footer .social-icon img {
+    transition: transform 0.5s;
+}
+
+footer .social-icon:hover img {
+    transform: scale(1.2) rotate(360deg);
+}
+
+footer .to-top {
+    cursor: pointer;
+    color: white;
+    transition: transform 0.5s;
+    margin-top: 6px;
+    margin-right: 4px;
+}
+
+footer .to-top:hover {
+    color: white;
+    text-decoration: none;
+    transform: translateY(-3px);
 }
 
 /* content */
@@ -578,7 +590,13 @@ article img {
 /* hero-home */
 .hero.hero-home {
     padding-top: 30px;
-    background-color: #25b5ad;
+    background: #25b5ad;
+
+    /* http://colorzilla.com/gradient-editor/#006a70+0,25b5ad+100 */
+    background: -moz-linear-gradient(45deg, rgba(0,106,112,1) 0%, rgba(37,181,173,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(0,106,112,1) 0%,rgba(37,181,173,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(0,106,112,1) 0%,rgba(37,181,173,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006a70', endColorstr='#25b5ad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .hero.hero-home img {
@@ -639,10 +657,6 @@ form#contact div.row {
 .paper {
     padding: 45px 0px;
     border-bottom: solid 5px #e3e3e3;
-}
-
-.paper.last {
-    margin-bottom: 60px;
 }
 
 .paper.disport {
