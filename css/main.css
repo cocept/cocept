@@ -645,6 +645,11 @@ form#contact div.row {
     border-image: -moz-linear-gradient(left, #E18728, #BE4C39 33%, #9351A6 66%, #4472B9, #4CA454, #D49B00) 2%;
 }
 
+/* filament */
+#filament-ivy {
+    top: -1000px;
+}
+
 .colorful-border.colorful-border-top {
     border-top: 3px;
 }
