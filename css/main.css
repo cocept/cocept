@@ -442,8 +442,8 @@ footer {
     text-align: center;
 }
 
-footer .right {
-    float: right;
+footer .left {
+    float: left;
 }
 
 footer .social-icon {
