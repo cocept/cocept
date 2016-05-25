@@ -21,7 +21,7 @@ redirect_from:
                 {% assign liClass = "colorful-border colorful-border-top" %}
             {% endif %}
             <li class="{{ liClass }}">
-                <a href="{{ post.url | prepend: site.baseurl }}">
+                <a href="{{ post.url }}">
                     {% if post.banner %}
                         <div style="background-image: url({{ post.banner }});" class="post__banner"></div>
                     {% endif %}
@@ -29,13 +29,13 @@ redirect_from:
                 <div class="post__text_content">
                     <span class="post__date">{{ post.date | date: "%b %-d, %Y" }}</span>
                     <span class="post__category">| Category: {{ post.category }}</span>
-                    <a class="post__link" href="{{ post.url | prepend: site.baseurl }}">
+                    <a class="post__link" href="{{ post.url }}">
                         {{ post.title }}
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                     {{ post.excerpt }}
                 </div>
-                <a class="btn btn-default post__read_more" href="{{ post.url | prepend: site.baseurl }}">
+                <a class="btn btn-default post__read_more" href="{{ post.url }}">
                     Read More
                     <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>

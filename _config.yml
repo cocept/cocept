@@ -1,7 +1,7 @@
 # Site settings
 title: "Cocept: Website Design & Development Agency in Brighton"
 description: "Welcome to Cocept, a website design & development agency based in Brighton, UK"
-url: "http://www.cocept.io"
+url: "https://www.cocept.io"
 
 # Build settings
 markdown: kramdown

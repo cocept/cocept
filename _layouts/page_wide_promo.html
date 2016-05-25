@@ -9,8 +9,8 @@ layout: empty
 				{{ content }}
 			</div>
 
-			<div class="col-md-4 hidden-sm hidden-xs">
-				<aside class="affix">
+			<div class="col-md-4 hidden-sm hidden-xs promo__container">
+				<aside>
 					<!-- mailchimp form -->
 					<img src="/images/graphics/overload.jpg">
 					<h3>
@@ -20,6 +20,36 @@ layout: empty
 						Save time and stay cutting edge with Cocept's monthly newsletter for business professionals.
 					</p>
 					{% include mailchimp_form.html %}
+				</aside>
+
+				<aside>
+					<!-- sharing -->
+					{% assign url = page.url | replace:'index.html','' | prepend: site.url %}
+					{% assign title = page.title | escape_once %}
+					{% assign excerpt = page.excerpt | strip_html | escape_once %}
+					<h3>Tell Your Friends</h3>
+					<div class="sharing_icons__container">
+						<a href="https://www.facebook.com/sharer/sharer.php?u={{ url }}" target="_new" class="sharing_icons__link facebook">
+							<span class="socicon-facebook"></span> 
+							Facebook
+						</a>
+						<a href="https://twitter.com/home?status={{ url }}%20{{ title }}" target="_new" class="sharing_icons__link twitter">
+							<span class="socicon-twitter"></span> 
+							Twitter
+						</a>
+						<a href="https://plus.google.com/share?url={{ url }}" target="_new" class="sharing_icons__link google-plus">
+							<span class="socicon-googleplus"></span> 
+							Google+
+						</a>
+						<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url }}&title={{ title }}&summary={{ excerpt }}" target="_new" class="sharing_icons__link linkedin">
+							<span class="socicon-linkedin"></span> 
+							LinkedIn
+						</a>
+						<a href="https://buffer.com/add?url={{ url }}&text={{ title }}" target="_new" class="sharing_icons__link buffer">
+							<span class="socicon-buffer"></span> 
+							Buffer
+						</a>
+					</div>
 				</aside>
 			</div>
 		</div>

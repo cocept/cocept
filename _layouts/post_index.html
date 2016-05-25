@@ -25,7 +25,7 @@ layout: page
                 {% assign liClass = "colorful-border colorful-border-top" %}
             {% endif %}
             <li class="{{ liClass }}">
-                <a href="{{ post.url | prepend: site.baseurl }}">
+                <a href="{{ post.url }}">
                     {% if post.banner %}
                         <div style="background-image: url({{ post.banner }});" class="post__banner"></div>
                     {% endif %}
@@ -34,13 +34,13 @@ layout: page
                     {% if show_date == true %}
                         <span class="post__date">{{ post.date | date: "%b %-d, %Y" }}</span>
                     {% endif %}
-                    <a class="post__link" href="{{ post.url | prepend: site.baseurl }}">
+                    <a class="post__link" href="{{ post.url }}">
                         {{ post.title }}
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                     {{ post.excerpt }}
                 </div>
-                <a class="btn btn-default post__read_more" href="{{ post.url | prepend: site.baseurl }}">
+                <a class="btn btn-default post__read_more" href="{{ post.url }}">
                     Read More
                     <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>

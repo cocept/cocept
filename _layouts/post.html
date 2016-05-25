@@ -24,7 +24,7 @@ layout: page_wide_promo
 				 	</a>
 				{% endif %}
 				•
-				<a href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
+				<a href="{{ page.url | replace:'index.html','' | prepend: site.url }}" itemprop="url">
 					<span class="glyphicon glyphicon-link"></span>
 				</a>
 			</div>
@@ -47,7 +47,7 @@ layout: page_wide_promo
 		<section id="comments">
 			<script>
 			var disqus_config = function () {
-				this.page.url = "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}";
+				this.page.url = "{{ page.url | replace:'index.html','' | prepend: site.url }}";
 				this.page.identifier = "{{ page.url }}"; 
 			};
 			(function() {

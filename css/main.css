@@ -513,6 +513,43 @@ article img {
 /* components */
 /* ----------------------------------------------------------*/
 
+/* social media icons in posts layout promo column */
+.sharing_icons__link {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    transition: transform 0.5s;
+}
+
+.sharing_icons__link:hover, .sharing_icons__link:focus {
+    text-decoration: none;
+    color: white;
+    transform: scale(1.02);
+}
+
+.sharing_icons__link.facebook {
+    background-color: #3e5b98;
+}
+
+.sharing_icons__link.twitter {
+    background-color: #4da7de;
+}
+
+.sharing_icons__link.google-plus {
+    background-color: #dd4b39;
+}
+
+.sharing_icons__link.buffer {
+    background-color: #000000;
+}
+
+.sharing_icons__link.linkedin {
+    background-color: #3371b7;
+}
+
 /* hot corners */
 .hot-corner__container {
     position: fixed;
@@ -782,6 +819,10 @@ form#contact div.row {
 .post .paper.disport {
     padding: 30px 20px;
     margin-bottom: 30px;
+}
+
+.promo__container aside {
+    margin-bottom: 70px;
 }
 
 /* post index */
