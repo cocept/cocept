@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.cocept.io/sitemap.xml
