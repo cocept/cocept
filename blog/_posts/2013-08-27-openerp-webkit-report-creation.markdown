@@ -5,6 +5,8 @@ redirect_from:
   - /how-to/create-openerp-webkit-report-from-scratch/
   - /posts/36-create-an-openerp-webkit-report-from-scratch/
   - /development/2013/openerp-webkit-report-creation/
+  - /development/2013/openerp-webkit
+  - /development/2013/openerp
 ---
 
 <p>This guide will help you prepare your OpenERP instance to use the Webkit reporting engine - a reporting engine rendered by webkit and powered by HTML and Python mako templates.</p>
