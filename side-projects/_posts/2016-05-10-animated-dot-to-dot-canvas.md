@@ -3,6 +3,8 @@ layout: page
 title: Animated Dot to Dot Canvas
 excerpt: A simple tech demo for HTML 5 canvas animations
 banner: /images/showcase/animated-dot-to-dot-canvas/banner.png
+redirect_from:
+ - /showcase/animated-dot-to-dot-canvas
 ---
 
 ## HTML 5 Animated Dot To Dot Canvas

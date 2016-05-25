@@ -3,6 +3,8 @@ layout: page
 title: Contact Cocept
 permalink: /contact/
 published: true
+redirect_from:
+ - resume
 ---
 
 ## Contact Cocept
