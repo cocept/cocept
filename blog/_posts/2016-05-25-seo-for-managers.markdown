@@ -1,8 +1,7 @@
 ---
 title: SEO For Managers
-excerpt: test
+excerpt: Search Engine Optimisation for Managers. None of the low level nitty gritty, just a high level summary document of what it means to SEO, and how to manage people who do it.
 category: digital-marketing
-description: testdesc
 ---
 
 ## What Is SEO?
