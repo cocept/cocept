@@ -1,13 +1,25 @@
-{% assign tasks = include.tasks | split: "|" %}
-{% if tasks %}
-<ul class="tasks__container">
-{% for task in tasks %}
-	<li class="tasks__item" data-task-id="{{ task | md5 }}">
-		<label>
-			<input type="checkbox" class="tasks__checkbox">
-			<span class="tasks__text">{{ task }}</span>
-		</label>
-	</li>
-{% endfor %}
-</ul>
+{% if include.tasks %}
+<section class="tasks tasks__widget" data-page-path="{{ page.path }}" data-page-url="{{ page.url }}" data-page-title="{{ page.title }}">
+	<header class="tasks__header">
+		<h2 class="tasks__title">
+			<span class="glyphicon glyphicon-tasks"></span>
+			Homework
+		</h2>
+		<span class="tasks__summary" 
+			data-typed-text="We've added these tasks to your task list. Come back once you've completed them and cross them off.">
+		</span>
+	</header>
+	<table class="tasks__container">
+	{% for task in include.tasks %}
+		<tr class="tasks__item" data-task-key="{{ task.key }}" data-task-name="{{ task.name }}">
+			<td>
+				<label>
+					<input type="checkbox" class="tasks__checkbox">
+					<span class="tasks__text">{{ task.name }}</span>
+				</label>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+</section>
 {% endif %}

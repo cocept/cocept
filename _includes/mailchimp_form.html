@@ -1,19 +1,21 @@
-<div id="mailchimp_form">
+<div class="mailchimp__form">
 	<form action="//Cocept.us13.list-manage.com/subscribe/post?u=6ebc423e00571d8434ac20373&amp;id=409f941f43" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-
-		<div class="form-group">
-			<label for="mce-EMAIL">Email address</label>
-			<input type="email" class="form-control required email" id="mce-EMAIL" placeholder="Type your email address here" name="EMAIL">
-		</div>
 
 		<!-- bot honeypot -->
 	    <div style="position: absolute; left: -5000px;" aria-hidden="true">
 	    	<input type="text" name="b_f6701c962ecb7b8fd40cff897_989dd513fd" tabindex="-1" value="">
 	    </div>
 
-	    <button class="btn btn-primary" type="submit">
-	    	<span class="glyphicon glyphicon-send"></span>
-	    	Subscribe To Our Newsletter
-	    </button>
+	    <div class="input-group">
+      		<input type="email" class="form-control required email" id="mce-EMAIL" placeholder="email address" name="EMAIL" required>
+      		<span class="input-group-btn">
+        		<button class="btn btn-primary" type="submit">
+        			<span class="glyphicon glyphicon-send"></span>
+        			Subscribe
+        		</button>
+      		</span>
+		</div><!-- /input-group -->
+
+
 	</form>
 </div>

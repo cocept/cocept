@@ -1,66 +1,107 @@
 ---
 # blog post template
-layout: page_wide_promo
+layout: empty
+scripts:
+ - /js/tasks.js
+stylesheets:
+ - /css/tasks.css
+footer-class: black
 ---
-<div class="post">
 
-	<article itemscope itemtype="http://schema.org/Article" itemprop="articleBody" class="post-content">
+<div class="container page">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
 
-		<header class="post-header">
-			<h1 itemprop="name">{{ page.title }}</h1>
-			<div class="meta">
-				<time datetime="{{ page.date | date: "%Y-%m-%d" }}" 
-					pubdate 
-					itemprop="datePublished" 
-					content="{{ page.date | date: "%Y-%m-%d" }}">
-					{{ page.date | date: "%b %-d, %Y" }}
-				</time>
-				{% if page.author %}
-					 • 
-					 <a href="{{ page.author_link }}" target="_blank" rel="author">
-					 	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-					 		<span itemprop="name">{{ page.author }}</span>
-				 		</span>
-				 	</a>
-				{% endif %}
-				•
-				<a href="{{ page.url | replace:'index.html','' | prepend: site.url }}" itemprop="url">
-					<span class="glyphicon glyphicon-link"></span>
-				</a>
-			</div>
-		</header>
+			<!-- post contents -->
+			<article itemscope itemtype="http://schema.org/Article" itemprop="articleBody">
+				<header class="post-header">
+					<h1 itemprop="name">{{ page.title }}</h1>
+					<div class="meta">
+						<time datetime="{{ page.date | date: "%Y-%m-%d" }}" 
+							pubdate 
+							itemprop="datePublished" 
+							content="{{ page.date | date: "%Y-%m-%d" }}">
+							{{ page.date | date: "%b %-d, %Y" }}
+						</time>
+						{% if page.author %}
+							 • 
+							 <a href="{{ page.author_link }}" target="_blank" rel="author">
+							 	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+							 		<span itemprop="name">{{ page.author }}</span>
+						 		</span>
+						 	</a>
+						{% endif %}
+						•
+						<a href="{{ page.url | replace:'index.html','' | prepend: site.url }}" itemprop="url">
+							<span class="glyphicon glyphicon-link"></span>
+						</a>
+					</div>
+				</header>
+				<span itemprop="articleBody">
+					{{ content }}
+				</span>
+			</article>
 
-		<span itemprop="articleBody">
-			{{ content }}
-		</span>
+		</div><!-- /col -->
+	</div><!-- /row -->
+</div><!-- /container -->
 
-		<div class="paper disport">
-			<h3>Stay Cutting Edge</h3>
-			<p>
-				Get this month's top tech tip dropped into your inbox from Cocept, written exclusively for business professionals.
-			</p>
-			{% include mailchimp_form.html %}
+<!-- share icons -->
+<section class="sharing_icons__container">
+	{% assign url = page.url | replace:'index.html','' | prepend: site.url %}
+	{% assign title = page.title | escape_once %}
+	{% assign excerpt = page.excerpt | strip_html | escape_once %}
+	<a href="https://www.facebook.com/sharer/sharer.php?u={{ url }}" target="_blank" class="sharing_icons__link facebook">
+		<span class="socicon-facebook"></span> 
+		Facebook
+	</a>
+	<a href="https://twitter.com/home?status={{ url }}%20{{ title }}" target="_blank" class="sharing_icons__link twitter">
+		<span class="socicon-twitter"></span> 
+		Twitter
+	</a>
+	<a href="https://plus.google.com/share?url={{ url }}" target="_blank" class="sharing_icons__link google-plus">
+		<span class="socicon-googleplus"></span> 
+		Google+
+	</a>
+	<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url }}&title={{ title }}&summary={{ excerpt }}" target="_blank" class="sharing_icons__link linkedin">
+		<span class="socicon-linkedin"></span> 
+		LinkedIn
+	</a>
+	<a href="https://buffer.com/add?url={{ url }}&text={{ title }}" target="_blank" class="sharing_icons__link buffer">
+		<span class="socicon-buffer"></span> 
+		Buffer
+	</a>
+</section>
+
+<!-- comments -->
+<section class="comments closed">
+	<div class="comments__overlay">
+		<div class="comments__overlay_text">Leave us a Comment</div>
+		<div class="comments__overlay_icon">
+			<span class="glyphicon glyphicon-comment"></span>
 		</div>
+	</div>
+	<div id="disqus_thread"></div>
+	<script>
+	var disqus_config = function () {
+		this.page.url = "{{ page.url | replace:'index.html','' | prepend: site.url }}";
+		this.page.identifier = "{{ page.url }}"; 
+	};
+	</script>
+</section>
 
+{% if page.tasks %}
+	<!-- tasks -->
+	{% include tasks.html tasks=page.tasks %}
+{% endif %}
 
-		<section id="comments">
-			<div id="disqus_thread"></div>
-			<script>
-			var disqus_config = function () {
-				this.page.url = "{{ page.url | replace:'index.html','' | prepend: site.url }}";
-				this.page.identifier = "{{ page.url }}"; 
-			};
-			(function() {
-			var d = document, s = d.createElement('script');
-			s.src = '//maxmakedesign.disqus.com/embed.js';
-			s.setAttribute('data-timestamp', +new Date());
-			(d.head || d.body).appendChild(s);
-			})();
-			</script>
-		</section>
-
-	</article>
-
-</div>
+<!-- mailchimp form -->
+<section class="paper disport black text-center">
+	<h3>Connect With Us</h3>
+	<p class="faint">
+		Get our monthly newsletter with tech tips for business professionals
+	</p>
+	{% include mailchimp_form.html %}
+</section>
 
 {% include mailchimp-popup.html %}

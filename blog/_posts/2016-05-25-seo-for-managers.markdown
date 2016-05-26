@@ -2,6 +2,11 @@
 title: SEO For Managers
 excerpt: Search Engine Optimisation for Managers. None of the low level nitty gritty, just a high level summary document of what it means to SEO, and how to manage people who do it.
 category: digital-marketing
+tasks:
+  - {key: code, name: Make sure your websites code is error free and fast}
+  - {key: semantic, name: Use the latest Semantic Markup for your content}
+  - {key: tags, name: Make sure you use the required descriptive HTML tags}
+  - {key: microdata, name: Sprinkle Microdata goodness among your pages}
 ---
 
 ## What Is SEO?
@@ -102,12 +107,6 @@ Sorry to be the bringer of bad news, but SEO does not give us instant gratificat
 
 Keep up to date with changes, have your team read up on the latest techniques, and you'll notice a gradual increase in traffic as long as all other variables remain the same.
 
-## What's Next?
-
-So, here's a quick rundown of things to do now:
-
-{% include tasks.html tasks="Make sure your website's code is error free and fast|Use the latest Semantic Markup for your content|Make sure you use the required descriptive HTML tags|Sprinkle Microdata goodness among your pages" %}
-
 ## What do you think?
 
-Found a great, little known technique? Want to share some feedback on your SEO experience? Let us know what you think in the comments section below.
+Found a great, little known technique to increase traffic? Want to share some feedback on your SEO experience? Let us know what you think in the comments section below.

@@ -109,7 +109,7 @@ $(document).ready(function() {
  	$hero = $('.hero');
  	if($hero.length > 0){
 	 	var inview = new Waypoint.Inview({
-		    element: $('.hero')[0],
+		    element: $hero[0],
 		    enter: function(direction) {
 			  	$('nav').removeClass('solid');
 		  	},
@@ -161,28 +161,18 @@ $(document).ready(function() {
 		})
 	});
 
-	// tasks widget in blog posts
-	function taskKey(taskId, checked){
-		return 'tasks.' + taskId;
-	}
+	// comments overlay
+	$('.comments__overlay').click(function(){
+		// trigger disqus
+		(function() {
+			var d = document, s = d.createElement('script');
+			s.src = '//maxmakedesign.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
 
-	$('.tasks__container .tasks__checkbox').on('click', function(e){
-		// on click, save state to localstorage
-		var checkbox = $(e.target);
-		var taskItem = checkbox.closest('.tasks__item');
-		var checked = checkbox.is(':checked');
-		var taskId = taskItem.attr('data-task-id');
-		localStorage.setItem( taskKey(taskId), checked );
-	});
-
-	$.each($('.tasks__container .tasks__item'), function(index, taskItem){
-		var taskId = $(taskItem).attr('data-task-id');
-		var checkbox = $(taskItem).find('input[type="checkbox"]');
-		var value = localStorage.getItem( taskKey(taskId) );
-		if(value){
-			var checked = value.split('.')[1];
-			checkbox.prop( 'checked', (value == "true" ? true : false) );
-		}
+		// show comments
+		$(this).closest('.comments').removeClass('closed');
 	});
 
 });

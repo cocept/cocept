@@ -32,6 +32,7 @@ defaults:
     values:
       author: "Max Mumford"
       author_link: "https://plus.google.com/+MaxMumford/"
+      footer-class: black
   -
     scope:
       path: "design"
