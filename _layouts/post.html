@@ -2,7 +2,7 @@
 # blog post template
 layout: page_wide_promo
 ---
-<div class="post" itemscope itemtype="http://schema.org/Article">
+<div class="post">
 
 	<article itemscope itemtype="http://schema.org/Article" itemprop="articleBody" class="post-content">
 
@@ -42,9 +42,9 @@ layout: page_wide_promo
 			{% include mailchimp_form.html %}
 		</div>
 
-		<div id="disqus_thread"></div>
 
 		<section id="comments">
+			<div id="disqus_thread"></div>
 			<script>
 			var disqus_config = function () {
 				this.page.url = "{{ page.url | replace:'index.html','' | prepend: site.url }}";

@@ -161,6 +161,30 @@ $(document).ready(function() {
 		})
 	});
 
+	// tasks widget in blog posts
+	function taskKey(taskId, checked){
+		return 'tasks.' + taskId;
+	}
+
+	$('.tasks__container .tasks__checkbox').on('click', function(e){
+		// on click, save state to localstorage
+		var checkbox = $(e.target);
+		var taskItem = checkbox.closest('.tasks__item');
+		var checked = checkbox.is(':checked');
+		var taskId = taskItem.attr('data-task-id');
+		localStorage.setItem( taskKey(taskId), checked );
+	});
+
+	$.each($('.tasks__container .tasks__item'), function(index, taskItem){
+		var taskId = $(taskItem).attr('data-task-id');
+		var checkbox = $(taskItem).find('input[type="checkbox"]');
+		var value = localStorage.getItem( taskKey(taskId) );
+		if(value){
+			var checked = value.split('.')[1];
+			checkbox.prop( 'checked', (value == "true" ? true : false) );
+		}
+	});
+
 });
 
 $(window).load(function(){

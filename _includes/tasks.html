@@ -1,0 +1,13 @@
+{% assign tasks = include.tasks | split: "|" %}
+{% if tasks %}
+<ul class="tasks__container">
+{% for task in tasks %}
+	<li class="tasks__item" data-task-id="{{ task | md5 }}">
+		<label>
+			<input type="checkbox" class="tasks__checkbox">
+			<span class="tasks__text">{{ task }}</span>
+		</label>
+	</li>
+{% endfor %}
+</ul>
+{% endif %}
