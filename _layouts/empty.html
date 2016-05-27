@@ -3,7 +3,11 @@
 
 	{% include head.html %}
 
-	<body class="preventAnimationsUntilLoad">
+	{% if page.background-image %}
+		{% capture background-image %}style="background-image: url('{{ page.background-image }}');"%}{% endcapture %}
+	{% endif %}
+
+	<body class="preventAnimationsUntilLoad" {{ background-image }}>
 
 	{% include hot_corners.html %}
 

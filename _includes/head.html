@@ -53,11 +53,8 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/pygments.css">
     <link rel="stylesheet" href="/css/hamburgers.css">
-    {% if layout.stylesheets %}
-        {% for stylesheet in layout.stylesheets %}
-            <link rel="stylesheet" href="{{ stylesheet }}">
-        {% endfor %}
-    {% elsif page.stylesheets %}
+    <link rel="stylesheet" href="/css/tasks.css">
+    {% if page.stylesheets %}
         {% for stylesheet in page.stylesheets %}
             <link rel="stylesheet" href="{{ stylesheet }}">
         {% endfor %}
@@ -78,12 +75,9 @@
 
     <!-- custom javascript -->
     <script src="/js/main.js"></script>
+    <script src="/js/tasks.js"></script>
     {% if page.scripts %}
         {% for script in page.scripts %}
-            <script type="text/javascript" src="{{ script }}"></script>
-        {% endfor %}
-    {% elsif layout.scripts %}
-        {% for script in layout.scripts %}
             <script type="text/javascript" src="{{ script }}"></script>
         {% endfor %}
     {% endif %}

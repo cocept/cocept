@@ -1,5 +1,10 @@
-{% if include.tasks %}
-<section class="tasks tasks__widget" data-page-path="{{ page.path }}" data-page-url="{{ page.url }}" data-page-title="{{ page.title }}">
+{% if include.post %}
+	{% assign class = "post" %}
+{% endif %}
+{% if include.background-image %}
+	{% capture style %}style="background-image: url({{ include.background-image }})"{% endcapture %}
+{% endif %}
+<section class="tasks tasks__widget {{ class }}" {{ style }} data-page-slug="{{ page.slug }}" data-page-url="{{ page.url | prepend: site.url }}" data-page-title="{{ page.title }}">
 	<header class="tasks__header">
 		<h2 class="tasks__title">
 			<span class="glyphicon glyphicon-tasks"></span>
@@ -9,7 +14,27 @@
 			data-typed-text="We've added these tasks to your task list. Come back once you've completed them and cross them off.">
 		</span>
 	</header>
-	<table class="tasks__container">
+
+	<!-- template used by javascript to load from localstorage -->
+	{% capture task-template %}
+		<tr class="tasks__item" data-task-key="task_key" data-task-name="task_name" 
+			data-page-slug="page_slug" data-page-title="page_title" data-page-url="page_url">
+			<td>
+				<label>
+					<input type="checkbox" class="tasks__checkbox">
+					<span class="tasks__text">task_name</span>
+				</label>
+			</td>
+			<td>
+				<a href="page_url" class="btn btn-default">
+					<span class="glyphicon glyphicon-link"></span>
+					Go To Article
+				</a>&nbsp;
+			</td>
+		</tr>
+	{% endcapture %}
+
+	<table class="tasks__container" data-task-template="{{ task-template | xml_escape }}">
 	{% for task in include.tasks %}
 		<tr class="tasks__item" data-task-key="{{ task.key }}" data-task-name="{{ task.name }}">
 			<td>
@@ -22,4 +47,3 @@
 	{% endfor %}
 	</table>
 </section>
-{% endif %}

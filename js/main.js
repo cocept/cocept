@@ -105,16 +105,16 @@ $(document).ready(function() {
   			window.cocept.toggleMenu();	
 	});
 
- 	// toggle nav.solid when scrolling past hero 
+ 	// toggle nav.grey when scrolling past hero 
  	$hero = $('.hero');
  	if($hero.length > 0){
 	 	var inview = new Waypoint.Inview({
 		    element: $hero[0],
 		    enter: function(direction) {
-			  	$('nav').removeClass('solid');
+			  	$('nav').removeClass('grey');
 		  	},
 			exited: function(direction) {
-		    	$('nav').addClass('solid');
+		    	$('nav').addClass('grey');
 			}
 		});
 	}

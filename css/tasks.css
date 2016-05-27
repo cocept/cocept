@@ -1,7 +1,6 @@
 /* tasks */
 .tasks {
     text-align: center;
-    background-image: url(/images/backgrounds/space.jpg);
     background-size: cover;
     color: white;
     padding: 50px 0px;
@@ -20,7 +19,7 @@
     border-bottom: none;
     background-color: white;
     color: #333333;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .tasks__item label {
@@ -48,3 +47,100 @@
 .tasks__container .tasks__checkbox:checked + .tasks__text {
     text-decoration: line-through;
 }
+
+/* task summary */
+nav.main .tasks-summary {
+    float: right;
+    margin-right: 20px;
+    margin-top: 9px;
+    position: relative;
+    overflow: hidden;
+    
+    background-color: #ddd;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav.main .tasks-summary:hover {
+    background-color: #f15758;
+    color: white;
+}
+
+nav.main .background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 100%;
+    bottom: 0px;
+    background-color: #25b5ad;
+}
+
+nav.main .tasks-summary:hover .background {
+    background-color: #BE2425;
+}
+
+nav.main .content {
+    position: relative;
+}
+
+nav.main .tasks-summary .glyphicon {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+nav.main .tasks-summary .completed {
+    font-size: 32px;
+}
+
+nav.main .tasks-summary .separator {
+    font-size: 16px;
+}
+
+nav.main .tasks-summary .total {
+    font-size: 16px;
+}
+
+.starsContainer {
+    z-index: 101;
+    pointer-events: none;
+    position: fixed; 
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px;
+}
+
+.star {
+    position: absolute;
+    color: yellow;
+    font-size: 48px;
+    z-index: 101;
+}
+
+@media screen and (max-width: 415px){
+    nav.main .tasks-summary{
+        margin-top: 15px;
+        margin-right: 8px;
+        padding: 3px 7px;
+    }
+
+    nav.main .tasks-summary .glyphicon {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 315px){
+    nav.main .tasks-summary{
+        display: none;
+    }
+}
+
+/* tasks list page */
+.tasks__list {
+    color: white;
+    text-align: center;
+}
+

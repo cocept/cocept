@@ -1,5 +1,8 @@
 /* colours 
 salmon: #f15758;
+salmon: darker 10%: #D83E3F;
+salmon: darker 20%: #BE2425;
+
 teal: #25b5ad;
 teal darker 10%: #0C9C94;
 teal darker 20%: #00837B;
@@ -247,13 +250,13 @@ small {
 
 /* form */
 .btn.btn-primary {
-    transition: 0.5s;
+    transition: 0.3s;
     background-color: #f15758;
     border-color: #f15758;
 }
 
 .btn.btn-primary:hover {
-    transition: 0.5s;
+    transition: 0.3s;
     background-color: #25b5ad;
     border-color: #25b5ad;
 }
@@ -298,7 +301,7 @@ nav {
     width: 100%;
     z-index: 100;
 
-    transition: background-color 0.5s;
+    transition: background-color 0.3s;
 }
 
 nav a, nav a:hover, nav a:focus, nav a:active {
@@ -307,8 +310,6 @@ nav a, nav a:hover, nav a:focus, nav a:active {
 
 nav .nav-section {
     display: inline-block;
-    width: 10vw;
-    min-width: 150px;
     font-family: 'Open Sans', sans-serif;
     color: white;
 }
@@ -354,22 +355,22 @@ nav .menu-button .hamburger .hamburger-inner::after {
     background-color: white;
 }
 
-/* nav.solid */
-nav.solid {
+/* nav.grey */
+nav.grey {
     background-color: #f3f3f3;
 }
 
-nav.solid .nav-section {
+nav.grey .nav-section {
     color: #333;
 }
 
-nav.solid .nav-section a {
+nav.grey .nav-section a {
     color: #333;
 }
 
-nav.solid .menu-button .hamburger .hamburger-inner, 
-nav.solid .menu-button .hamburger .hamburger-inner::before, 
-nav.solid .menu-button .hamburger .hamburger-inner::after {
+nav.grey .menu-button .hamburger .hamburger-inner, 
+nav.grey .menu-button .hamburger .hamburger-inner::before, 
+nav.grey .menu-button .hamburger .hamburger-inner::after {
     background-color: #333;
 }
 
@@ -514,6 +515,10 @@ article img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+article.post p {
+    word-wrap: break-word;
 }
 
 /* used in promo_column.html */
@@ -895,7 +900,7 @@ figure figcaption {
     padding: 10px;
     cursor: pointer;
 
-    transition: background-color 0.5s;
+    transition: background-color 0.3s;
 }
 
 .comments.closed .comments__overlay:hover {
@@ -919,7 +924,7 @@ figure figcaption {
     position: relative;
     overflow: hidden;
 
-    transition: transform 0.4s, box-shadow 0.5s;
+    transition: transform 0.4s, box-shadow 0.3s;
 }
 
 .index .posts li:hover {
@@ -1050,5 +1055,23 @@ body.preventAnimationsUntilLoad * {
     to {
         transform: translateY(10px);
         -webkit-transform: translateY(10px);
+    }
+}
+
+.callout {
+    animation-name: callout;
+    animation-duration: 0.5s;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
+    animation-timing-function: easeOutCubic;
+}
+
+@-webkit-keyframes callout {
+    from {
+
+    }
+    to {
+        background-color: #fdd133;
+        transform: translateY(-10px);
     }
 }

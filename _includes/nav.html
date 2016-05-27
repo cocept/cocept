@@ -1,8 +1,11 @@
 {% if page.hero == false %}
-	{% assign class = "solid" %}
+	{% assign class = "grey" %}
+{% endif %}
+{% if page.nav-class %}
+	{% assign class = page.nav-class %}
 {% endif %}
 
-<nav role="navigation" class="{{ class }} colorful-border colorful-border-top">
+<nav role="navigation" class="{{ class }} colorful-border colorful-border-top main">
     <div class="nav-section branding">
     	<a href="/">
     		<span class="cocept-icon-logo"></span> Cocept
@@ -16,6 +19,15 @@
 		    </span>
 		</button>  
     </div>
+	<a href="/tasks" class="nav-section tasks-summary hidden" title="Tasks">
+		<div class="background"></div>
+		<div class="content">
+			<span class="glyphicon glyphicon-tasks"></span>
+	    	<span class="completed"></span>
+	    	<span class="separator">/</span>
+	    	<span class="total"></span>
+	    </div>
+    </a>
     <div class="clear"></div>
 </nav>
 
