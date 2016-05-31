@@ -298,6 +298,10 @@ header.top {
 }
 
 /* navigation */
+nav a:hover {
+    text-decoration: none;
+}
+
 nav.main {
     display: block;
     position: fixed;
