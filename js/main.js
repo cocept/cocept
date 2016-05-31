@@ -115,7 +115,7 @@ $(document).ready(function() {
 	});
 
  	// toggle nav.grey when scrolling past hero 
- 	$hero = $('.hero');
+	$hero = $('.hero');
  	if($hero.length > 0){
 	 	var inview = new Waypoint.Inview({
 		    element: $hero[0],
@@ -207,6 +207,28 @@ $(document).ready(function() {
 			$progressBar.show();
 		}
 	});
+
+	// sub menu fixed position
+	if($('#nav-sub-container').length > 0){
+		var subMenuWaypoint = new Waypoint({
+		    element: $('#nav-sub-container'),
+		  	handler: function(direction) {
+		    	if(direction == "down"){
+	    			// move submenu into nav.main and insert ghost
+	    			var $sub = this.element.find('.sub');
+		    		$sub.appendTo('nav.main');
+		    		var $ghost = $('<div id="nav-sub-ghost"></div>').css('height', $sub.height());
+		    		$ghost.appendTo( this.element );
+		    	}
+		    	else {
+		    		// create ghost element
+					$('nav.main nav.sub').appendTo('#nav-sub-container');
+		    		$('#nav-sub-ghost').remove();
+		    	}
+		  	},
+		  	offset: $('nav.main').height() 
+		});
+	}
 
 });
 

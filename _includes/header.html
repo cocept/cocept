@@ -1,5 +1,6 @@
 <header class="top">
 {% if page.hero %}
-        {% include hero.html %}
+	{% assign hero = page.hero | default "" %}
+	{% include {{ hero }} %}
 {% endif %}
 </header>

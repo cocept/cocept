@@ -4,43 +4,43 @@ layout: empty
 footer-class: black
 ---
 
-<div class="container page">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+<article it emscope itemtype="http://schema.org/Article" itemprop="articleBody" class="post">
 
-			<!-- post contents -->
-			<article itemscope itemtype="http://schema.org/Article" itemprop="articleBody" class="post">
-				<header class="post-header">
-					<h1 itemprop="name">{{ page.title }}</h1>
-					<div class="meta">
-						<time datetime="{{ page.date | date: "%Y-%m-%d" }}" 
-							pubdate 
-							itemprop="datePublished" 
-							content="{{ page.date | date: "%Y-%m-%d" }}">
-							{{ page.date | date: "%b %-d, %Y" }}
-						</time>
-						{% if page.author %}
-							 • 
-							 <a href="{{ page.author_link }}" target="_blank" rel="author">
-							 	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-							 		<span itemprop="name">{{ page.author }}</span>
-						 		</span>
-						 	</a>
-						{% endif %}
-						•
-						<a href="{{ page.url | replace:'index.html','' | prepend: site.url }}" itemprop="url">
-							<span class="glyphicon glyphicon-link"></span>
+	<!-- sub navigation -->
+	{% if page.nav %}
+	<div id="nav-sub-container">
+		<nav class="sub hidden-xs">
+			<ul class="nav">
+				<li class="icon">
+					<span class="glyphicon glyphicon-bookmark"></span>
+				</li>
+				{% for link in page.nav %}
+					<li>
+						<a href="#{{ link.id }}" onclick="window.cocept.scrollTo('#{{ link.id }}', 'nav.main', '20'); return false;">
+							{{ link.text }}
 						</a>
-					</div>
-				</header>
+					</li>
+				{% endfor %}
+			</ul>
+			<div class="progress-bar">
+				<span style="width: 0%"></span>
+			</div>
+		</nav>
+	</div>
+	{% endif %}
+
+	<!-- post body -->
+	<div class="container post-body">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
 				<span itemprop="articleBody">
 					{{ content }}
 				</span>
-			</article>
+			</div><!-- /col -->
+		</div><!-- /row -->
+	</div><!-- /container -->
 
-		</div><!-- /col -->
-	</div><!-- /row -->
-</div><!-- /container -->
+</article>
 
 <!-- share icons -->
 <section class="sharing_icons__container">

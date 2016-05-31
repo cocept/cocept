@@ -14,6 +14,7 @@ permalink: /:categories/:year/:title/
 gems:
   - jekyll-redirect-from
   - jekyll-sitemap
+  - liquid-md5
 
 # Custom directories
 include: ["_pages"]
@@ -33,6 +34,7 @@ defaults:
       author: "Max Mumford"
       author_link: "https://plus.google.com/+MaxMumford/"
       footer-class: black
+      hero: hero-post.html
   -
     scope:
       path: "design"

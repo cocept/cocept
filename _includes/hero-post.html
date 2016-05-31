@@ -1,0 +1,42 @@
+<!-- post header -->
+<div class="post-header-container hero" 
+style="background-image: url({{ page.background | default: '/images/backgrounds/space.jpg' }}); background-position-y: {{ page.background-position-y | default: '0px'}}">
+	<header class="post-header">
+		<!-- post info -->
+		<h1 itemprop="name" class="post-title">{{ page.title }}</h1>
+		<hr class="line">
+		<div class="post-category">
+			<span class="italic">in</span> 
+		    {% assign words = page.category | split: '-' %}
+		    {% for word in words %}
+		        {{ word | capitalize }}
+		    {% endfor %}
+		</div>
+		
+		<!-- author info -->
+		<div class="post-author-container">
+			<div>
+				<img class="post-avatar" src="https://www.gravatar.com/avatar/{{ site.data.authors[page.author].email | downcase | md5 }}" />
+			</div>
+			<a href="{{ page.author_link }}" target="_blank">
+			 	<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			 		<span class="italic">by</span> <span itemprop="name">{{ page.author }}</span>
+		 		</span>
+			</a>
+		</div>
+
+		<!-- post meta -->
+		<div class="meta">
+			<time datetime="{{ page.date | date: "%Y-%m-%d" }}" 
+				pubdate 
+				itemprop="datePublished" 
+				content="{{ page.date | date: "%Y-%m-%d" }}" title="{{ page.date | date: "%Y-%m-%d" }}">
+				<span class="glyphicon glyphicon-time"></span>
+			</time>
+			<a href="{{ page.url | replace:'index.html','' | prepend: site.url }}" itemprop="url">
+				<span class="glyphicon glyphicon-link"></span>
+			</a>
+		</div>
+
+	</header>
+</div>

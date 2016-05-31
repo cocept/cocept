@@ -267,6 +267,10 @@ small {
 
 /* misc */
 /* ----------------------------------------------------------*/
+.italic {
+    font-style: italic;
+}
+
 .outRight {
     transform: translateX(100%);
 }
@@ -366,19 +370,19 @@ nav.main .main .menu-button .hamburger .hamburger-inner::after {
 }
 
 /* post sub navigation */
-nav.main .sub {
+nav.sub {
     transition: background-color 0.3s;
     background-color: #EAEAEA;
     color: #333333;
     position: relative;
 }
 
-nav.main .sub ul {
+nav.sub ul {
     margin: 0px;
     padding: 10px 10px 10px 18px;
 }
 
-nav.main .sub ul li {
+nav.sub ul li {
     display: inline-block;
     font-family: "Droid Sans";
     margin-right: 20px;
@@ -386,25 +390,25 @@ nav.main .sub ul li {
     font-size: 16px;
 }
 
-nav.main .sub ul li.icon {
+nav.sub ul li.icon {
     margin-right: 3px;
 }
 
-nav.main .sub ul li a {
+nav.sub ul li a {
     color: #999999;
 }
 
-nav.main .sub ul li.active a, nav.main .sub ul li a:hover {
+nav.sub ul li.active a, nav.sub ul li a:hover {
     color: #333333;
 }
 
-nav.main .sub .progress-bar {
+nav.sub .progress-bar {
     position: absolute;
     bottom: 0px;
 }
 
 /* undo bootstrap .nav styling */
-nav.main .sub .nav > li > a {
+nav.sub .nav > li > a {
     padding: 0px;
     background-color: transparent;
 }
@@ -557,6 +561,10 @@ footer .to-top:hover {
     margin: 45px auto 45px auto;
 }
 
+.container.post-body {
+    margin: 35px auto 45px auto;
+}
+
 @media screen and (min-width: 768px) {
     body.with-sub-nav .container.page {
         margin-top: 100px;
@@ -569,13 +577,51 @@ footer .to-top:hover {
 }
 
 /* posts */
-.meta {
-    display: block;
-    margin: 12px 0px;
+.post-header-container {
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 45px;
+    color: white;
+    min-height: 35vh;
+    font-family: "Open Sans";
 }
 
-header.post-header {
-    margin-bottom: 45px;
+.post-header {
+    text-align: center;
+    margin: auto;
+    text-shadow: 0px 2px 20px black
+}
+
+.post-header a {
+    color: white;
+}
+
+.post-title {
+    margin: 25px auto 0px auto;
+}
+
+.post-category {
+    margin-bottom: 25px;
+}
+
+.post-avatar {
+    border-radius: 50%;
+    transition: border-radius 0.5s;
+}
+
+.post-avatar:hover {
+    border-radius: 2px;
+}
+
+.post-author-container, .post-author-container a {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.post-author-container a:hover {
+    color: white;
+    text-decoration: none;
 }
 
 article img {
@@ -588,6 +634,12 @@ article.post p {
     word-wrap: break-word;
 }
 
+@media only screen and (max-width : 768px) {
+    .post-title {
+        font-size: 6vw;
+    }
+}
+
 /* used in promo_column.html */
 .col-md-4 > .affix {
     max-width: 360px;
@@ -595,6 +647,13 @@ article.post p {
 
 /* components */
 /* ----------------------------------------------------------*/
+
+/* line */
+.line {
+    width: 100px;
+    height: 1px;
+    border-top: 1px solid #e3e3e3;
+}
 
 /* progress bar */
 .progress-bar {
