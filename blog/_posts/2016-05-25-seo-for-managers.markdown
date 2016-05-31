@@ -3,21 +3,27 @@ title: SEO For Managers
 excerpt: Search Engine Optimisation for Managers. None of the low level nitty gritty, just a high level summary document of what it means to SEO, and how to manage people who do it.
 category: digital-marketing
 tasks:
-  - {key: code, name: Make sure your websites code is error free and fast}
-  - {key: semantic, name: Use the latest Semantic Markup for your content}
-  - {key: tags, name: Make sure you use the required descriptive HTML tags}
-  - {key: microdata, name: Sprinkle Microdata goodness among your pages}
-  - {key: domain, name: Have just one main domain that serves your content}
-  - {key: friendly, name: Use friendly URLs}
+ - {key: code, name: Make sure your websites code is error free and fast}
+ - {key: semantic, name: Use the latest Semantic Markup for your content}
+ - {key: tags, name: Make sure you use the required descriptive HTML tags}
+ - {key: microdata, name: Sprinkle Microdata goodness among your pages}
+ - {key: domain, name: Have just one main domain that serves your content}
+ - {key: friendly, name: Use friendly URLs}
+nav:
+ - {id: what, text: What is SEO}
+ - {id: why, text: Why bother}
+ - {id: how, text: How}
+ - {id: how-often, text: How Often}
+ - {id: results, text: Results}
 ---
 
-## What Is SEO?
+## What Is SEO? {#what}
 
 What is SEO anyway? The internet seems to be full of low level, nitty gritty technical run downs of SEO but no executive summaries of what it actually is, or how to manage a team of people supposedly doing it! Well, let's address that.
 
 > Search Engine Optimisation concerns itself with making sure your website is search engine friendly
 
-## Why Bother?
+## Why Bother? {#why}
 
 You already have great content on your website, so why bother with SEO? Well, having great content is a very good start. But not paying attention to SEO is like opening an art gallery full of Georgia O'Keeffe's in a back alley with no front door. 
 
@@ -29,7 +35,7 @@ To do that, Google has to have some kind of understanding of each website. This 
 
 > Try to make Google's job easier by making your websites more interpretable.
 
-## Ok, I'm convinced. Now what?
+## Ok, I'm convinced. Now what? {#how}
 
 Well, unfortunately Google's searching algorithm is guarded closer than the [Doomsday Seed Vault](http://www.globalresearch.ca/doomsday-seed-vault-in-the-arctic-2/23503), so a definitive understanding is out of our reach unless you happen to have cracked teleportation or mind reading.
 
@@ -98,7 +104,7 @@ As an example, compare the two links below:
 
 The latter conveys a lot more information.
 
-## How often should we SEO?
+## How often should we SEO? {#how-often}
 
 SEO is one of those things that you wish you knew more about when first building your website. That's the best time to fit it in. However, Google changes it's algorithms daily (... yup!), which means SEO is an ongoing battle.
 
@@ -106,7 +112,7 @@ You can stay up to date with the latest changes on [Google's](https://webmasters
 
 You should also consider SEO each time you add new content. If you use Wordpress to blog and don't already use it, check out the [Yoast SEO](https://en-gb.wordpress.org/plugins/wordpress-seo/) plugin to optimise pages individually. 
 
-## Alright, my team have finished and they're all sweaty. When will we see results?
+## Alright, my team have finished and they're all sweaty. When will we see results? {#results}
 
 Sorry to be the bringer of bad news, but SEO does not give us instant gratification. It's a slow game full of guesswork and commitment, but it **will** pay off. 
 

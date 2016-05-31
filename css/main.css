@@ -298,83 +298,129 @@ header.top {
 }
 
 /* navigation */
-nav {
+nav.main {
     display: block;
     position: fixed;
     top: 0px;
     width: 100%;
     z-index: 100;
-
-    transition: background-color 0.3s;
 }
 
-nav a, nav a:hover, nav a:focus, nav a:active {
+nav.main a, nav.main a:hover, nav.main a:focus, nav.main a:active {
     text-decoration: none;
 }
 
-nav .nav-section {
+nav.main .main {
+    transition: background-color 0.3s;
+}
+
+nav.main .main .nav-section {
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
     color: white;
 }
 
-nav .nav-section a {
+nav.main .main .nav-section a {
     color: white;
 }
 
-nav .branding {
+nav.main .main .branding {
     float: left;
     padding: 20px 0px 20px 20px;
 }
 
-nav .branding a {
+nav.main .main .branding a {
     transition: transform 0.5s;
     display: inline-block;
     font-size: 22px;
 }
 
-nav .branding a:hover {
+nav.main .main .branding a:hover {
     transform: scale(1.1);
 }
 
-nav .menu-button {
+nav.main .main .menu-button {
     float: right;
     padding: 20px 20px 20px 0px;
     text-align: right;
     font-size: 22px;
 }
 
-nav .menu-button .text {
+nav.main .main .menu-button .text {
     vertical-align: top;
     padding-right: 3px;
 }
 
-nav .menu-button .hamburger:focus{
+nav.main .main .menu-button .hamburger:focus{
     outline: none;
 }
 
-nav .menu-button .hamburger .hamburger-inner, 
-nav .menu-button .hamburger .hamburger-inner::before, 
-nav .menu-button .hamburger .hamburger-inner::after {
+nav.main .main .menu-button .hamburger .hamburger-inner, 
+nav.main .main .menu-button .hamburger .hamburger-inner::before, 
+nav.main .main .menu-button .hamburger .hamburger-inner::after {
     background-color: white;
 }
 
-/* nav.grey */
-nav.grey {
+/* post sub navigation */
+nav.main .sub {
+    transition: background-color 0.3s;
+    background-color: #EAEAEA;
+    color: #333333;
+    position: relative;
+}
+
+nav.main .sub ul {
+    margin: 0px;
+    padding: 10px 10px 10px 18px;
+}
+
+nav.main .sub ul li {
+    display: inline-block;
+    font-family: "Droid Sans";
+    margin-right: 20px;
+
+    font-size: 16px;
+}
+
+nav.main .sub ul li.icon {
+    margin-right: 3px;
+}
+
+nav.main .sub ul li a {
+    color: #999999;
+}
+
+nav.main .sub ul li.active a, nav.main .sub ul li a:hover {
+    color: #333333;
+}
+
+nav.main .sub .progress-bar {
+    position: absolute;
+    bottom: 0px;
+}
+
+/* undo bootstrap .nav styling */
+nav.main .sub .nav > li > a {
+    padding: 0px;
+    background-color: transparent;
+}
+
+/* nav.main.grey */
+nav.main.grey .main {
     background-color: #f3f3f3;
 }
 
-nav.grey .nav-section {
+nav.main.grey .main .nav-section {
     color: #333;
 }
 
-nav.grey .nav-section a {
+nav.main.grey .main .nav-section a {
     color: #333;
 }
 
-nav.grey .menu-button .hamburger .hamburger-inner, 
-nav.grey .menu-button .hamburger .hamburger-inner::before, 
-nav.grey .menu-button .hamburger .hamburger-inner::after {
+nav.main.grey .main .menu-button .hamburger .hamburger-inner, 
+nav.main.grey .main .menu-button .hamburger .hamburger-inner::before, 
+nav.main.grey .main .menu-button .hamburger .hamburger-inner::after {
     background-color: #333;
 }
 
@@ -387,17 +433,24 @@ nav.push-menu {
     left: 0px;
     z-index: 80;
 
-    padding-top: 73px;
+    padding-top: 80px;
     color: white;
     text-align: right;
+  
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fed30d+0,25b5ad+77&0.87+0,0+96,0.36+96 */
-background: -moz-radial-gradient(top right, ellipse cover, rgba(254,211,13,0.87) 0%, rgba(37,181,173,0.46) 77%, rgba(37,181,173,0.36) 96%); /* FF3.6-15 */
-background: -webkit-radial-gradient(top right, ellipse cover, rgba(254,211,13,0.87) 0%,rgba(37,181,173,0.46) 77%,rgba(37,181,173,0.36) 96%); /* Chrome10-25,Safari5.1-6 */
-background: radial-gradient(ellipse at top right, rgba(254,211,13,0.87) 0%,rgba(37,181,173,0.46) 77%,rgba(37,181,173,0.36) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#defed30d', endColorstr='#5c25b5ad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: -moz-radial-gradient(top right, ellipse cover, rgba(254,211,13,0.87) 0%, rgba(37,181,173,0.46) 77%, rgba(37,181,173,0.36) 96%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(top right, ellipse cover, rgba(254,211,13,0.87) 0%,rgba(37,181,173,0.46) 77%,rgba(37,181,173,0.36) 96%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at top right, rgba(254,211,13,0.87) 0%,rgba(37,181,173,0.46) 77%,rgba(37,181,173,0.36) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#defed30d', endColorstr='#5c25b5ad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
     opacity: 0;
     transition: opacity 0.5s;
+}
+
+@media screen and (min-width: 768px) {
+    body.with-sub-nav nav.push-menu {
+        padding-top: 140px;
+    }
 }
 
 nav.push-menu.open {
@@ -500,6 +553,12 @@ footer .to-top:hover {
     margin: 45px auto 45px auto;
 }
 
+@media screen and (min-width: 768px) {
+    body.with-sub-nav .container.page {
+        margin-top: 100px;
+    }
+}
+
 .grey-hero {
     background-color: #f0f0f0;
     border-bottom: 5px solid #e3e3e3;
@@ -532,6 +591,22 @@ article.post p {
 
 /* components */
 /* ----------------------------------------------------------*/
+
+/* progress bar */
+.progress-bar {
+    float: none;
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: transparent;
+    text-align: left;
+}
+
+.progress-bar > span {
+    background-color: #25b5ad;
+    display: block;
+    height: 3px;
+}
 
 /* mailchimp signup forms */
 .mailchimp__form .input-group {

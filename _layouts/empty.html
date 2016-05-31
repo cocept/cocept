@@ -7,7 +7,11 @@
 		{% capture background-image %}style="background-image: url('{{ page.background-image }}');"%}{% endcapture %}
 	{% endif %}
 
-	<body class="preventAnimationsUntilLoad" {{ background-image }}>
+	{% if page.nav %}
+		{% assign subNav = "with-sub-nav" %}
+	{% endif %}
+
+	<body class="preventAnimationsUntilLoad {{ subNav }}" {{ background-image }}>
 
 	{% include hot_corners.html %}
 

@@ -5,32 +5,59 @@
 	{% assign class = page.nav-class %}
 {% endif %}
 
+<!-- top navigation -->
 <nav role="navigation" class="{{ class }} colorful-border colorful-border-top main">
-    <div class="nav-section branding">
-    	<a href="/">
-    		<span class="cocept-icon-logo"></span> Cocept
-    	</a>
-    </div>
-    <div class="nav-section menu-button">
-    	<a class="text" id="menu-button-text" href="#">Menu</a>
-    	<button class="hamburger hamburger--elastic" id="menu-button-hamburger" type="button">
-		    <span class="hamburger-box">
-		        <span class="hamburger-inner"></span>
-		    </span>
-		</button>  
-    </div>
-	<a href="/tasks" class="nav-section tasks-summary hidden" title="Tasks">
-		<div class="background"></div>
-		<div class="content">
-			<span class="glyphicon glyphicon-tasks"></span>
-	    	<span class="completed"></span>
-	    	<span class="separator">/</span>
-	    	<span class="total"></span>
+
+	<!-- main nav -->
+	<div class="main">
+	    <div class="nav-section branding">
+	    	<a href="/">
+	    		<span class="cocept-icon-logo"></span> Cocept
+	    	</a>
 	    </div>
-    </a>
-    <div class="clear"></div>
+	    <div class="nav-section menu-button">
+	    	<a class="text" id="menu-button-text" href="#">Menu</a>
+	    	<button class="hamburger hamburger--elastic" id="menu-button-hamburger" type="button">
+			    <span class="hamburger-box">
+			        <span class="hamburger-inner"></span>
+			    </span>
+			</button>  
+	    </div>
+		<a href="/tasks" class="nav-section tasks-summary hidden" title="Tasks">
+			<div class="background"></div>
+			<div class="content">
+				<span class="glyphicon glyphicon-tasks"></span>
+		    	<span class="completed"></span>
+		    	<span class="separator">/</span>
+		    	<span class="total"></span>
+		    </div>
+	    </a>
+	    <div class="clear"></div>
+	</div>
+
+	<!-- sub navigation -->
+	{% if page.nav %}
+	<div class="sub hidden-xs">
+		<ul class="nav">
+			<li class="icon">
+				<span class="glyphicon glyphicon-bookmark"></span>
+			</li>
+			{% for link in page.nav %}
+				<li>
+					<a href="#{{ link.id }}" onclick="window.cocept.scrollTo('#{{ link.id }}', 'nav.main', '20'); return false;">
+						{{ link.text }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<div class="progress-bar">
+			<span style="width: 0%"></span>
+		</div>
+	</div>
+	{% endif %}
 </nav>
 
+<!-- push menu navigation -->
 <nav role="navigation" class="push-menu outRight">
 	<ul>
 		{% for link in site.navigation %}

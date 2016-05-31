@@ -84,6 +84,15 @@ window.cocept.isMenuOpen = function(){
 	return $('nav.push-menu').hasClass('open');
 }
 
+window.cocept.scrollTo = function(targetSelector, marginTopSelector, paddingTop=0){
+	var offsetY = $(targetSelector).offset().top - paddingTop;
+	if(marginTopSelector)
+		offsetY = offsetY - $(marginTopSelector).height()
+	$('html, body').animate({
+        scrollTop: offsetY
+    }, 500);
+}
+
 $(document).ready(function() {
 
 	// menu button
@@ -175,11 +184,37 @@ $(document).ready(function() {
 		$(this).closest('.comments').removeClass('closed');
 	});
 
+	// article scroll bar
+	$(document).on('scroll', function(){
+		// return if no article found
+		var article = $('article.post');
+		if(article.length == 0)
+			return;
+
+		// calculate scroll percentage
+		var scrollPercent = 100 * ($(window).scrollTop() + $('nav.main').height() - article.offset().top) / article.height();
+
+		// update and hide/show the progress bar
+		if(scrollPercent < 0){
+			$('nav.main .sub .progress-bar').hide();
+		}
+		else {
+			if(scrollPercent > 100)
+				scrollPercent = 100;
+			
+			$progressBar = $('nav.main .sub .progress-bar');
+			$progressBar.find('> span').css('width', scrollPercent + '%');
+			$progressBar.show();
+		}
+	});
+
 });
 
 $(window).load(function(){
 
 	// take the breaks off CSS animations
 	$("body").removeClass("preventAnimationsUntilLoad");
+
+	$('body').scrollspy({ target: 'nav.main .sub', offset: $('nav.main').height() + 50 })
 
 });
