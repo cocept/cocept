@@ -244,8 +244,12 @@ small {
 }
 
 /* code highlighting */
-.highlight pre {
+.highlight pre, pre.highlight {
     padding: 5px 13px;
+}
+
+.highlighter-rouge {
+    margin-bottom: 25px;
 }
 
 /* form */

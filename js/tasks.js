@@ -230,7 +230,7 @@ $(document).ready(function(){
                     var singleAnimation = function($star) {
                         $star.animate({
                             top: $('.starsContainer').height() + "px",
-                            left: parseInt($star.css('left').replace('px', '')) + (Math.random() * 300) + "px",
+                            left: parseInt($star.css('left').replace('px', '')) + ( ((Math.random()-0.5)*2)  * 300) + "px",
                             opacity: 0
                         }, Math.random()*-3500 + 5000, function(){
                         	if(runStorm){

@@ -7,6 +7,8 @@ tasks:
   - {key: semantic, name: Use the latest Semantic Markup for your content}
   - {key: tags, name: Make sure you use the required descriptive HTML tags}
   - {key: microdata, name: Sprinkle Microdata goodness among your pages}
+  - {key: domain, name: Have just one main domain that serves your content}
+  - {key: friendly, name: Use friendly URLs}
 ---
 
 ## What Is SEO?
@@ -69,7 +71,7 @@ Delve into the source code for this blog post, for example, and you'll find some
 
 The itemtype tag tells a search engine what kind of "Thing" this element represents. In this case it's an article. 
 
-It could also be a person, organisation, game, flight, the list goes on. For the geeks among you, [here IS that list](https://schema.org/docs/full.html), curtesy of [schema.org](http://schema.org).
+It could also be a person, organisation, game, flight, the list goes on. For the geeks among you, [here IS that list](https://schema.org/docs/full.html), courtesy of [schema.org](http://schema.org).
 
 ### Social Media Links
 
@@ -79,19 +81,22 @@ This will help Google make the connection between them and your website, so your
 
 {% include figure.html src="/images/blog/digital-marketing/seo-for-managers-social.png" caption="Social media account links in a website footer" %} 
 
-### Canonical Domain Name
+### Domain Names
 
-Make sure you only have one domain that serves your website. All other domains should only serve permanent redirects to your canonical domain. 
+Only serve content from one domain. All other domains should return nothing but permanent redirects. For example, redirect example.com to www.example.com.
 
-What this means for you is that you must ensure example.com redirects to www.example.com if the www version is your canonical domain name.
-
-If you don't do this, Google might consider you to have two separate sites and rank them separately too, resulting in half the value for each of them.
+Consider using geographically relevant domains if you are a local business. For example if you're a hairdressers in the UK, use www.myhairdressers.co.uk.
 
 ### Use Friendly URLs
 
 A friendly URL is a web address that conveys meaning to a human, and benefits search engines as well. 
 
-As an example, compare http://example.com/p?id=1238&col=e3e3e3 to http://example.com/products/leather-bag/grey. The latter conveys a lot more information.
+As an example, compare the two links below:
+
+    http://example.com/p?id=1238&col=e3e3e3
+    http://example.com/products/leather-bag/grey
+
+The latter conveys a lot more information.
 
 ## How often should we SEO?
 
@@ -101,7 +106,7 @@ You can stay up to date with the latest changes on [Google's](https://webmasters
 
 You should also consider SEO each time you add new content. If you use Wordpress to blog and don't already use it, check out the [Yoast SEO](https://en-gb.wordpress.org/plugins/wordpress-seo/) plugin to optimise pages individually. 
 
-## Alright, I'm Finished SEO'ing and I'm All Sweaty. When do I Get the Results?
+## Alright, my team have finished and they're all sweaty. When will we see results?
 
 Sorry to be the bringer of bad news, but SEO does not give us instant gratification. It's a slow game full of guesswork and commitment, but it **will** pay off. 
 
