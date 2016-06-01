@@ -3,6 +3,7 @@ title: SEO For Managers
 excerpt: Search Engine Optimisation for Managers. None of the low level nitty gritty, just a high level summary document of what it means to SEO, and how to manage people who do it.
 background: /images/backgrounds/runners.jpg
 background-position-y: -108px
+banner: /images/backgrounds/runners.jpg
 category: digital-marketing
 tasks:
  - {key: code, name: Make sure your websites code is error free and fast}

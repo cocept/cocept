@@ -1,3 +1,6 @@
+{% unless page.hero %}
+	{% assign class = "grey" %}
+{% endunless %}
 {% if page.nav-class %}
 	{% assign class = page.nav-class %}
 {% endif %}

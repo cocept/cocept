@@ -579,6 +579,10 @@ footer .to-top:hover {
 /* posts */
 .post-header-container {
     background-size: cover;
+    -webkit-box-shadow: inset 9px 108px 114px -58px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 9px 108px 114px -58px rgba(0,0,0,0.75);
+    box-shadow: inset 9px 108px 114px -58px rgba(0,0,0,0.75);
+
     display: flex;
     align-items: center;
     padding: 45px;

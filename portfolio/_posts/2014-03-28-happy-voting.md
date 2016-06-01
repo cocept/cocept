@@ -2,6 +2,7 @@
 title:  EU's Happy Voting
 permalink: /portfolio/happy-voting/
 banner: /images/portfolio/happy-voting/banner.png
+background: /images/backgrounds/happy-voting.jpg
 excerpt: Worked with the EU to power their Youth Voting Drive by building the website for their "Happy Voting" participation campaign, with great engagement results
 redirect_from: 
  - /projects/8-happy-voting/

@@ -55,8 +55,9 @@ defaults:
       type: "posts"
     values:
       permalink: /:categories/:title/
-      layout: "portfolio"
+      layout: "post"
       category: "portfolio"
+      comments: false
   -
     scope:
       path: "blog"

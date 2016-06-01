@@ -3,7 +3,14 @@
 style="background-image: url({{ page.background | default: '/images/backgrounds/space.jpg' }}); background-position-y: {{ page.background-position-y | default: '0px'}}">
 	<header class="post-header">
 		<!-- post info -->
-		<h1 itemprop="name" class="post-title">{{ page.title }}</h1>
+		<h1 itemprop="name" class="post-title">
+			{{ page.title }}
+			{% if page.link %}
+        		<a href="{{ page.link }}" target="_blank">
+        			<span class="glyphicon glyphicon-new-window"></span>
+    			</a>
+			{% endif %}
+		</h1>
 		<hr class="line">
 		<div class="post-category">
 			<span class="italic">in</span> 
