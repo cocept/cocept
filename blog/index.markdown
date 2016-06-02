@@ -23,7 +23,10 @@ redirect_from:
             <li class="{{ liClass }}">
                 <a href="{{ post.url }}">
                     {% if post.banner %}
-                        <div style="background-image: url({{ post.banner }});" class="post__banner"></div>
+                        {% if post.banner-position-y %}
+                            {% assign banner-position-y = "background-position-y: " | append: post.banner-position-y %}
+                        {% endif %}
+                        <div style="background-image: url({{ post.banner }}); {{ banner-position-y }}" class="post__banner"></div>
                     {% endif %}
                 </a>
                 <div class="post__text_content">

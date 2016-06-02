@@ -3,6 +3,11 @@ title:  P&O and Cunard Christmas Ecard Website
 banner: /images/portfolio/cuk/banner.png
 excerpt: We helped P&O and Cunard increase their customer satisfaction and engagement with this complimentary service provided throughout the Christmas period
 background: /images/backgrounds/holly.jpg
+nav:
+ - {id: project, text: Project}
+ - {id: challenges, text: Challenges}
+ - {id: solutions, text: Solutions}
+ - {id: results, text: Results}
 ---
 
 <blockquote>
@@ -19,11 +24,11 @@ background: /images/backgrounds/holly.jpg
 
 ![Cunard and P&O Logos](/images/portfolio/cuk/cuk-logos.png)
 
-## The Project
+## The Project {#project}
 
 We were approached by Carnival UK, owner of P&O Cruises and Cunard, to create a **Christmas Ecard website** to add to the festivities on board their vessals.
 
-## The Challenges
+## The Challenges {#challenges}
 
 This project posed some interesting challenges:
 
@@ -34,7 +39,7 @@ This project posed some interesting challenges:
 
 ![Cunard Ecard Website Home Page](/images/portfolio/cuk/home.png)
 
-## The Solutions
+## The Solutions {#solutions}
 
 ### Amazon Elastic Beanstalk
 
@@ -60,7 +65,7 @@ When building the Ecard website it was **optimised for mobiles and tablets** fro
 
 ![Mobile Optimisation](/images/portfolio/cuk/mobile.png)
 
-## The Result
+## The Result {#results}
 
 The Christmas Ecard service was a **huge success** with a very large number of ecards being sent. The service helped connect Cunard and P&amp;O's passengers with their friends and family which served to improve brand identity among existing customer's networks. 
 

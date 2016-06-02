@@ -4,6 +4,11 @@ permalink: /portfolio/happy-voting/
 banner: /images/portfolio/happy-voting/banner.png
 background: /images/backgrounds/happy-voting.jpg
 excerpt: Worked with the EU to power their Youth Voting Drive by building the website for their "Happy Voting" participation campaign, with great engagement results
+nav:
+ - {id: project, text: Project}
+ - {id: challenges, text: Challenges}
+ - {id: solutions, text: Solutions}
+ - {id: results, text: Results}
 redirect_from: 
  - /projects/8-happy-voting/
  - /portfolio/2014/happy-voting/
@@ -21,7 +26,7 @@ redirect_from:
 
 </blockquote>
 
-## The Project
+## The Project {#project}
 
 Happy Voting was an **international**, independent campaign focussed on improving **young voter turnout** in the 2014 **European Elections**.
 
@@ -29,7 +34,7 @@ The official website **designed and built** by **Cocept** was the publishing pla
 
 The campaign was publicised through tight integration between it's website and social media sites, along with more traditional exposure like newspapers, radio and TV.
 
-## The Challenges
+## The Challenges {#challenges}
 
 The **short term lifecycle** and viral nature of HappyVoting meant the project posted some unique challenges:
 
@@ -40,7 +45,7 @@ The **short term lifecycle** and viral nature of HappyVoting meant the project p
 
 ![Happy Voting Home Page](/images/portfolio/happy-voting/home.png)
 
-## The Solutions
+## The Solutions {#solutions}
 
 ### Social Media Reliance
 
@@ -72,7 +77,7 @@ To **optimise** for our visitors coming from social media on their **mobiles and
 
 ![Mobile Optimisation](/images/portfolio/happy-voting/mobile.png)
 
-## The Result
+## The Result {#results}
 
 The campaign was a **huge success**. The video received close to 100,000 views and sparked hot debates among it's viewers. It succeeded in raising voting awareness among young voters all accross Europe.
 

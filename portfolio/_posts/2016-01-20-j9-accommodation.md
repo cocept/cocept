@@ -4,6 +4,10 @@ link: http://j9accommodation.co.uk
 banner: /images/portfolio/j9/banner.png
 background: /images/backgrounds/houses.jpg
 excerpt: We increased enquiries by 24% by modernising the tenant facing website of one of the UKs largest landlords
+nav:
+ - {id: project, text: Project}
+ - {id: solutions, text: Solutions}
+ - {id: results, text: Results}
 ---
 
 <blockquote>
@@ -18,7 +22,7 @@ excerpt: We increased enquiries by 24% by modernising the tenant facing website 
 
 </blockquote>
 
-## The Project
+## The Project {#project}
 
 J9 Accommodation is the letting agent arm of one of the **largest landlords in the country**. They asked us to **modernise their existing website** so bring it inline with their cutting edge business model.
 
@@ -32,7 +36,7 @@ Some unique aspects of this project:
 
 ![Cunard Ecard Website Home Page](/images/portfolio/j9/home.png)
 
-## The Solutions
+## The Solutions {#solutions}
 
 ### Wordpress
 
@@ -54,7 +58,7 @@ The site receives a larger than average number of visitors using mobile phones d
 
 ![Mobile Optimisation](/images/portfolio/j9/mobile.png)
 
-## The Result
+## The Result {#results}
 
 The new site has **increased enquiries by 24%** which we put down to the focus being put on the property listings and the easy access to the contact page. This is of course a huge improvement which translates directly into profit!
 
