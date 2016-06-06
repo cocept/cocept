@@ -84,7 +84,8 @@ window.cocept.isMenuOpen = function(){
 	return $('nav.push-menu').hasClass('open');
 }
 
-window.cocept.scrollTo = function(targetSelector, marginTopSelector, paddingTop=0){
+window.cocept.scrollTo = function(targetSelector, marginTopSelector, paddingTop){
+	paddingTop = paddingTop || 0;
 	var offsetY = $(targetSelector).offset().top - paddingTop;
 	if(marginTopSelector)
 		offsetY = offsetY - $(marginTopSelector).height()

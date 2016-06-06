@@ -7,7 +7,8 @@ window.cocept.tasks.taskIdGenerator = function(pageSlug, taskKey){
 /* ******************** */
 /* *** tasks object *** */
 /* ******************** */
-window.cocept.tasks.Task = function(taskKey, name, pageSlug, pageUrl, pageTitle, completed=false){
+window.cocept.tasks.Task = function(taskKey, name, pageSlug, pageUrl, pageTitle, completed){
+	completed = completed || false;
 	var taskId = window.cocept.tasks.taskIdGenerator(pageSlug, taskKey);
 	return {
 		id: taskId,
@@ -58,7 +59,9 @@ window.cocept.tasks.Manager = function(){
 };
 
 // update .tasks-summary widget
-window.cocept.tasks.updateSummary = function(animate=true){
+window.cocept.tasks.updateSummary = function(animate){
+	animate = animate || true;
+	
 	// find elements
 	var $taskSummary = $('.tasks-summary');
 	var $taskTotal = $taskSummary.find('.total');
