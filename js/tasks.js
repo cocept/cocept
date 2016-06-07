@@ -60,7 +60,7 @@ window.cocept.tasks.Manager = function(){
 
 // update .tasks-summary widget
 window.cocept.tasks.updateSummary = function(animate){
-	animate = animate || true;
+	animate = animate || false;
 	
 	// find elements
 	var $taskSummary = $('.tasks-summary');
