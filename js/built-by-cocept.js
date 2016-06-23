@@ -33,6 +33,7 @@
   \
   #builtByCocept .wrapper {\
     transition: transform 0.5s;\
+    display: inline-block;\
   }\
   \
   #builtByCocept:hover .wrapper {\
