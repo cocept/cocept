@@ -36,4 +36,11 @@ $(document).ready(function() {
             },
         }
     });
+
+    $('form#contact').on('submit', function(){
+        if(window.fb_lead == undefined){
+            fbq('track', 'Lead');
+            window.fb_lead = true;
+        }
+    });
 });
